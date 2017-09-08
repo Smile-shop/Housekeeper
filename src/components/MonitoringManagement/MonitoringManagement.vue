@@ -51,7 +51,7 @@
 		        </tr>
 		      </tbody>
 		    </table>
-		    <mt-button type="primary" class="registbtn">签字</mt-button>
+		    <mt-button type="primary" class="registbtn">提交</mt-button>
 		</div>
 	</div>
 </template>

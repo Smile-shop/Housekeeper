@@ -1,17 +1,20 @@
 <template>
 	<div class="index_container">
+		<div class="mmm" v-show="show" @click=isshow></div>
 		<p class="index_text">
 			<span>主页</span>
 			<img src="../../assets/imgs/person.png" alt="" class="person" @click=isshow>
-			<div class="all" v-show="show">
-				<div class="jian"></div>
-				<div class="menu">
-					<ul>
-						<li><a href="javascript:;"><i class="el-icon-edit edit"></i>密码修改</a></li>
-						<li><a href="javascript:;"><i class="el-icon-upload2 exit"></i>退出</a></li>
-					</ul>
+			<transition name="el-fade-in-linear">
+				<div class="all" v-show="show">
+					<div class="jian"></div>
+					<div class="menu">
+						<ul>
+							<li><a href="javascript:;"><i class="el-icon-edit edit"></i>密码修改</a></li>
+							<li @click = exit><a href="javascript:;"><i class="el-icon-upload2 exit"></i>退出</a></li>
+						</ul>
+					</div>
 				</div>
-			</div>
+			</transition>
 		</p>
 		<div class="main">
 			<ul class="mchli">
@@ -64,7 +67,7 @@
 	export default {
 		data(){
 			return {
-				show:false
+				show:false,
 			}
 		},
 		created(){
@@ -74,8 +77,14 @@
 			isshow(){
 				this.show = !this.show;
 				console.log(this.show)
-				}
 			},
+			exit(){
+				this.$messagebox.confirm('确定退出该账号?').then(action => {
+					sessionStorage.removeItem('user')
+					this.$router.push({name:'login'})
+				});
+			}
+		},
 	
 	}
 </script>

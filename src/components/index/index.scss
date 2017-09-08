@@ -4,6 +4,14 @@
     background-size: 100% 100%;
     overflow-y: scroll;
     text-align: center;
+    .mmm {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
     .index_text {
         position: relative;
         text-align: center;
@@ -11,79 +19,92 @@
         font-size: .32rem;
         background: #48A4F2;
         color: #fff;
+        z-index: 2;
         span {
             line-height: 1rem;
         }
-        .person{
-            width: 20px;
+        .person {
+            width: .4rem;
             position: absolute;
-            top: 17px;
-            left: 280px;
+            top: .34rem;
+            left: 5.6rem;
         }
     }
-        .all{
-            .menu{
-                ul{
-                    position: absolute;
-                    left: 203px;
-                    top: 44px;
-                    width: 110px;
-                    height: 70px;
-                    background:#fff;
-                    border:1px solid rgba(204, 204, 204, 0.74);
-                    border-top:0;
-                    box-shadow: 0 2px 5px #ccc;
-                    z-index:10;
-                    li{
-                        float:left;
+    .all {
+        .menu {
+            ul {
+                position: absolute;
+                left: 4.06rem;
+                top: .88rem;
+                width: 2.2rem;
+                height: 1.4rem;
+                background: #fff;
+                border: .02rem solid rgba(204, 204, 204, 0.74);
+                border-top: 0;
+                box-shadow: 0 .04rem .1rem #ccc;
+                z-index: 10;
+                li {
+                    float: left;
+                    width: 100%;
+                    height: .7rem;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    /* Firefox */
+                    -webkit-box-sizing: border-box;
+                    /* Safari */
+                    text-align: center;
+                    line-height: .7rem;
+                    &:nth-child(1) {
+                        border-bottom: .02rem solid #ccc;
+                    }
+                    &:hover {
+                        background: #ebebeb;
+                    }
+                    a {
+                        display: inline-block;
                         width: 100%;
-                        height: 35px;
-                        overflow:hidden;
-                        box-sizing:border-box;
-                        -moz-box-sizing:border-box; /* Firefox */
-                        -webkit-box-sizing:border-box; /* Safari */
-                        text-align: center;
-                        line-height: 35px;
-                        &:nth-child(1){
-                            border-bottom:1px solid #ccc;
+                        height: 100%;
+                        color: #888;
+                        position: relative;
+                        left: .3rem;
+                        font-size: .24rem;
+                        .edit {
+                            position: absolute;
+                            left: .12rem;
+                            top: .2rem;
+                            font-size: .24rem;
                         }
-                        &:hover{
-                            background:#ebebeb;
-                        }
-                        a{
-                            display: inline-block;
-                            width: 100%;
-                            height: 100%; 
-                            color:#888; 
-                            position: relative;
-                            left: 15px;font-size: 12px;
-                            .edit{
-                                position: absolute;
-                                left: 6px;top: 10px;font-size: 12px;
-                            }
-                            .exit{
-                                position: absolute;
-                                left: 6px;top: 10px;font-size: 12px;
-                            }
+                        .exit {
+                            position: absolute;
+                            left: .12rem;
+                            top: .2rem;
+                            font-size: .24rem;
                         }
                     }
                 }
             }
-            .jian{
-                position: absolute;
-                left: 281px;
-                top: 40px;
-                width: 16px;
-                height: 16px;
-                background:#fff;
-                transform:rotate(45deg);
-                -ms-transform:rotate(45deg);     /* IE 9 */
-                -moz-transform:rotate(45deg);    /* Firefox */
-                -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
-                -o-transform:rotate(45deg);  /* Opera */
-            }
+        }
+        .jian {
+            position: absolute;
+            left: 5.62rem;
+            top: .8rem;
+            width: .32rem;
+            height: .32rem;
+            border: .02rem solid rgba(204, 204, 204, 0.74);
+            background: #fff;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            /* IE 9 */
+            -moz-transform: rotate(45deg);
+            /* Firefox */
+            -webkit-transform: rotate(45deg);
+            /* Safari 和 Chrome */
+            -o-transform: rotate(45deg);
+            /* Opera */
         }
     }
+}
 
 .mchli li {
     width: 50%;
