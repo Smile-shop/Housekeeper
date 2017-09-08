@@ -1,0 +1,90 @@
+.checkForm_container {
+    max-width: 12.8rem;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    .resigt-background {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: -1;
+    }
+    .checkForm_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        background: #48A4F2;
+        font-size: .32rem;
+        color: #fff;
+        margin-bottom: 8px;
+        span {
+            line-height: 1rem;
+        }
+        .checkFormback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .34rem;
+            left: .38rem;
+        }
+    }
+    label.q {
+        position: absolute;
+        color: #888;
+        font-size: .25rem;
+        top: 1.65rem;
+    }
+    input.companyname {
+        background-color: transparent;
+        width: 288px;
+        height: .7rem;
+        border: none;
+        border-bottom: .02rem solid #ccc;
+        padding-left: 49px;
+        margin-top: .36rem;
+        color: #888;
+        font-size: .25rem;
+        text-align: center;
+    }
+    label.j {
+        position: absolute;
+        color: #888;
+        font-size: .25rem;
+        top: 2.74rem;
+    }
+    
+    label.f {
+        position: absolute;
+        color: #888;
+        font-size: .25rem;
+        top: 3.76rem;
+        left:13px;
+    }
+    .el-select{
+        margin-top: 20px;
+        margin-left: 43px;
+        font-size: 13px;
+        text-align: center;
+        input{
+            border-radius:20px;
+            width: 229px;
+            height: 36px;
+            font-size: 13px;
+            text-align: center;
+        }
+    }
+    .xian{
+        border-top:1px solid #ccc;
+        margin-top: 11px;
+        width: 337px;
+    }
+    .ctips{
+        margin-top: 50px;
+        font-size: 14px;
+        color: #48A4F2;
+        line-height: 30px;
+    }
+    
+}

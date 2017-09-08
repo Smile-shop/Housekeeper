@@ -1,0 +1,112 @@
+.FileManagement_container{
+	max-width: 12.8rem;
+	height: 100%;
+	background-size:100% 100%;
+	text-align: center;
+	.FileManagement_text{
+		position: relative;
+		text-align: center;
+		height: 1rem;
+		font-size: .32rem;
+		background:#48A4F2;
+		color:#fff;
+		span{
+			line-height: 1rem;
+		}
+		.goback{
+			display: inline-block;
+			width: .2rem;height: .30rem;
+			position: absolute;
+			top: .3rem;
+			left: .38rem;
+		}
+	}
+	.main{
+		.dsearch{
+			width: 100%;	
+			height: 79px;
+			background:#ddd;
+			.fromname{
+				border-radius:20px;
+				width: 155px;
+				border:none;
+				border:1px solid #ccc;
+				height: 30px;
+				margin-top: 5px;
+			}
+			.timestart,.timeend{
+				border-radius:20px;
+				width: 85px;
+				border:none;
+				border:1px solid #ccc;
+				height: 30px;
+				margin-top: 5px;
+			}
+			
+			.year{
+				border-radius:20px;
+				font-size: 14px;
+				width: 120px;height: 30px;
+				margin-top: 5px;
+				background:#3ade7e;
+			}
+			input,select{
+				text-align: center;
+				color:#ccc;
+			}
+			input:focus{
+			    outline: none;   
+			    border: 1px solid #26a2ff; 
+			}
+			.el-select{
+				input{
+					border-radius:20px;
+					width: 73.5px;
+					height: 38px;
+				}
+			}
+			input:-ms-input-placeholder{color:#ccc;font-size: 11px;text-align: center;}/* Internet Explorer 10+ */ 
+			input::-webkit-input-placeholder{color:#ccc;font-size: 11px;text-align: center;}/* WebKit browsers */
+			input::-moz-placeholder{color:#ccc;font-size: 11px;text-align: center;}/* Mozilla Firefox 4 to 18 */ 
+			input:-moz-placeholder{color:#ccc;font-size: 11px;text-align: center;}/* Mozilla Firefox 19+ */ 
+		}
+		.jodtable{
+			border:1px solid #ccc;
+			border-top:none;
+			border-collapse: collapse;
+			width: 100%;
+			margin-top: 50px;
+			th{
+				background:#81bdef;
+				color:#fff;
+			}
+			tr,td,th{
+				border:1px solid #ccc;
+				border-collapse: collapse;
+				padding: 8px 2px 8px 2px;
+				font-size: 11px;
+			}
+			tr:nth-child(1){
+				border-top:none;
+				th{
+					border-top:none;
+				}
+				.cao{
+					width: 157px;																																																																																																						
+				}
+				td{
+					.edit,.print,.del{
+						font-size: 10px;
+						width: 48px;
+						height: 27px;
+					}
+				}
+			}
+		}
+	}
+	.search{
+		border-radius:20px;
+		font-size: 14px;
+		width: 85px;height: 30px;
+	}
+}

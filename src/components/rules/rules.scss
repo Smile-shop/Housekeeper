@@ -1,0 +1,80 @@
+.rules_container {
+    max-width: 12.8rem;
+    height: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    .rules_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        span {
+            line-height: 1rem;
+        }
+        .goback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .3rem;
+            left: .38rem;
+        }
+    }
+    .main {
+        .order {
+            height: 1.2rem;
+            line-height: 1.2rem;
+            text-align: center;
+            .line {
+                display: inline-block;
+                width: 1.66rem;
+                border-top: .02rem solid #ccc;
+            }
+            .txt {
+                color: #848484;
+                vertical-align: middle;
+                padding: 0 .2rem 0 .2rem;
+                font-size: .28rem;
+            }
+        }
+        .el-table {
+            .el-table__empty-block {
+                background: #fff;
+            }
+            font-size: .24rem;
+            th {
+                background: #2ab3ea;
+                .cell {
+                    color: #fff;
+                    background: #2ab3ea;
+                    text-align: center;
+                    font-size: .24rem;
+                    line-height: .32rem!important;
+                    padding: 0!important;
+                    span {
+                        font-size: .2rem;
+                    }
+                }
+            }
+            tr {
+                .cell {
+                    padding: 0!important;
+                }
+                .el-button+.el-button,
+                .el-button--small {
+                    margin-left: .04rem;
+                    padding: .08rem .04rem;
+                    font-size: .2rem;
+                }
+            }
+        }
+        .sub {
+            background: #39D1AA;
+            width: 5rem;
+            margin: .7rem 0;
+            font-size: .3rem;
+        }
+    }
+}

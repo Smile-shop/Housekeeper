@@ -1,0 +1,1 @@
+global.baseUrl = '/api';

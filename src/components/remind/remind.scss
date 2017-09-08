@@ -1,0 +1,69 @@
+.remind_container{
+	max-width: 12.8rem;
+	height: 100%;
+	background-size:100% 100%;
+	text-align: center;
+	.remind_text{
+		position: relative;
+		text-align: center;
+		height: 1rem;
+		font-size: .32rem;
+		background:#48A4F2;
+		color:#fff;
+		span{
+			line-height: 1rem;
+		}
+		.goback{
+			display: inline-block;
+			width: .2rem;height: .36rem;
+			position: absolute;
+			top: .3rem;
+			left: .38rem;
+		}
+	}
+	.main{
+		.psearch{
+			width: 100%;	
+			height: 52px;
+			background:#ddd;
+		.jobx{
+				border-radius:20px;
+				width: 133px;
+				border:none;
+				border:1px solid #ccc;
+				height: 36px;
+				margin-top: 7px;
+				text-align: center;
+				color:#ccc;
+		}
+		.search{
+				border-radius:20px;
+				font-size: 14px;
+				width: 60px;
+				height: 36px;
+			}
+		}
+		.el-input__inner{
+			background:#fff;
+			color:#000;
+			width: 267px;
+			font-size: 13px;
+		}
+		.rtips{
+			display: inline-block;
+			margin-top: 20px;
+	        font-size: 12px;
+	        color: #48A4F2;
+	        line-height: 30px;
+			margin-bottom: 20px;
+		}
+	}
+}
+		input:focus{
+			    outline: none;   
+			    border: 1px solid #26a2ff; 
+			}
+			input:-ms-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Internet Explorer 10+ */ 
+			input::-webkit-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* WebKit browsers */
+			input::-moz-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Mozilla Firefox 4 to 18 */ 
+			input:-moz-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Mozilla Firefox 19+ */ 
