@@ -19,7 +19,8 @@ import JobMonitoring from '../components/JobMonitoring/JobMonitoring.vue'
 import Incomplete from '../components/Incomplete/Incomplete.vue'
 import MonitoringManagement from '../components/MonitoringManagement/MonitoringManagement.vue'
 import EditJobInformation from '../components/EditJobInformation/EditJobInformation.vue'
-
+import EnterpriseSelfExamination from '../components/EnterpriseSelfExamination/EnterpriseSelfExamination.vue'
+import legitimate from '../components/legitimate/legitimate.vue'
 
 
 Vue.use(VueRouter)
@@ -98,6 +99,16 @@ const router = new VueRouter({
         path:'/EditJobInformation',
         name:'EditJobInformation',
         component:EditJobInformation,
+    },{
+        path:'/EnterpriseSelfExamination',
+        name:'EnterpriseSelfExamination',
+        component:EnterpriseSelfExamination,
+        children: [  
+            { path: "/legitimate", 
+              name:'legitimate', 
+              component: legitimate 
+            }  
+        ] 
     },]
 })
 

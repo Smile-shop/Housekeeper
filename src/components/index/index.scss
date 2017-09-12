@@ -69,13 +69,7 @@
                         position: relative;
                         left: .3rem;
                         font-size: .24rem;
-                        .edit {
-                            position: absolute;
-                            left: .12rem;
-                            top: .2rem;
-                            font-size: .24rem;
-                        }
-                        .exit {
+                        .edit,.exit {
                             position: absolute;
                             left: .12rem;
                             top: .2rem;
@@ -210,6 +204,13 @@
     margin: .22rem 0 .1rem 0;
 }
 
+.mchli li img.indeximg14 {
+    display: inline-block;
+    width: .66rem;
+    height: auto;
+    margin: .4rem 0 .1rem 0;
+}
+
 .mchli li img.indeximg11 {
     display: inline-block;
     width: .66rem;
@@ -232,7 +233,7 @@
 }
 
 .mchli li.bott {
-    width: 33.33333%;
+    width: 50%;
 }
 
 .mchli li:nth-last-child(odd) {

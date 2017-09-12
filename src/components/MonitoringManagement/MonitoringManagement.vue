@@ -6,52 +6,59 @@
 		</p>
 		<div class="main">
 			<table class="jodtable">
-		     <!--  <thead>
-		        <tr>
-		          <th>主体责任</th>
-		          <th>未完成事件</th>
-		        </tr>
-		      </thead> -->
 		      <tbody>
 		        <tr>
-		          <td>记录编号</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><span>*</span>记录编号</td>
+		          <td><textarea class="textearetext" v-model="record_no"></textarea></td>
 		        </tr>
 		        <tr>
-		          <td>检查单位</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><span>*</span>检查单位</td>
+		          <td><textarea class="textearetext" v-model="admin_unit"></textarea></td>
 		        </tr>
 		        <tr>
-		          <td>检查方式</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><span>*</span>检查方式</td>
+		          <td><textarea class="textearetext" v-model="admin_method"></textarea></td>
 		        </tr>
 		        <tr>
-		          <td>检查内容</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><span>*</span>检查内容</td>
+		          <td><textarea class="textearetext" v-model="admin_content"></textarea></td>
 		        </tr>
 		        <tr>
-		          <td>检查结果</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><span>*</span>检查结果</td>
+		          <td><textarea class="textearetext" v-model="admin_conclusion"></textarea></td>
 		        </tr>
 		        <tr>
-		          <td>检查日期</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><span>*</span>检查日期</td>
+		          <td>
+		          	<i class="time" @click="openPicker">
+		          		<el-input class="time" v-model="admin_date"  placeholder="点击选择时间"></el-input>
+		          	</i>
+		          </td>
 		        </tr>
 		        <tr>
-		          <td>检查人</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><span>*</span>检查人</td>
+		          <td><textarea class="textearetext" v-model="checker"></textarea></td>
 		        </tr>
 		        <tr>
 		          <td>检查对象</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><textarea class="textearetext" v-model="checked"></textarea></td>
 		        </tr>
 		        <tr>
 		          <td>备注</td>
-		          <td><textarea class="textearetext"></textarea></td>
+		          <td><textarea class="textearetext" v-model="notes"></textarea></td>
 		        </tr>
 		      </tbody>
 		    </table>
-		    <mt-button type="primary" class="registbtn">提交</mt-button>
+		    <mt-datetime-picker
+			    ref="picker"
+			    type="date"
+			    yearFormat="{value} 年"
+			    monthFormat="{value} 月"
+			    dateFormat="{value} 日"
+			    v-model="pickerValue"
+			    @confirm="aa">
+			</mt-datetime-picker>
+		    <mt-button type="primary" class="registbtn" @click="sub">提交</mt-button>
 		</div>
 	</div>
 </template>
@@ -61,23 +68,89 @@
 	export default {
 		data(){
 			return {
-				formInline: {
-		          user: '',
-		          region: ''
-		        },
-		        jod:[['店长'],['进货岗'],['销售岗'],['质量安全岗'],['质量追踪岗']]
+				record_no:'',
+				admin_unit:'',
+				admin_method:'',
+				admin_content:'',
+				admin_conclusion:'',
+				admin_date:'',
+				checker:'',
+				checked:'',
+				notes:'',
+				pickerValue:'',
+				time:''
 			}
+		},
+		mouthed(){
+			console.log(this.pickerValue)
+			let a = new Date(this.pickerValue);
+			let y = a.getFullYear();
+			let M = a.getMonth()+1;
+			let d = a.getDate();
+			let pickerValue = `${y}-${M}-${d}`
+			this.pickerValue = pickerValue;		
 		},
 		methods: {
 			goback(){
 				this.$router.go(-1)
 			},
-			toIncomplete(){
-				this.$router.push({name:'Incomplete'})
-			},
-		    search(){
-		     	console.log(this.formInline.region)
-		     	
+			openPicker() {
+		        this.$refs.picker.open();
+		        
+		        console.log(this.pickerValue)
+		    },
+		    aa(){
+		    	let a = new Date(this.pickerValue);
+				let y = a.getFullYear();
+				let M = a.getMonth()+1;
+				let d = a.getDate();
+				M = M < 10 ? '0' + M : M
+				d = d < 10 ? '0' + d : d
+				let pickerValue = `${y}-${M}-${d}`
+				this.pickerValue = pickerValue;
+				this.admin_date = this.pickerValue;
+		    },
+		    sub(){
+		    	switch (''){
+					case this.record_no:
+						this.$messagebox.alert('打*号的空格输入不能为空！');
+						return;
+					case this.admin_unit:
+						this.$messagebox.alert('打*号的空格输入不能为空！');
+						return;	
+					case this.admin_method:
+						this.$messagebox.alert('打*号的空格输入不能为空！');
+						return;
+					case this.admin_content:
+						this.$messagebox.alert('打*号的空格输入不能为空！');
+						return;	
+					case this.admin_conclusion:
+						this.$messagebox.alert('打*号的空格输入不能为空！');
+						return;	
+					case this.admin_date:
+						this.$messagebox.alert('打*号的空格输入不能为空！');
+						return;
+					case this.checker:
+						this.$messagebox.alert('打*号的空格输入不能为空！');
+						return;	
+				}
+				let a = new Date(this.pickerValue);
+				let y = a.getFullYear();
+				let M = a.getMonth()+1;
+				let d = a.getDate();
+				let pickerValue = `${y}-${M}-${d}`
+				this.pickerValue = pickerValue;
+				let obj = {record_no:this.record_no,admin_unit:this.admin_unit,admin_method:this.admin_method,admin_content:this.admin_content,admin_conclusion:this.admin_conclusion,admin_date:this.admin_date,checker:this.checker,checked:this.checked,notes:this.notes}
+		     	this.$http.post(baseUrl+'/addRegulatory',obj).then((res)=>{
+		     		console.log(res)
+	              	if(res.data.retCode === 0){
+	              		
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		        },(err)=>{
+		             this.$messagebox.alert('操作失败,请稍后再试!');
+		        });
 		     }
 		}
 	}

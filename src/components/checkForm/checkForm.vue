@@ -5,12 +5,12 @@
 			<span>企业主体责任履约自查表单</span>
 		</p>
 		<label for="companyname1" class="q">岗位：</label>
-		<input type="text" id="companyname1" placeholder="" class="companyname" v-model="companyname"><br>
+		<input type="text" id="companyname1" placeholder="" class="companyname" v-model="gw"><br>
 		<label for="companyname2" class="j">表单：</label>
-		<input type="text" id="companyname2" placeholder="" class="companyname" v-model="companyname"><br>
+		<input type="text" id="companyname2" placeholder="" class="companyname" v-model="bd"><br>
 		<label for="" class="f">频率：</label>
-		<el-select v-model="formInline.region" placeholder="请选择时间" >
-			<el-option v-for="arr in time" :label="arr[0]" :value="arr[0]"></el-option>
+		<el-select v-model="choose" placeholder="请选择时间">
+			<el-option v-for="arr in time" :label="arr[0]" :key="arr[0]" :value="arr[1]"></el-option>
 		</el-select>
 		<div class="xian"></div>
 		<p class="ctips">系统默认提醒时间为每周/次,特殊产品需更改的<br>请查询后更改</p>
@@ -22,49 +22,50 @@
 	export default {
 		data(){
 			return {
-				companyname:'',
-				formInline: {
-		          user: '',
-		          region: ''
-		        },
-				time:[['每周/次'],['每月/次']]
+				gw:'质量安全负责岗',
+				bd:'企业主体责任履约自查表单',
+				choose:'',
+				choose1:'',
+				time:[['一周/次',1],['两周/次',2],['三周/次',3],['四周/次',4]],
+				id:''
 			}
 		},
 		created(){
-			this.$indicator.close('加载中...'); 
+			this.$http.post(baseUrl+'/findSelfCheckPeriod').then((res)=>{
+              	if(res.data.retCode === 0){
+              		this.choose = res.data.data.self_check_period;
+              		this.choose1 = res.data.data.self_check_period;
+              		this.id = res.data.data.id;
+              	}else{
+              		this.$messagebox.alert(res.data.retMessage);
+              	}
+	        },(err)=>{
+	             this.$messagebox.alert('操作失败,请稍后再试!');
+	        });
 		},
 		methods:{
 			checkForm(){
-				console.log(this.phone,this.password)
-				switch (''){
-					case this.companyname:
-						this.$messagebox.alert('企业名称不能为空！');
-						return;
-					case this.jnumber:
-							this.$messagebox.alert('经营许可证号不能为空！');
-							return;	
-					case this.fname:
-							this.$messagebox.alert('法人名称不能为空！');
-							return;
-					case this.fphonenumber:
-						this.$messagebox.alert('法人手机号不能为空！');
-						return;	
-					case this.zname:
-						this.$messagebox.alert('质量负责人名称不能为空！');
-						return;	
-					case this.zphonenumber:
-						this.$messagebox.alert('质量负责人手机号不能为空！');
-						return;
-					case this.dadress:
-						this.$messagebox.alert('地址不能为空！');
-						return;			
+				if(this.choose !== this.choose1){
+					let obj = {self_check_period:this.choose,id:this.id}
+					this.$http.post(baseUrl+'/setSelfCheck',obj).then((res)=>{
+		              	console.log(res)
+		              	if(res.data.retCode === 0){
+		              		this.$messagebox.alert("操作成功!");
+		              	}else{
+		              		this.$messagebox.alert(res.data.retMessage);
+		              	}
+			        },(err)=>{
+			             this.$messagebox.alert('操作失败,请稍后再试!');
+			        });
 				}
 			},
 			goback(){
 				this.$router.go(-1);
-				console.log(123)
 			}
 
+		},
+		watch:{
+			choose:'checkForm'
 		}
 	
 	}

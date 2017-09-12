@@ -19,12 +19,12 @@
 		<div class="main">
 			<ul class="mchli">
 	    		<router-link to="housekeeper">
-		    		<li><img src="../../assets/imgs/housekeeper (3).png" height="91" width="68" alt="" class="indeximg1"><br>激活管家</li>
+		    		<li><img src="../../assets/imgs/housekeeper (3).png" alt="" class="indeximg1"><br>激活管家</li>
 		    	</router-link>
 		    	<router-link to="MonitoringManagement">
 		    		<li><img src="../../assets/imgs/Supervision (3).png" height="91" width="68" alt="" class="indeximg2"><br>监管记录</li>
 		    	</router-link>
-		    	<router-link to="regist">	
+		    	<router-link to="EnterpriseSelfExamination">	
 		    		<li><img src="../../assets/imgs/Self-examination (3).png" height="91" width="68" alt="" class="indeximg3"><br>企业自查</li>
 		    	</router-link>
 		    	<router-link to="AuditsManagement">	
@@ -47,6 +47,9 @@
 		    	</router-link>
 		    	<router-link to="regist">
 		    		<li><img src="../../assets/imgs/Qualitytracking (3).png" height="91" width="68" alt="" class="indeximg10"><br>质量追踪</li>
+		    	</router-link>
+		    	<router-link to="regist">
+		    		<li><img src="../../assets/imgs/file-19@3x.png" height="91" width="68" alt="" class="indeximg14"><br>追溯档案</li>
 		    	</router-link>
 		    	<router-link to="regist">	
 		    		<li class="bott"><img src="../../assets/imgs/Cheats (3).png" height="91" width="68" alt="" class="indeximg11"><br>秘籍</li>

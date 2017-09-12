@@ -13,7 +13,7 @@
 			<el-table
 			    :data="tableData"
 			    border
-			    style="width: 97%;border-radius:.4rem;background:#2ab3ea;" class="thead">
+			    style="width: 96%;border-radius:.4rem;background:#2ab3ea;" class="thead">
 			    <el-table-column
 			      label="制度名称"
 			      width="200">

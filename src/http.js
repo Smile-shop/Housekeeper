@@ -18,13 +18,14 @@ axios.interceptors.response.use((response)=> {
     Indicator.close();
     return response
 },(error)=> {
-        if (error.response.status === 401) {
-            router.replace({
-                path: '/login',
-            });
-            // sessionStorage.removeItem('token')
-            sessionStorage.removeItem('user')
-        }
-        return Promise.reject(error);
-    });
+    Indicator.close();
+    if (error.response.status === 401) {
+        router.replace({
+            path: '/login',
+        });
+        // sessionStorage.removeItem('token')
+        sessionStorage.removeItem('user')
+    }
+    return Promise.reject(error);
+});
 export default axios;

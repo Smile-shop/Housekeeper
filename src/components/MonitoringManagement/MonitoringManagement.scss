@@ -39,11 +39,30 @@
 			}
 			tr{
 				td{
+					.time{
+						display: inline-block;
+						width: 100%;
+						height: 40px;
+						font-size: 12px;
+						height: 30px;
+						.el-input__inner{
+							font-size: 12px;
+							border:none;
+							padding-left: 15px;
+						}
+					}
+					span{
+						color:red;
+						margin-right: 3px;
+					}
 					.textearetext{
 						border:0;
-						width: 100%;
+						width: 92%;
 						height: 100%;
 						resize:none;
+						font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
+						padding: 0 10px 0 14px;
+						font-size: 12px;
 					}
 				}
 			}
