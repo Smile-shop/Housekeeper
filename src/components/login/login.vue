@@ -9,7 +9,7 @@
 		<input type="text" id="phone" placeholder="请输入手机号" class="phone" v-model="phone" autocomplete="off"><br>
 		<label for="password" class="m">密&nbsp;&nbsp;&nbsp;  码：</label>
 		<input type="password" id="password" placeholder="请输入密码" class="password" v-model="password" autocomplete="off">
-		<p class="tips">温馨提示<br>初始密码为注册手机号码(法人手机号或者质量负责人手机号)的后6位</p>
+		<p class="tips">温馨提示:<br>初始密码为注册手机号码(法人手机号或者质量负责人手机号)的后6位</p>
 		<mt-button type="primary" class="loginbtn" @click=login>登录</mt-button>
 		<router-link to="regist">
 			<mt-button type="primary" class="registbtn">企业注册</mt-button>
@@ -52,8 +52,8 @@
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
-			          },function(err){
-			              console.log('failed');
+			          },(err)=>{
+			              console.log('err');
 			              this.$messagebox.alert('登录错误！');
 			          });
 				}else{
@@ -63,7 +63,6 @@
 
 		},
 		mounted(){
-			
 			console.log(this.$route.params)
 		}
 	

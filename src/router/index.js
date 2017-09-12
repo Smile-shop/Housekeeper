@@ -18,6 +18,7 @@ import FileManagement from '../components/FileManagement/FileManagement.vue'
 import JobMonitoring from '../components/JobMonitoring/JobMonitoring.vue'
 import Incomplete from '../components/Incomplete/Incomplete.vue'
 import MonitoringManagement from '../components/MonitoringManagement/MonitoringManagement.vue'
+import EditJobInformation from '../components/EditJobInformation/EditJobInformation.vue'
 
 
 
@@ -93,6 +94,10 @@ const router = new VueRouter({
         path:'/MonitoringManagement',
         name:'MonitoringManagement',
         component:MonitoringManagement,
+    },{
+        path:'/EditJobInformation',
+        name:'EditJobInformation',
+        component:EditJobInformation,
     },]
 })
 

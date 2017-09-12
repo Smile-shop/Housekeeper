@@ -2,7 +2,7 @@
 	<div class="jobManagement_container">
 		<p class="jobManagement_text">
 			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
-			<span>岗位人管理</span>
+			<span>岗位人员管理</span>
 		</p>
 		<div class="main">
 			<div class="jobsearch">
@@ -13,41 +13,46 @@
 			    </el-select>
 				<mt-button type="primary" class="search" @click=search>搜索</mt-button>
 			</div>
-				<p>添加岗位</p>
-				<input type="text" class="jobx" placeholder="岗位人员姓名">
-				<input type="text" class="jobx" placeholder="手机号">
-				<mt-button type="primary" class="search" @click=add>提交</mt-button><br>
-				<span :class="{'spanActive':dz1}" @click = dz>店长
-					<input type="checkbox" class = "a1" v-model="checkedNames" value= "店长">
-				</span>
-				<span :class="{'spanActive':jh1}" @click = jh>进货岗
-					<input type="checkbox" class = "a1" v-model="checkedNames" value= "进货岗">
-				</span>
-				<span :class="{'spanActive':xs1}" @click = xs>销售岗
-					<input type="checkbox" class = "a1" v-model="checkedNames" value= "销售岗">
-				</span>
-				<span :class="{'spanActive':fz1}" @click = fz>质量安全负责岗
-					<input type="checkbox" class = "a1" v-model="checkedNames" value= "质量安全负责岗">
-				</span>
-				<span :class="{'spanActive':zz1}" @click = zz>质量安全追踪岗
-					<input type="checkbox" class = "a1" v-model="checkedNames" value= "质量安全追踪岗">
-				</span>
-				<table class="jodtable">
-			      <thead>
-			        <tr>
-			          <th>岗位人员姓名</th>
-			          <th>手机号码</th>
-			          <th>岗位</th>
-			        </tr>
-			      </thead>
-			      <tbody>
-			        <tr>
-			          <td>Mark</td>
-			          <td>Otto</td>
-			          <td>@mdo</td>
-			        </tr>
-			      </tbody>
-			    </table>
+			<p class="tiannjia">添加岗位人员</p>
+			<input type="text" class="jobx" placeholder="岗位人员姓名" v-model = userName>
+			<input type="text" class="jobx" placeholder="手机号" v-model = userMobile>
+			<mt-button type="primary" class="search" @click=add>添加</mt-button><br>
+			<span :class="{'spanActive':dz1}" @click = dz class = "gwei">店长
+				<input type="checkbox" class = "a1" v-model="checkedNames" value= "店长">
+			</span>
+			<span :class="{'spanActive':jh1}" @click = jh class = "gwei">进货岗
+				<input type="checkbox" class = "a1" v-model="checkedNames" value= "进货岗">
+			</span>
+			<span :class="{'spanActive':xs1}" @click = xs class = "gwei">销售岗
+				<input type="checkbox" class = "a1" v-model="checkedNames" value= "销售岗">
+			</span>
+			<span :class="{'spanActive':fz1}" @click = fz class = "gwei">质量安全负责岗
+				<input type="checkbox" class = "a1" v-model="checkedNames" value= "质量安全负责岗">
+			</span>
+			<span :class="{'spanActive':zz1}" @click = zz class = "gwei">质量安全追踪岗
+				<input type="checkbox" class = "a1" v-model="checkedNames" value= "质量安全追踪岗">
+			</span>
+			<table class="jodtable">
+		      <thead>
+		        <tr>
+		          <th>岗位人员姓名</th>
+		          <th>手机号码</th>
+		          <th>岗位</th>
+		          <th>操作</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr v-for = "(arr,index) in data">
+		          <td>{{arr.user_name}}</td>
+		          <td>{{arr.mobile}}</td>
+		          <td><span v-for= 'arr2 in arr.role_ids' class= "s gwei">{{arr2}}</span></td>
+		          <td>
+		          	<mt-button type="primary" class="edit" @click=edit(index)>修改</mt-button><br>
+		          	<mt-button type="danger" class="del" @click = del(index)>删除</mt-button>
+		          </td>
+		        </tr>
+		      </tbody>
+		    </table>
 		</div>
 	</div>
 </template>
@@ -67,8 +72,15 @@
 		        zz1:false,
 		        data:'',
 		        userphone:'',
-		        username:''
+		        username:'',
+		        data:'',
+		        editdata:'',
+		        userName:'',
+		        userMobile:''
 			}
+		},
+		created(){
+			this.getdata();
 		},
 		methods: {
 			goback(){
@@ -89,34 +101,87 @@
 			zz(){
 				this.zz1 = !this.zz1 
  			},
+ 			getdata(){
+ 				this.$http.post(baseUrl+'/searchUser').then((res)=>{
+	              	console.log(res)
+	              	if(res.data.retCode === 0){
+	              		this.data = res.data.data
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		              this.$messagebox.alert("获取信息错误!");
+		          });
+ 			},
 		    search(){
 		    	let obj = {user_name:this.username,mobile:this.userphone,title_name:this.gangwei}
 		     	this.$http.post(baseUrl+'/searchUser',obj).then((res)=>{
-		              	console.log(res)
-		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('注册成功!').then(action => {
- 							});
-		              	}else{
-		              		this.$messagebox.alert(res.data.retMessage);
-		              	}
-			          },function(err){
-			              console.log('failed');
-			          });
+	              	console.log(res)
+	              	if(res.data.retCode === 0){
+	              		this.data = res.data.data
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		              console.log('failed');
+		              this.$messagebox.alert("查询失败!");
+		          });
 		     },
-		     add(){
-		     	let obj = {user_name:this.username,mobile:this.userphone,title_name:this.gangwei}
+		    add(){
+		    	if(this.userName==''){
+					this.$messagebox.alert('岗位人员姓名不能为空！');
+					return false;
+				}else if(this.userMobile==''){
+					this.$messagebox.alert('手机号码不能为空！');
+					return false;
+				}
+				console.log(this.checkedNames)
+		     	let obj = {user_name:this.userName,mobile:this.userMobile,role_ids:this.checkedNames}
 		     	this.$http.post(baseUrl+'/addUser',obj).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('注册成功!').then(action => {
-		              			this.$router.push({name:'login'})
+		              		this.data = res.data.data
+		              		this.getdata();
+		              		this.$messagebox.alert('添加成功!').then(action => {
+		              			this.userName = '';
+		              			this.userMobile = '';
+		              			this.dz1 = false;
+		              			this.jh1 = false;
+		              			this.xs1 = false;
+		              			this.fz1 = false;
+		              			this.zz1 = false;
+		              			this.checkedNames = [];
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
-			          },function(err){
-			              console.log('failed');
+			          },(err)=>{
+			              this.$messagebox.alert("添加失败!");
 			          });
+		     },
+		    edit(index){
+		     	this.editdata = this.data[index];
+		     	let a = this.editdata;
+		     	this.$router.push({name:'EditJobInformation',params:{a}})
+		     },
+		    del(index){
+		    	let obj = {id:this.data[index].id}
+		    	console.log(obj)
+		      	this.$messagebox.confirm('确定要删除吗?').then(action => {
+					this.$http.post(baseUrl+'/deleteUser?id='+this.data[index].id).then((res)=>{
+						console.log(res)
+		              	if(res.data.retCode === 0){
+		              		this.$messagebox.alert('删除成功!').then(action => {
+		              			this.data.splice(index,1)
+		              		});
+		              	}else{
+		              		this.$messagebox.alert(res.data.retMessage);
+		              	}
+			          },(err)=>{
+			              this.$messagebox.alert('删除失败!');
+			          });
+ 				});
+		     	
 		     }
 		}
 	}

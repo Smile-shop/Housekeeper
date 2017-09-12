@@ -66,8 +66,9 @@
               	}else{
               		this.$messagebox.alert(res.data.retMessage);
               	}
-	          },function(err){
+	          },(err)=>{
 	              console.log('failed');
+	              this.$messagebox.alert("获取信息错误!");
 	          });
 		},
 		methods:{
@@ -140,6 +141,7 @@
 		              	}
 			          },function(err){
 			              console.log('failed');
+			              this.$messagebox.alert('修改失败,请稍后再试!');
 			          });
 			},
 			goback(){

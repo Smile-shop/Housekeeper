@@ -32,13 +32,13 @@
 				width: 94px;
 				border:none;
 				border:1px solid #ccc;
-				height: 36px;
-				margin-top: 5px;
+				height: 30px;
+				margin-top: 10px;
 			}
 			.search{
 				border-radius:20px;
 				font-size: 13px;
-				width: 60px;height: 36px;
+				width: 60px;height: 30px;
 			}
 			input,select{
 				text-align: center;
@@ -52,13 +52,17 @@
 				input{
 					border-radius:20px;
 					width: 73.5px;
-					height: 38px;
+					height: 32px;
 				}
 			}
 			input:-ms-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Internet Explorer 10+ */ 
 			input::-webkit-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* WebKit browsers */
 			input::-moz-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Mozilla Firefox 4 to 18 */ 
 			input:-moz-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Mozilla Firefox 19+ */ 
+		}
+		.tiannjia{
+			color:#26a2ff;
+			font-weight: bold;
 		}
 		.jodtable{
 			border:1px solid #ccc;
@@ -75,13 +79,31 @@
 				padding: 8px 2px 8px 2px;
 				font-size: 12px;
 			}
+			td{
+				.s{
+					background:#26a2ff;
+					margin: 2px 2px 2px 2px;
+				}
+				.edit,.del{
+						font-size: 10px;
+						width: 48px;
+						height: 27px;
+						margin: 3px;
+					}
+			}
+		}
+		.t{
+			line-height: 20px;
+			font-size: 12px;
+			color:#888;
+			margin-top: 10px;
 		}
 		.jobx{
 				border-radius:20px;
 				width: 133px;
 				border:none;
 				border:1px solid #ccc;
-				height: 36px;
+				height: 30px;
 				margin-top: 5px;
 				text-align: center;
 				color:#ccc;
@@ -94,7 +116,7 @@
 				border-radius:20px;
 				font-size: 13px;
 				width: 60px;
-				height: 36px;
+				height: 30px;
 			}
 		input:-ms-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Internet Explorer 10+ */ 
 		input::-webkit-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* WebKit browsers */
@@ -105,7 +127,58 @@
 			color:#888;
 			font-size: 13px;	
 		}
-		span{
+		
+	}
+	.editjod{
+		position: relative;
+		.qymc {
+            position: absolute;
+            font-size: .25rem;
+            top: 0.36rem;
+            margin-left: .2rem;
+        }
+		.scompanyname {
+            background-color: rgba(0, 0, 0, 0.04);
+            border-radius: .1rem;
+            width: 4.18rem;
+            height: .66rem;
+            margin-top: .2rem;
+            border: none;
+            border: .02rem solid rgb(220, 220, 220);
+            padding-left: 1.98rem;
+            font-size: .25rem;
+        }
+        .jyxkzh {
+            position: absolute;
+            font-size: .25rem;
+            top: 1.27rem;
+            margin-left: .2rem;
+        }
+        .jyxkzhname {
+            background-color: rgba(0, 0, 0, 0.04);
+            border-radius: .1rem;
+            width: 4.65rem;
+            height: .66rem;
+            margin-top: .2rem;
+            border: none;
+            border: .02rem solid rgb(220, 220, 220);
+            padding-left: 1.5rem;
+            font-size: .25rem;
+        }
+        p{
+        	.ggg{
+        		margin-right: 281px;
+        		margin-top: 20px;
+        		display: inline-block;
+        	}
+        }
+        .qedit{
+			width: 6rem;
+	        margin:0.5rem 0 0.8rem 0;
+	        font-size: .28rem;
+		}
+	}
+	.gwei{
 			position: relative;
 			margin: 22px 1px 5px 1px;
 			padding: 6px;
@@ -133,5 +206,4 @@
 			font-size: 12px;
 			color:#fff;
 		}
-	}
 }

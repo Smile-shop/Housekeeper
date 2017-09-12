@@ -49,8 +49,9 @@
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
-		          },function(err){
+		          },(err)=>{
 		              console.log('failed');
+		              this.$messagebox.alert("获取信息错误!");
 		          });
 		},
 		methods: {

@@ -121,8 +121,8 @@
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
-			          },function(err){
-			              console.log('failed');
+			          },(err)=>{
+			              this.$messagebox.alert("注册失败!");
 			          });
 			},
 			goback(){
