@@ -1,20 +1,20 @@
 <template>
 	<div class="index_container">
-		<div class="mmm" v-show="show" @click=isshow></div>
+		<div class="mmm" v-show="show" @click="isshow"></div>
+		<img src="../../assets/imgs/person.png" alt="" class="person" @click="isshow">
+		<transition name="el-zoom-in-top">
+			<div class="all" v-show="show">
+				<div class="jian"></div>
+				<div class="menu">
+					<ul>
+						<li @click = "EditPsw"><a href="javascript:;"><i class="el-icon-edit edit"></i>密码修改</a></li>
+						<li @click = "exit"><a href="javascript:;"><i class="el-icon-upload2 exit"></i>退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</transition>
 		<p class="index_text">
 			<span>主页</span>
-			<img src="../../assets/imgs/person.png" alt="" class="person" @click=isshow>
-			<transition name="el-fade-in-linear">
-				<div class="all" v-show="show">
-					<div class="jian"></div>
-					<div class="menu">
-						<ul>
-							<li><a href="javascript:;"><i class="el-icon-edit edit"></i>密码修改</a></li>
-							<li @click = exit><a href="javascript:;"><i class="el-icon-upload2 exit"></i>退出</a></li>
-						</ul>
-					</div>
-				</div>
-			</transition>
 		</p>
 		<div class="main">
 			<ul class="mchli">
@@ -36,10 +36,10 @@
 		    	<router-link to="FileManagement">	
 		    		<li><img src="../../assets/imgs/file (3).png" height="91" width="68" alt="" class="indeximg6"><br>档案管理</li>
 		    	</router-link>
-		    	<router-link to="regist">	
+		    	<router-link to="Purchase">	
 		    		<li><img src="../../assets/imgs/Purchasemanagement (3).png" height="91" width="68" alt="" class="indeximg7"><br>进货管理</li>
 		    	</router-link>
-		    	<router-link to="regist">	
+		    	<router-link to="FirstBusiness">	
 		    		<li><img src="../../assets/imgs/Inspection (3).png" height="91" width="68" alt="" class="indeximg8"><br>首营企业与产品自检</li>
 		    	</router-link>
 		    	<router-link to="regist">	
@@ -86,6 +86,9 @@
 					sessionStorage.removeItem('user')
 					this.$router.push({name:'login'})
 				});
+			},
+			EditPsw(){
+				this.$router.push({name:'EditPsw'})
 			}
 		},
 	

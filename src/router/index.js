@@ -21,6 +21,16 @@ import MonitoringManagement from '../components/MonitoringManagement/MonitoringM
 import EditJobInformation from '../components/EditJobInformation/EditJobInformation.vue'
 import EnterpriseSelfExamination from '../components/EnterpriseSelfExamination/EnterpriseSelfExamination.vue'
 import legitimate from '../components/legitimate/legitimate.vue'
+import EditPsw from '../components/EditPsw/EditPsw.vue'
+import Identification from '../components/Identification/Identification.vue'
+import Acceptance from '../components/Acceptance/Acceptance.vue'
+import Term from '../components/Term/Term.vue'
+import Others from '../components/Others/Others.vue'
+import StorageCondition from '../components/StorageCondition/StorageCondition.vue'
+import Propaganda from '../components/Propaganda/Propaganda.vue'
+import Purchase from '../components/Purchase/Purchase.vue'
+import FirstBusiness from '../components/FirstBusiness/FirstBusiness.vue'
+ 
 
 
 Vue.use(VueRouter)
@@ -107,8 +117,38 @@ const router = new VueRouter({
             { path: "/legitimate", 
               name:'legitimate', 
               component: legitimate 
-            }  
-        ] 
+            },{ path: "/Identification", 
+              name:'Identification', 
+              component: Identification 
+            },
+            { path: "/Acceptance", 
+              name:'Acceptance', 
+              component: Acceptance 
+            },{ path: "/Term", 
+              name:'Term', 
+              component: Term 
+            },{ path: "/Others", 
+              name:'Others', 
+              component: Others 
+            },{ path: "/StorageCondition", 
+              name:'StorageCondition', 
+              component: StorageCondition 
+            },{ path: "/Propaganda", 
+              name:'Propaganda', 
+              component: Propaganda 
+            },]  
+    },{
+        path:'/EditPsw',
+        name:'EditPsw',
+        component:EditPsw,
+    },{
+        path:'/Purchase',
+        name:'Purchase',
+        component:Purchase,
+    },{
+        path:'/FirstBusiness',
+        name:'FirstBusiness',
+        component:FirstBusiness,
     },]
 })
 

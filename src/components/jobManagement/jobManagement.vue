@@ -8,8 +8,8 @@
 			<div class="jobsearch">
 				<input type="text" class="jobx" placeholder="岗位人员姓名" v-model = username>
 				<input type="text" class="jobx" placeholder="手机号" v-model = userphone>
-				<el-select v-model="gangwei" placeholder="岗位" >
-			      <el-option v-for="arr in jod" :label="arr[0]" :value="arr[0]"></el-option>
+				<el-select v-model="gangwei" placeholder="岗位">
+			      <el-option v-for="arr in jod" :label="arr[0]" :value="arr[0]" ></el-option>
 			    </el-select>
 				<mt-button type="primary" class="search" @click=search>搜索</mt-button>
 			</div>
@@ -17,19 +17,19 @@
 			<input type="text" class="jobx" placeholder="岗位人员姓名" v-model = userName>
 			<input type="text" class="jobx" placeholder="手机号" v-model = userMobile>
 			<mt-button type="primary" class="search" @click=add>添加</mt-button><br>
-			<span :class="{'spanActive':dz1}" @click = dz class = "gwei">店长
+			<span :class="{'spanActive':dz1}" @click = "dz" class = "gwei">店长
 				<input type="checkbox" class = "a1" v-model="checkedNames" value= "店长">
 			</span>
-			<span :class="{'spanActive':jh1}" @click = jh class = "gwei">进货岗
+			<span :class="{'spanActive':jh1}" @click = "jh" class = "gwei">进货岗
 				<input type="checkbox" class = "a1" v-model="checkedNames" value= "进货岗">
 			</span>
-			<span :class="{'spanActive':xs1}" @click = xs class = "gwei">销售岗
+			<span :class="{'spanActive':xs1}" @click = "xs" class = "gwei">销售岗
 				<input type="checkbox" class = "a1" v-model="checkedNames" value= "销售岗">
 			</span>
-			<span :class="{'spanActive':fz1}" @click = fz class = "gwei">质量安全负责岗
+			<span :class="{'spanActive':fz1}" @click = "fz" class = "gwei">质量安全负责岗
 				<input type="checkbox" class = "a1" v-model="checkedNames" value= "质量安全负责岗">
 			</span>
-			<span :class="{'spanActive':zz1}" @click = zz class = "gwei">质量安全追踪岗
+			<span :class="{'spanActive':zz1}" @click = "zz" class = "gwei">质量安全追踪岗
 				<input type="checkbox" class = "a1" v-model="checkedNames" value= "质量安全追踪岗">
 			</span>
 			<table class="jodtable">
@@ -47,8 +47,8 @@
 		          <td>{{arr.mobile}}</td>
 		          <td><span v-for= 'arr2 in arr.role_ids' class= "s gwei">{{arr2}}</span></td>
 		          <td>
-		          	<mt-button type="primary" class="edit" @click=edit(index)>修改</mt-button><br>
-		          	<mt-button type="danger" class="del" @click = del(index)>删除</mt-button>
+		          	<mt-button type="primary" class="edit" @click="edit(index)">修改</mt-button><br>
+		          	<mt-button type="danger" class="del" @click = "del(index)">删除</mt-button>
 		          </td>
 		        </tr>
 		      </tbody>

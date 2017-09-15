@@ -27,10 +27,11 @@
 		<a href="javascript:;" class="y">点击上传营业执照
 			<input id="fileId1" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange"/>
 		</a>
+		<img :src="file1" alt="">
 		<a href="javascript:;" class="w">点击上传卫生许可证
 			<input id="fileId2" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange1"/>
 		</a>
-		<mt-button type="primary" class="registbtn" @click=regist>企业注册</mt-button>
+		<mt-button type="primary" class="registbtn" @click="regist">企业注册</mt-button>
 	</div>
 </template>
 
@@ -68,11 +69,11 @@
 						this.$messagebox.alert('企业名称不能为空！');
 						return;
 					case this.jnumber:
-							this.$messagebox.alert('经营许可证号不能为空！');
-							return;	
+						this.$messagebox.alert('经营许可证号不能为空！');
+						return;	
 					case this.fname:
-							this.$messagebox.alert('法人名称不能为空！');
-							return;
+						this.$messagebox.alert('法人名称不能为空！');
+						return;
 					case this.fphonenumber:
 						this.$messagebox.alert('法人手机号不能为空！');
 						return;	

@@ -15,7 +15,7 @@
 		      <tbody>
 		        <tr>
 		          <td>企业准入责任</td>
-		          <td><img src="../../assets/imgs/redround (3).png" alt="" @click = toIncomplete()></td>
+		          <td><img src="../../assets/imgs/redround (3).png" alt="" @click = "toIncomplete()"></td>
 		        </tr>
 		      </tbody>
 		    </table>

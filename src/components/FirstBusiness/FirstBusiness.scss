@@ -1,0 +1,82 @@
+.FirstBusiness_container {
+    max-width: 12.8rem;
+    height: 100%;
+    background-size: 100% 100%;
+    overflow-y: scroll;
+    text-align: center;
+    .FirstBusiness_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        span {
+            line-height: 1rem;
+        }
+        .goback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .3rem;
+            left: .38rem;
+        }
+    }
+    .main{
+        .title{
+            margin-top: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .el-form-item{
+            margin-bottom: 10px;
+            margin-right: 20px;
+        }
+        .el-form-item__label{
+            font-size: 11px;
+        }
+        .yy{
+            text-align: left;
+            margin-left: -260px;
+            font-size: 11px;
+        }
+        .yy1{
+            display: inline-block;
+            margin: 16px 0 16px 0;
+            text-align: left;
+            margin-left: -205px;
+            font-size: 11px;
+        }
+        .avatar-uploader .el-upload {
+            border: 1px dashed #d9d9d9;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+          }
+          .avatar-uploader .el-upload:hover {
+            border-color: #20a0ff;
+          }
+          .avatar-uploader-icon {
+            font-size: 28px;
+            color: #8c939d;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+          }
+          .avatar {
+            width: 100px;
+            height: 100px;
+            display: block;
+          }
+          .search{
+                font-size: 13px;
+                width: 320px;
+                height: 35px;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
+    }
+}

@@ -7,30 +7,20 @@
     .mmm {
         width: 100%;
         height: 100%;
-        background: transparent;
+        background: rgba(0, 0, 0, 0.24);;
         position: fixed;
         top: 0;
-        z-index: 1;
+        z-index: 3;
     }
-    .index_text {
-        position: relative;
-        text-align: center;
-        height: 1rem;
-        font-size: .32rem;
-        background: #48A4F2;
-        color: #fff;
-        z-index: 2;
-        span {
-            line-height: 1rem;
-        }
-        .person {
+    .person {
             width: .4rem;
             position: absolute;
             top: .34rem;
             left: 5.6rem;
-        }
+            z-index:4;
     }
     .all {
+        z-index:5;
         .menu {
             ul {
                 position: absolute;
@@ -96,8 +86,23 @@
             /* Safari 和 Chrome */
             -o-transform: rotate(45deg);
             /* Opera */
+            z-index:5;
         }
     }
+    .index_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        z-index: 2;
+        span {
+            line-height: 1rem;
+        }
+
+    }
+
 }
 
 .mchli li {
