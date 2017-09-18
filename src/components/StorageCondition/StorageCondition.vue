@@ -60,31 +60,43 @@
 				this.c1 = true;
 				this.c1s = false;
 				this.neiwaizhengjie = 1;
+				let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
+				sessionStorage.setItem('sto',sto)
 			},
 			choose2(){
 				this.c1 = false;
 				this.c1s = true;
 				this.neiwaizhengjie = 0;
+				let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
+				sessionStorage.setItem('sto',sto)
 			},
 			choose3(){
 				this.c2 = true;
 				this.c2s = false;
 				this.shesi1 = 1;
+				let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
+				sessionStorage.setItem('sto',sto)
 			},
 			choose4(){
 				this.c2 = false;
 				this.c2s = true;
 				this.shesi1 = 0;
+				let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
+				sessionStorage.setItem('sto',sto)
 			},
 			choose5(){
 				this.c3 = true;
 				this.c3s = false;
 				this.wuranshesi = 1;
+				let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
+				sessionStorage.setItem('sto',sto)
 			},
 			choose6(){
 				this.c3 = false;
 				this.c3s = true;
 				this.wuranshesi = 0;
+				let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
+				sessionStorage.setItem('sto',sto)
 			},
 			choose7(){
 				this.c4 = true;
@@ -92,7 +104,6 @@
 				this.huazhuangpin = 1;
 				let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
 				sessionStorage.setItem('sto',sto)
-				console.log(JSON.parse(sessionStorage.getItem('sto')))
 			},
 			choose8(){
 				this.c4 = false;
@@ -100,7 +111,6 @@
 				this.huazhuangpin = 0;
 				let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
 				sessionStorage.setItem('sto',sto)
-				console.log(JSON.parse(sessionStorage.getItem('sto')))
 			},
 		},
 	}

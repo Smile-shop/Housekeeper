@@ -1,0 +1,52 @@
+.Sale_container{
+	max-width: 12.8rem;
+	height: 100%;
+	background-size:100% 100%;
+	text-align: center;
+	.Sale_text{
+		position: relative;
+		text-align: center;
+		height: 1rem;
+		font-size: .32rem;
+		background:#48A4F2;
+		color:#fff;
+		span{
+			line-height: 1rem;
+		}
+		.goback{
+			display: inline-block;
+			width: .2rem;height: .36rem;
+			position: absolute;
+			top: .3rem;
+			left: .38rem;
+		}
+	}
+	.main{
+		.mint-tab-item{
+			z-index:1;
+		}
+		.el-form-item{
+	        margin: 10px 20px 0 0 ;
+	        margin-right: 20px;
+
+	    }
+	    .el-form-item:nth-child(1){
+	        margin-top: 20px;
+
+	    }
+	    .pedit{
+	        width: 5.5rem;
+	        margin:0.8rem 0 0.8rem 0;
+	        font-size: .28rem;
+	    }
+	    .title{
+	        margin-top: 20px;
+	        font-size: 14px;
+	        margin-bottom: 20px;
+	        margin-top: 20px;
+	    }
+	    .el-textarea__inner{
+	    	height: 200px;
+	    }
+	}
+}

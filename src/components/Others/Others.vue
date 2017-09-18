@@ -32,7 +32,6 @@
 				this.zizhi = 1;
 				let acc = JSON.stringify({zizhi:this.zizhi})
 				sessionStorage.setItem('zizhi',acc)
-				console.log(JSON.parse(sessionStorage.getItem('acc')))
 			},
 			choose2(){
 				this.c1 = false;
@@ -40,7 +39,6 @@
 				this.zizhi = 0;
 				let acc = JSON.stringify({zizhi:this.zizhi})
 				sessionStorage.setItem('zizhi',acc)
-				console.log(JSON.parse(sessionStorage.getItem('acc')))
 			},
 		},
 	}

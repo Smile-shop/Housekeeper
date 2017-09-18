@@ -26,7 +26,7 @@
 					<input type="checkbox" class = "a1" v-model="checkedNames" value= "质量安全追踪岗">
 				</span>
 			</p>
-			<mt-button type="primary" class="qedit" @click=sub>确认修改</mt-button><br>	
+			<mt-button type="primary" class="qedit" @click="sub">确认修改</mt-button><br>	
 		</div>
 	</div>
 </template>

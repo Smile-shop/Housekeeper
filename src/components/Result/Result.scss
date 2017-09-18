@@ -1,0 +1,59 @@
+.Result_container{
+	max-width: 12.8rem;
+	height: 100%;
+	background-size:100% 100%;
+	text-align: center;
+	.Result_text{
+		position: relative;
+		text-align: center;
+		height: 1rem;
+		font-size: .32rem;
+		background:#48A4F2;
+		color:#fff;
+		span{
+			line-height: 1rem;
+		}
+		.goback{
+			display: inline-block;
+			width: .2rem;height: .36rem;
+			position: absolute;
+			top: .3rem;
+			left: .38rem;
+		}
+	}
+	.main{
+		.notfound{
+			img{
+				width: 120px;
+				margin-top: 80px;	
+			}
+			p{
+				font-size: 16px;
+				margin-top: 20px;
+				color:rgb(153,153,153)
+			}
+		}
+		.get{
+			.list{
+				text-align: left;
+				.radio{
+					display: block;
+					margin: 0;
+					margin-left: 20px;
+					margin-top: 10px;
+				}
+			}
+		    .el-form-item{
+		        margin: 23px 20px 0 0 ;
+		        margin-right: 20px;
+
+		    }
+		}
+		    .pedit{
+		        width: 190px;
+		        height: 35px;
+		        margin:0.5rem 0 0.8rem 0;
+		        font-size: 14px;
+		    }
+	}
+}

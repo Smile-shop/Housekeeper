@@ -70,41 +70,57 @@
 				this.c1 = true;
 				this.c1s = false;
 				this.xuanchuanliaoxiao = 1;
+				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 			},
 			choose2(){
 				this.c1 = false;
 				this.c1s = true;
 				this.xuanchuanliaoxiao = 0;
+				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 			},
 			choose3(){
 				this.c2 = true;
 				this.c2s = false;
 				this.yiliaoshuyu = 1;
+				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 			},
 			choose4(){
 				this.c2 = false;
 				this.c2s = true;
 				this.yiliaoshuyu = 0;
+				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 			},
 			choose5(){
 				this.c3 = true;
 				this.c3s = false;
 				this.shiyingzheng = 1;
+				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 			},
 			choose6(){
 				this.c3 = false;
 				this.c3s = true;
 				this.shiyingzheng = 0;
+				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 			},
 			choose7(){
 				this.c4 = true;
 				this.c4s = false;
 				this.kuada = 1;
+				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 			},
 			choose8(){
 				this.c4 = false;
 				this.c4s = true;
 				this.kuada = 0;
+				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 			},
 			choose9(){
 				this.c5 = true;
@@ -112,7 +128,6 @@
 				this.weigui = 1;
 				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
 				sessionStorage.setItem('pro',pro)
-				console.log(JSON.parse(sessionStorage.getItem('pro')))
 			},
 			choose10(){
 				this.c5 = false;
@@ -120,7 +135,6 @@
 				this.weigui = 0;
 				let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
 				sessionStorage.setItem('pro',pro)
-				console.log(JSON.parse(sessionStorage.getItem('pro')))
 			},
 		},
 	}

@@ -32,7 +32,6 @@
 				this.guoqi = 1;
 				let acc = JSON.stringify({guoqi:this.guoqi})
 				sessionStorage.setItem('guoqi',acc)
-				console.log(JSON.parse(sessionStorage.getItem('acc')))
 			},
 			choose2(){
 				this.c1 = false;
@@ -40,7 +39,6 @@
 				this.guoqi = 0;
 				let acc = JSON.stringify({guoqi:this.guoqi})
 				sessionStorage.setItem('guoqi',acc)
-				console.log(JSON.parse(sessionStorage.getItem('acc')))
 			},
 		},
 	}

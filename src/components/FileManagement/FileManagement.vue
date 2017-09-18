@@ -2,7 +2,7 @@
 	<div class="FileManagement_container">
 		<p class="FileManagement_text">
 			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
-			<span>审核管理</span>
+			<span>档案管理</span>
 		</p>
 		<div class="main">
 			<div class="dsearch">

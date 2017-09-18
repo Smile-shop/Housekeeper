@@ -39,10 +39,10 @@
 		    	<router-link to="Purchase">	
 		    		<li><img src="../../assets/imgs/Purchasemanagement (3).png" height="91" width="68" alt="" class="indeximg7"><br>进货管理</li>
 		    	</router-link>
-		    	<router-link to="FirstBusiness">	
+		    	<router-link to="FirstSelf">	
 		    		<li><img src="../../assets/imgs/Inspection (3).png" height="91" width="68" alt="" class="indeximg8"><br>首营企业与产品自检</li>
 		    	</router-link>
-		    	<router-link to="regist">	
+		    	<router-link to="Sale">	
 		    		<li><img src="../../assets/imgs/Salesmanagement (3).png" height="91" width="68" alt="" class="indeximg9"><br>销售管理</li>
 		    	</router-link>
 		    	<router-link to="regist">

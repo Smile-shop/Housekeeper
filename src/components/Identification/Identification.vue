@@ -72,12 +72,6 @@
 	export default {
 		data(){
 			return {
-				// list:[['所经营的国产化妆品是否由取得有效的《化妆品生产企业卫生许可证》的企业生产。',['是','否']],
-				// 	 ['国产特殊用途化妆品是否取得“国产特殊用途化妆品批准文号”。',['是','否']],
-				// 	 ['进口非特殊用途化妆品是否取得“进口非特殊用途化妆品备案凭证”（查看复印件）。',['是','否']],
-				// 	 ['进口特殊用途化妆品是否取得“进口特殊用途化妆品卫生许可批件”（查看复印件）。',['是','否']],
-				// 	 ['经营的进口化妆品是否在卫生许可批件或备案凭证有效期内入境。',['是','否']],
-				// 	 ['进口化妆品是否经过检验检疫部门检验。',['是','否']]],
 				d1:'',
 				d1s:'',
 				d2:'',
@@ -112,87 +106,113 @@
 				this.d1 = true;
 				this.d1s = false;
 				this.hegebiaozhi = 1;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose2(){
 				this.d1 = false;
 				this.d1s = true;
 				this.hegebiaozhi = 0;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose3(){
 				this.d2 = true;
 				this.d2s = false;
 				this.guiding = 1;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose4(){
 				this.d2 = false;
 				this.d2s = true;
 				this.guiding = 0;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose5(){
 				this.d3 = true;
 				this.d3s = false;
 				this.qiyedizhi = 1;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose6(){
 				this.d3 = false;
 				this.d3s = true;
 				this.qiyedizhi = 0;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose7(){
 				this.d4 = true;
 				this.d4s = false;
 				this.dailidizhi = 1;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose8(){
 				this.d4 = false;
 				this.d4s = true;
 				this.dailidizhi = 0;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose9(){
 				this.d5 = true;
 				this.d5s = false;
 				this.shiyongdate = 1;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose10(){
 				this.d5 = false;
 				this.d5s = true;
 				this.shiyongdate = 0;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose11(){
 				this.d6 = true;
 				this.d6s = false;
 				this.bianhao = 1;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose12(){
 				this.d6 = false;
 				this.d6s = true;
 				this.bianhao = 0;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose13(){
 				this.d7 = true;
 				this.d7s = false;
 				this.pzwenhao = 1;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose14(){
 				this.d7 = false;
 				this.d7s = true;
 				this.pzwenhao = 0;
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 			},
 			choose15(){
 				this.d8 = true;
 				this.d8s = false;
 				this.bawenhao = 1;
-				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.youxiaoqi,bawenhao:this.bawenhao})
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
 				sessionStorage.setItem('ide',ide)
-				console.log(JSON.parse(sessionStorage.getItem('ide')))
 			},
 			choose16(){
 				this.d8 = false;
 				this.d8s = true;
 				this.bawenhao = 0;
-				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.youxiaoqi,bawenhao:this.bawenhao})
+				let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
 				sessionStorage.setItem('ide',ide)
-				console.log(JSON.parse(sessionStorage.getItem('ide')))
 			},
 		},
 	}

@@ -7,8 +7,20 @@
 		<div class="main">
 			<p class="title">供货企业合规信息登记表</p>
 			<el-form :label-position="labelPosition" label-width="95px">
-			  <el-form-item v-for="item in FirstBusiness" :label="item[0]">
-			    <el-input :v-model="item[1]"></el-input>
+			  <el-form-item label="许可查验人:">
+			    <el-input v-model="xkcyr"></el-input>
+			  </el-form-item>
+			  <el-form-item label="许可查验日期:">
+			    <el-input v-model="xkcydate"></el-input>
+			  </el-form-item>
+			  <el-form-item label="ANO:">
+			    <el-input v-model="ANO"></el-input>
+			  </el-form-item>
+			  <el-form-item label="类别:">
+			    <el-input v-model="lb"></el-input>
+			  </el-form-item>
+			  <el-form-item label="供货企业名称:">
+			    <el-input v-model="ghqymc"></el-input>
 			  </el-form-item>
 			</el-form>
 			<span class="yy">营业执照:</span>
@@ -42,11 +54,16 @@
 		data(){
 			return {
 				labelPosition:'right',
-				FirstBusiness:[['许可查验人:','xkcyr'],
-		        		       ['许可查验日期:','xkcydate'],
-		        		       ['ANO:','ANO'],
-		        		       ['类别:','lb'],
-		        		       ['供货企业名称:','ghqymc']],
+				// FirstBusiness:[['许可查验人:',xkcyr:''],
+		  //       		       ['许可查验日期:','xkcydate'],
+		  //       		       ['ANO:','ANO'],
+		  //       		       ['类别:','lb'],
+		  //       		       ['供货企业名称:','ghqymc']],
+		        xkcyr:'',
+		        xkcydate:'',
+		        ANO:'',
+		        lb:'',
+		        ghqymc:'',
         		file1:'',
         		file2:'',
         		imageUrl: '',

@@ -22,8 +22,71 @@
 			<div class="inputall">
 				<p class="title">进货工作记录表<br><span>(记录保存期限不得少于两年)</span></p>
 				<el-form :label-position="labelPosition" label-width="95px">
-				  <el-form-item v-for="item in inputName" :label="item[0]">
-				    <el-input :v-model="item[1]"></el-input>
+				  <el-form-item label="检验人:">
+				    <el-input v-model="testname"></el-input>
+				  </el-form-item>
+				  <el-form-item label="检验日期:">
+				    <el-input v-model="jyrq"></el-input>
+				  </el-form-item>
+				  <el-form-item label="产品名称*:">
+				    <el-input v-model="cpmc"></el-input>
+				  </el-form-item>
+				  <el-form-item label="进货日期*:">
+				    <el-input v-model="jhrq"></el-input>
+				  </el-form-item>
+				  <el-form-item label="供货企业*:">
+				    <el-input v-model="ghqy"></el-input>
+				  </el-form-item>
+				  <el-form-item label="批准文号*:">
+				    <el-input v-model="pzwh"></el-input>
+				  </el-form-item>
+				  <el-form-item label="生产厂商*:">
+				    <el-input v-model="sccs"></el-input>
+				  </el-form-item>
+				  <el-form-item label="卫生许可证号*:">
+				    <el-input v-model="wsxkzh"></el-input>
+				  </el-form-item>
+				  <el-form-item label="规格:">
+				    <el-input v-model="gg"></el-input>
+				  </el-form-item>
+				  <el-form-item label="数量:">
+				    <el-input v-model="sl"></el-input>
+				  </el-form-item>
+				  <el-form-item label="生产日期:">
+				    <el-input v-model="scrq"></el-input>
+				  </el-form-item>
+				  <el-form-item label="生产批号:">
+				    <el-input v-model="scph"></el-input>
+				  </el-form-item>
+				  <el-form-item label="有效期:">
+				    <el-input v-model="yxq"></el-input>
+				  </el-form-item>
+				  <el-form-item label="批次检查报告:">
+				    <el-input v-model="jybg"></el-input>
+				  </el-form-item>
+				  <el-form-item label="合格证:">
+				    <el-input v-model="hgz"></el-input>
+				  </el-form-item>
+				  <el-form-item label="标签与文宣:">
+				    <el-input v-model="bqywx"></el-input>
+				  </el-form-item>
+				  <el-form-item label="质量情况:">
+				    <el-input v-model="zlqk"></el-input>
+				  </el-form-item>
+				  <el-form-item label="包装情况:">
+				    <el-input v-model="bzqk"></el-input>
+				  </el-form-item>
+				  <el-form-item label="外观质量:">
+				    <el-input v-model="wgzl"></el-input>
+				  </el-form-item>
+				  <el-form-item label="联系方式:">
+				    <el-input v-model="Tel"></el-input>
+				  </el-form-item>
+				  <el-form-item label="验收结论:">
+				    <el-input v-model="jl"></el-input>
+				  </el-form-item>
+				  <el-form-item label="备注:">
+				    <el-input v-model="Notes"></el-input>
 				  </el-form-item>
 				</el-form>
 			</div>
@@ -38,28 +101,28 @@
 		data(){
 			return {
 		        jod:[['店长'],['进货岗'],['销售岗'],['质量安全负责岗'],['质量安全追踪岗']],
-		        inputName:[['检验人:','testname'],
-		        		   ['检验日期:','jyrq'],
-		        		   ['产品名称*:','cpmc'],
-		        		   ['进货日期*:','jhrq'],
-		        		   ['供货企业*:','ghqy'],
-		        		   ['批准文号*:','pzwh'],
-		        		   ['生产厂商*:','sccs'],
-		        		   ['卫生许可证号*:','wsxkzh'],
-		        		   ['规格:','gg'],
-		        		   ['数量:','sl'],
-		        		   ['生产日期:','scrq'],
-		        		   ['生产批号:','scph'],
-		        		   ['有效期:','yxq'],
-		        		   ['批次检查报告:','jybg'],
-		        		   ['合格证:','hgz'],
-		        		   ['标签与文宣:','bqywx'],
-		        		   ['质量情况:','zlqk'],
-		        		   ['包装情况:','bzqk'],
-		        		   ['外观质量:','wgzl'],
-		        		   ['联系方式:','Tel'],
-		        		   ['验收结论:','jl'],
-		        		   ['备注:','Notes'],],
+		        // inputName:[['检验人:','testname'],
+		        // 		   ['检验日期:','jyrq'],
+		        // 		   ['产品名称*:','cpmc'],
+		        // 		   ['进货日期*:','jhrq'],
+		        // 		   ['供货企业*:','ghqy'],
+		        // 		   ['批准文号*:','pzwh'],
+		        // 		   ['生产厂商*:','sccs'],
+		        // 		   ['卫生许可证号*:','wsxkzh'],
+		        // 		   ['规格:','gg'],
+		        // 		   ['数量:','sl'],
+		        // 		   ['生产日期:','scrq'],
+		        // 		   ['生产批号:','scph'],
+		        // 		   ['有效期:','yxq'],
+		        // 		   ['批次检查报告:','jybg'],
+		        // 		   ['合格证:','hgz'],
+		        // 		   ['标签与文宣:','bqywx'],
+		        // 		   ['质量情况:','zlqk'],
+		        // 		   ['包装情况:','bzqk'],
+		        // 		   ['外观质量:','wgzl'],
+		        // 		   ['联系方式:','Tel'],
+		        // 		   ['验收结论:','jl'],
+		        // 		   ['备注:','Notes'],],
 		        labelPosition:'right',		   
 		        companyName:'',
 		        pname:'',

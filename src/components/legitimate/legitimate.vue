@@ -58,12 +58,6 @@
 	export default {
 		data(){
 			return {
-				// list:[['所经营的国产化妆品是否由取得有效的《化妆品生产企业卫生许可证》的企业生产。',['是','否']],
-				// 	 ['国产特殊用途化妆品是否取得“国产特殊用途化妆品批准文号”。',['是','否']],
-				// 	 ['进口非特殊用途化妆品是否取得“进口非特殊用途化妆品备案凭证”（查看复印件）。',['是','否']],
-				// 	 ['进口特殊用途化妆品是否取得“进口特殊用途化妆品卫生许可批件”（查看复印件）。',['是','否']],
-				// 	 ['经营的进口化妆品是否在卫生许可批件或备案凭证有效期内入境。',['是','否']],
-				// 	 ['进口化妆品是否经过检验检疫部门检验。',['是','否']]],
 				c1:'',
 				c1s:'',
 				c2:'',
@@ -92,51 +86,71 @@
 				this.c1 = true;
 				this.c1s = false;
 				this.xukezheng = 1;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose2(){
 				this.c1 = false;
 				this.c1s = true;
 				this.xukezheng = 0;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose3(){
 				this.c2 = true;
 				this.c2s = false;
 				this.pizhunwenhao = 1;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose4(){
 				this.c2 = false;
 				this.c2s = true;
 				this.pizhunwenhao = 0;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose5(){
 				this.c3 = true;
 				this.c3s = false;
 				this.beianpingzheng = 1;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose6(){
 				this.c3 = false;
 				this.c3s = true;
 				this.beianpingzheng = 0;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose7(){
 				this.c4 = true;
 				this.c4s = false;
 				this.xukepingjian = 1;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose8(){
 				this.c4 = false;
 				this.c4s = true;
 				this.xukepingjian = 0;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose9(){
 				this.c5 = true;
 				this.c5s = false;
 				this.youxiaoqi = 1;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose10(){
 				this.c5 = false;
 				this.c5s = true;
 				this.youxiaoqi = 0;
+				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 			},
 			choose11(){
 				this.c6 = true;
@@ -144,7 +158,6 @@
 				this.jianyan = 1;
 				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
 				sessionStorage.setItem('leg',leg)
-				console.log(JSON.parse(sessionStorage.getItem('leg')))
 			},
 			choose12(){
 				this.c6 = false;
@@ -152,7 +165,6 @@
 				this.jianyan = 0;
 				let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
 				sessionStorage.setItem('leg',leg)
-				console.log(JSON.parse(sessionStorage.getItem('leg')))
 			},
 		},
 	}

@@ -30,7 +30,11 @@ import StorageCondition from '../components/StorageCondition/StorageCondition.vu
 import Propaganda from '../components/Propaganda/Propaganda.vue'
 import Purchase from '../components/Purchase/Purchase.vue'
 import FirstBusiness from '../components/FirstBusiness/FirstBusiness.vue'
- 
+import AddProduct from '../components/AddProduct/AddProduct.vue'
+import Sale from '../components/Sale/Sale.vue'
+import FirstSelf from '../components/FirstSelf/FirstSelf.vue'
+import Result from '../components/Result/Result.vue'
+import Result1 from '../components/Result1/Result1.vue'
 
 
 Vue.use(VueRouter)
@@ -149,6 +153,26 @@ const router = new VueRouter({
         path:'/FirstBusiness',
         name:'FirstBusiness',
         component:FirstBusiness,
+    },{
+        path:'/AddProduct',
+        name:'AddProduct',
+        component:AddProduct,
+    },{
+        path:'/Sale',
+        name:'Sale',
+        component:Sale,
+    },{
+        path:'/FirstSelf',
+        name:'FirstSelf',
+        component:FirstSelf,
+    },{
+        path:'/Result',
+        name:'Result',
+        component:Result,
+    },{
+        path:'/Result1',
+        name:'Result1',
+        component:Result1,
     },]
 })
 
