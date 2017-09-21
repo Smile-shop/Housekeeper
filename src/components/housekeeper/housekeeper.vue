@@ -1,7 +1,7 @@
 <template>
 	<div class="housekeeper_container">
 		<p class="housekeeper_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click=goback>
 			<span>激活管家</span>
 		</p>
 		<div class="main">

@@ -1,7 +1,7 @@
 <template>
 	<div class="setRules_container">
 		<p class="setRules_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click=goback>
 			<span>规则制定</span>
 		</p>
 		<div class="main">

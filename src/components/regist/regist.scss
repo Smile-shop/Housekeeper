@@ -29,7 +29,7 @@
         }
     }
     label.q {
-        position: absolute;
+        position: fixed;
         color: #fff;
         font-size: .25rem;
         top: 1.66rem;
@@ -188,6 +188,7 @@
         width: 5rem;
         margin-top: .9rem;
         font-size: .28rem;
+        margin-bottom: 1rem;
     }
     .y,
     .w {
@@ -204,7 +205,7 @@
         text-decoration: none;
         text-indent: 0;
         line-height: .4rem;
-        margin-top: .4rem;
+        margin: 0.4rem 0.12rem 0 0.12rem;
         &:hover {
             background: #AADFFD;
             border-color: #78C3F3;

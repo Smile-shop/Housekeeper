@@ -1,143 +1,188 @@
-.jobManagement_container{
-	max-width: 12.8rem;
-	height: 100%;
-	background-size:100% 100%;
-	text-align: center;
-	.jobManagement_text{
-		position: relative;
-		text-align: center;
-		height: 1rem;
-		font-size: .32rem;
-		background:#48A4F2;
-		color:#fff;
-		span{
-			line-height: 1rem;
-		}
-		.goback{
-			display: inline-block;
-			width: .2rem;height: .36rem;
-			position: absolute;
-			top: .3rem;
-			left: .38rem;
-		}
-	}
-	.main{
-		text-align: center;
-		.jobsearch{
-			width: 100%;	
-			height: 52px;
-			background:#ddd;
-			.jobx{
-				border-radius:20px;
-				width: 94px;
-				border:none;
-				border:1px solid #ccc;
-				height: 30px;
-				margin-top: 10px;
-			}
-			.search{
-				border-radius:20px;
-				font-size: 13px;
-				width: 60px;height: 30px;
-			}
-			input,select{
-				text-align: center;
-				color:#ccc;
-			}
-			input:focus{
-			    outline: none;   
-			    border: 1px solid #26a2ff; 
-			}
-			.el-select{
-				input{
-					border-radius:20px;
-					width: 73.5px;
-					height: 32px;
-				}
-			}
-			input:-ms-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Internet Explorer 10+ */ 
-			input::-webkit-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* WebKit browsers */
-			input::-moz-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Mozilla Firefox 4 to 18 */ 
-			input:-moz-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Mozilla Firefox 19+ */ 
-		}
-		.tiannjia{
-			color:#26a2ff;
-			font-weight: bold;
-		}
-		.jodtable{
-			border:1px solid #ccc;
-			border-collapse: collapse;
-			width: 100%;
-			margin-top: 20px;
-			th{
-				background:#81bdef;
-				color:#fff;
-			}
-			tr,td,th{
-				border:1px solid #ccc;
-				border-collapse: collapse;
-				padding: 8px 2px 8px 2px;
-				font-size: 12px;
-			}
-			td{
-				.s{
-					background:#26a2ff;
-					margin: 2px 2px 2px 2px;
-				}
-				.edit,.del{
-						font-size: 10px;
-						width: 48px;
-						height: 27px;
-						margin: 3px;
-					}
-			}
-		}
-		.t{
-			line-height: 20px;
-			font-size: 12px;
-			color:#888;
-			margin-top: 10px;
-		}
-		.jobx{
-				border-radius:20px;
-				width: 133px;
-				border:none;
-				border:1px solid #ccc;
-				height: 30px;
-				margin-top: 5px;
-				text-align: center;
-				color:#ccc;
-		}
-		input:focus{
-			    outline: none;   
-			    border: 1px solid #26a2ff; 
-			}
-		.search{
-				border-radius:20px;
-				font-size: 13px;
-				width: 60px;
-				height: 30px;
-			}
-		input:-ms-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Internet Explorer 10+ */ 
-		input::-webkit-input-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* WebKit browsers */
-		input::-moz-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Mozilla Firefox 4 to 18 */ 
-		input:-moz-placeholder{color:#ccc;font-size: 13px;text-align: center;}/* Mozilla Firefox 19+ */ 
-		p{
-			padding: 10px;
-			color:#888;
-			font-size: 13px;	
-		}
-		
-	}
-	.editjod{
-		position: relative;
-		.qymc {
+.jobManagement_container {
+    max-width: 12.8rem;
+    height: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    .jobManagement_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        span {
+            line-height: 1rem;
+        }
+        .goback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .3rem;
+            left: .38rem;
+        }
+    }
+    .main {
+        text-align: center;
+        .jobsearch {
+            width: 100%;
+            height: .924444rem;
+            background: #ddd;
+            .jobx {
+                width: 1.813333rem;
+                border: none;
+                margin-top: .177778rem;
+                .el-input__inner {
+                    height: .568889rem;
+                    border-radius: .355556rem;
+                }
+            }
+            .search {
+                border-radius: .355556rem;
+                font-size: .231111rem;
+                width: 1.066667rem;
+                height: .533333rem;
+            }
+            input,
+            select {
+                text-align: center;
+                color: #888;
+            }
+            input:focus {
+                outline: none;
+                border: .017778rem solid #26a2ff;
+            }
+            .el-select {
+                input {
+                    border-radius: .355556rem;
+                    width: 1.306667rem;
+                    height: .568889rem;
+                }
+            }
+            input:-ms-input-placeholder {
+                color: #888;
+                font-size: .195556rem;
+                text-align: center;
+            }
+            /* Internet Explorer 10+ */
+            input::-webkit-input-placeholder {
+                color: #888;
+                font-size: .195556rem;
+                text-align: center;
+            }
+            /* WebKit browsers */
+            input::-moz-placeholder {
+                color: #888;
+                font-size: .195556rem;
+                text-align: center;
+            }
+            /* Mozilla Firefox 4 to 18 */
+            input:-moz-placeholder {
+                color: #888;
+                font-size: .195556rem;
+                text-align: center;
+            }
+            /* Mozilla Firefox 19+ */
+        }
+        .tiannjia {
+            color: #26a2ff;
+            font-weight: bold;
+        }
+        .jodtable {
+            border: .017778rem solid #ccc;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: .355556rem;
+            th {
+                background: #81bdef;
+                color: #fff;
+            }
+            tr,
+            td,
+            th {
+                border: .017778rem solid #ccc;
+                border-collapse: collapse;
+                padding: .142222rem .035556rem .142222rem .035556rem;
+                font-size: .213333rem;
+            }
+            td {
+                .s {
+                    background: #26a2ff;
+                    margin: .035556rem .035556rem .035556rem .035556rem;
+                }
+                .edit,
+                .del {
+                    font-size: .177778rem;
+                    width: .853333rem;
+                    height: .48rem;
+                    margin: .053333rem;
+                }
+            }
+        }
+        .t {
+            line-height: .355556rem;
+            font-size: .213333rem;
+            color: #888;
+            margin-top: .177778rem;
+        }
+        .jobx {
+            width: 2.506667rem;
+            border: none;
+            height: .568889rem;
+            margin-top: .088889rem;
+            text-align: center;
+            .el-input__inner {
+                height: .568889rem;
+                border-radius: .355556rem;
+                text-align: center;
+                color: #888;
+            }
+        }
+        .search {
+            border-radius: .355556rem;
+            font-size: .231111rem;
+            width: 1.066667rem;
+            height: .533333rem;
+        }
+        input:-ms-input-placeholder {
+            color: #888;
+            font-size: .195556rem;
+            text-align: center;
+        }
+        /* Internet Explorer 10+ */
+        input::-webkit-input-placeholder {
+            color: #888;
+            font-size: .195556rem;
+            text-align: center;
+        }
+        /* WebKit browsers */
+        input::-moz-placeholder {
+            color: #888;
+            font-size: .195556rem;
+            text-align: center;
+        }
+        /* Mozilla Firefox 4 to 18 */
+        input:-moz-placeholder {
+            color: #888;
+            font-size: .195556rem;
+            text-align: center;
+        }
+        /* Mozilla Firefox 19+ */
+        p {
+            padding: .177778rem;
+            color: #888;
+            font-size: .231111rem;
+        }
+    }
+    .editjod {
+        position: relative;
+        .qymc {
             position: absolute;
             font-size: .25rem;
             top: 0.36rem;
             margin-left: .2rem;
         }
-		.scompanyname {
+        .scompanyname {
             background-color: rgba(0, 0, 0, 0.04);
             border-radius: .1rem;
             width: 4.18rem;
@@ -165,45 +210,45 @@
             padding-left: 1.5rem;
             font-size: .25rem;
         }
-        p{
-        	.ggg{
-        		margin-right: 281px;
-        		margin-top: 20px;
-        		display: inline-block;
-        	}
+        p {
+            .ggg {
+                margin-right: 4.995556rem;
+                margin-top: .355556rem;
+                display: inline-block;
+            }
         }
-        .qedit{
-			width: 6rem;
-	        margin:0.5rem 0 0.8rem 0;
-	        font-size: .28rem;
-		}
-	}
-	.gwei{
-			position: relative;
-			margin: 22px 1px 5px 1px;
-			padding: 6px;
-			display: inline-block;
-			border-radius:6px;
-			background:#a5a5a5;
-			font-size: 12px;
-			color:#fff;
-			overflow:hidden;
-			.a1{
-				position: absolute;
-				width: 300px;
-				left: -14px;
-				top: -23px;
-				height: 300px;
-				opacity: 0;
-			}
-		}
-		.spanActive{
-			margin: 22px 1px 5px 1px;
-			padding: 6px;
-			display: inline-block;
-			border-radius:6px;
-			background:#26a2ff;
-			font-size: 12px;
-			color:#fff;
-		}
+        .qedit {
+            width: 6rem;
+            margin: 0.5rem 0 0.8rem 0;
+            font-size: .28rem;
+        }
+    }
+    .gwei {
+        position: relative;
+        margin: .391111rem .017778rem .088889rem .017778rem;
+        padding: .106667rem;
+        display: inline-block;
+        border-radius: .106667rem;
+        background: #a5a5a5;
+        font-size: .213333rem;
+        color: #fff;
+        overflow: hidden;
+        .a1 {
+            position: absolute;
+            width: 5.333333rem;
+            left: -.248889rem;
+            top: -.408889rem;
+            height: 5.333333rem;
+            opacity: 0;
+        }
+    }
+    .spanActive {
+        margin: .391111rem .017778rem .088889rem .017778rem;
+        padding: .106667rem;
+        display: inline-block;
+        border-radius: .106667rem;
+        background: #26a2ff;
+        font-size: .213333rem;
+        color: #fff;
+    }
 }

@@ -1,101 +1,110 @@
-.MonitoringManagement_container{
-	max-width: 12.8rem;
-	height: 100%;
-	background-size:100% 100%;
-	text-align: center;
-	.MonitoringManagement_text{
-		position: relative;
-		text-align: center;
-		height: 1rem;
-		font-size: .32rem;
-		background:#48A4F2;
-		color:#fff;
-		span{
-			line-height: 1rem;
-		}
-		.goback{
-			display: inline-block;
-			width: .2rem;height: .36rem;
-			position: absolute;
-			top: .3rem;
-			left: .38rem;
-		}
-	}
-	.main{
-		.jodtable{
-			border:1px solid #ccc;
-			border-top:none;
-			border-collapse: collapse;
-			width: 100%;
-			th{
-				background:#81bdef;
-				color:#fff;
-			}
-			tr,td,th{
-				border:1px solid #ccc;
-				border-collapse: collapse;
-				padding: 8px 2px 8px 2px;
-				font-size: 11px;
-			}
-			tr{
-				td{
-					.time{
-						display: inline-block;
-						width: 100%;
-						height: 40px;
-						font-size: 12px;
-						height: 30px;
-						.el-input__inner{
-							font-size: 12px;
-							border:none;
-							padding-left: 15px;
-						}
-					}
-					span{
-						color:red;
-						margin-right: 3px;
-					}
-					.textearetext{
-						border:0;
-						width: 92%;
-						height: 100%;
-						resize:none;
-						font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
-						padding: 0 10px 0 14px;
-						font-size: 12px;
-					}
-				}
-			}
-			tr{
-				border-top:none;
-				td:nth-child(1){
-					width:20%;
-					background:#81bdef;
-					border-top:none;
-					color:#fff;
-				}
-			}
-		}
-		.registbtn{
-			width: 5rem;
-	        margin:0.8rem 0 0.8rem 0;
-	        font-size: .28rem;
-		}
-		.jobx{
-				border-radius:20px;
-				width: 133px;
-				border:none;
-				border:1px solid #ccc;
-				height: 36px;
-				margin-top: 5px;
-				text-align: center;
-				color:#ccc;
-		}
-		.search{
-				border-radius:20px;
-				font-size: 14px;
-				width: 60px;
-				height: 36px;
-			}
-	}
+.MonitoringManagement_container {
+    max-width: 12.8rem;
+    height: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    .MonitoringManagement_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        span {
+            line-height: 1rem;
+        }
+        .goback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .3rem;
+            left: .38rem;
+        }
+    }
+    .main {
+        .jodtable {
+            border: .017778rem solid rgba(204, 204, 204, 0.74);
+            border-top: none;
+            border-collapse: collapse;
+            width: 100%;
+            border-right:none;
+            border-left: none;
+            th {
+                background: #81bdef;
+                color: #fff;
+            }
+            tr,
+            td,
+            th {
+                border-top: 0.017778rem rgba(204, 204, 204, 0.74) solid;
+                border-collapse: collapse;
+                padding: .142222rem .035556rem .142222rem .035556rem;
+                font-size: .195556rem;
+            }
+            tr {
+                td {
+
+                    .time {
+                        display: inline-block;
+                        width: 100%;
+                        height: .711111rem;
+                        font-size: .213333rem;
+                        height: .533333rem;
+                        .el-input__inner {
+                            font-size: .213333rem;
+                            border: none;
+                            background-color: #fff;
+                            padding-left: .266667rem;
+                            color:#000;
+                        }
+                    }
+                    span {
+                        color: red;
+                        margin-right: .053333rem;
+                    }
+                    .textearetext {
+                        border: 0;
+                        width: 92%;
+                        height: 100%;
+                        resize: none;
+                        font-family: 'Microsoft YaHei', "Comic Sans MS", "幼圆", "黑体", sans-serif;
+                        padding: 0 .177778rem 0 .248889rem;
+                        font-size: .213333rem;
+                    }
+                }
+            }
+            tr {
+                border-top: none;
+                td:nth-child(1) {
+                    width: 20%;
+                    background: #81bdef;
+                    border-top: 0.017778rem rgba(204, 204, 204, 0.28) solid;
+                    border-right:none;
+                    color: #fff;
+                }
+            }
+        }
+        .registbtn {
+            width: 5rem;
+            margin: 0.8rem 0 0.8rem 0;
+            font-size: .28rem;
+        }
+        .jobx {
+            border-radius: .355556rem;
+            width: 2.364444rem;
+            border: none;
+            border: .017778rem solid rgba(204, 204, 204, 0.74);
+            height: .64rem;
+            margin-top: .088889rem;
+            text-align: center;
+            color: #ccc;
+        }
+        .search {
+            border-radius: .355556rem;
+            font-size: .248889rem;
+            width: 1.066667rem;
+            height: .64rem;
+        }
+    }
 }

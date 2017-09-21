@@ -99,7 +99,8 @@
 			}
 		},
 		created(){
-
+			let ide = JSON.stringify({hegebiaozhi:this.hegebiaozhi,guiding:this.guiding,qiyedizhi:this.qiyedizhi,dailidizhi:this.dailidizhi,shiyongdate:this.shiyongdate,bianhao:this.bianhao,pzwenhao:this.pzwenhao,bawenhao:this.bawenhao})
+				sessionStorage.setItem('ide',ide)
 		},
 		methods: {
 			choose1(){

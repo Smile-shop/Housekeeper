@@ -1,7 +1,7 @@
 <template>
 	<div class="EditJobInformation_container">
 		<p class="EditJobInformation_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click=goback>
 			<span>岗位人员信息管理</span>
 		</p>
 		<div class="editjod">

@@ -53,7 +53,8 @@
 			}
 		},
 		created(){
-
+			let sto = JSON.stringify({neiwaizhengjie:this.neiwaizhengjie,shesi1:this.shesi1,wuranshesi:this.wuranshesi,huazhuangpin:this.huazhuangpin})
+			sessionStorage.setItem('sto',sto)
 		},
 		methods: {
 			choose1(){

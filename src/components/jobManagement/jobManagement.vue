@@ -1,22 +1,26 @@
 <template>
 	<div class="jobManagement_container">
 		<p class="jobManagement_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click=goback>
 			<span>岗位人员管理</span>
 		</p>
 		<div class="main">
 			<div class="jobsearch">
-				<input type="text" class="jobx" placeholder="岗位人员姓名" v-model = username>
-				<input type="text" class="jobx" placeholder="手机号" v-model = userphone>
+				<el-input v-model="username" class="jobx" placeholder="岗位人员姓名"></el-input>
+				<!-- <input type="text" class="jobx" placeholder="岗位人员姓名" v-model = username> -->
+				<!-- <input type="text" class="jobx" placeholder="手机号" v-model = userphone> -->
+				<el-input v-model="userphone" class="jobx" placeholder="手机号"></el-input>
 				<el-select v-model="gangwei" placeholder="岗位">
 			      <el-option v-for="arr in jod" :label="arr[0]" :value="arr[0]" ></el-option>
 			    </el-select>
-				<mt-button type="primary" class="search" @click=search>搜索</mt-button>
+				<mt-button type="primary" class="search" @click="search">搜索</mt-button>
 			</div>
 			<p class="tiannjia">添加岗位人员</p>
-			<input type="text" class="jobx" placeholder="岗位人员姓名" v-model = userName>
-			<input type="text" class="jobx" placeholder="手机号" v-model = userMobile>
-			<mt-button type="primary" class="search" @click=add>添加</mt-button><br>
+			<el-input v-model="userName" class="jobx" placeholder="岗位人员姓名"></el-input>
+			<el-input v-model="userMobile" class="jobx" placeholder="手机号"></el-input>
+			<!-- <input type="text" class="jobx" placeholder="岗位人员姓名" v-model = "userName">
+			<input type="text" class="jobx" placeholder="手机号" v-model = userMobile> -->
+			<mt-button type="primary" class="search" @click="add">添加</mt-button><br>
 			<span :class="{'spanActive':dz1}" @click = "dz" class = "gwei">店长
 				<input type="checkbox" class = "a1" v-model="checkedNames" value= "店长">
 			</span>
@@ -116,7 +120,7 @@
 		    search(){
 		    	let obj = {user_name:this.username,mobile:this.userphone,title_name:this.gangwei}
 		     	this.$http.post(baseUrl+'/searchUser',obj).then((res)=>{
-	              	console.log(res)
+	              	// console.log(res)
 	              	if(res.data.retCode === 0){
 	              		this.data = res.data.data
 	              	}else{
@@ -139,9 +143,9 @@
 		     	let obj = {user_name:this.userName,mobile:this.userMobile,role_ids:this.checkedNames}
 		     	this.$http.post(baseUrl+'/addUser',obj).then((res)=>{
 		              	console.log(res)
+		              	this.getdata();
 		              	if(res.data.retCode === 0){
 		              		this.data = res.data.data
-		              		this.getdata();
 		              		this.$messagebox.alert('添加成功!').then(action => {
 		              			this.userName = '';
 		              			this.userMobile = '';

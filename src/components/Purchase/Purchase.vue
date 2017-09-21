@@ -1,39 +1,36 @@
 <template>
 	<div class="Purchase_container">
 		<p class="Purchase_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click="goback">
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click="goback">
 			<span>进货管理</span>
 		</p>
 		<div class="main">
 			<div class="select">
-				<span class="label1">供货企业：</span>
-				<el-select v-model="companyName" placeholder="请选择供货企业"  @change="getCompany">
-			      <el-option v-for="arr in jod" :label="arr[0]" :value="arr[0]" ></el-option>
-			    </el-select><br>
-			    <span class="label1">产品名称：</span>
-				<el-select v-model="pname" placeholder="请选择产品名称" @change="getpname">
-			      <el-option v-for="arr in jod" :label="arr[0]" :value="arr[0]" ></el-option>
-			    </el-select><br>
-			    <span class="label1">批准文号：</span>
-				<el-select v-model="wenhao" placeholder="请选择批准文号" @change="getwenhao">
-			      <el-option v-for="arr in jod" :label="arr[0]" :value="arr[0]" ></el-option>
-			    </el-select><br>
+				
+			    <el-form :label-position="labelPosition" label-width="95px">
+			      <el-form-item label="供货企业:">
+				   <el-select v-model="companyName" placeholder="请选择供货企业"  @change="getCompany">
+				      <el-option v-for="(arr,index) in company" :label="arr.enterprise_name" :value="arr.enterprise_name+'-'+index"></el-option>
+				    </el-select><br>
+				  </el-form-item>
+				  <el-form-item label="产品名称:">
+				    <el-select v-model="pname" placeholder="请选择产品名称" @change="getpname">
+				      <el-option v-for="(arr,index) in product" :label="arr.product_name" :value="arr.product_name+'-'+index" ></el-option>
+				    </el-select><br>
+				  </el-form-item>
+				  <el-form-item label="批准文号:">
+				    <el-input v-model="wenhao"></el-input>
+				  </el-form-item>
+				</el-form>
 			</div>
 			<div class="inputall">
 				<p class="title">进货工作记录表<br><span>(记录保存期限不得少于两年)</span></p>
 				<el-form :label-position="labelPosition" label-width="95px">
-				  <el-form-item label="检验人:">
-				    <el-input v-model="testname"></el-input>
-				  </el-form-item>
-				  <el-form-item label="检验日期:">
-				    <el-input v-model="jyrq"></el-input>
-				  </el-form-item>
+				  
 				  <el-form-item label="产品名称*:">
 				    <el-input v-model="cpmc"></el-input>
 				  </el-form-item>
-				  <el-form-item label="进货日期*:">
-				    <el-input v-model="jhrq"></el-input>
-				  </el-form-item>
+				 
 				  <el-form-item label="供货企业*:">
 				    <el-input v-model="ghqy"></el-input>
 				  </el-form-item>
@@ -43,8 +40,8 @@
 				  <el-form-item label="生产厂商*:">
 				    <el-input v-model="sccs"></el-input>
 				  </el-form-item>
-				  <el-form-item label="卫生许可证号*:">
-				    <el-input v-model="wsxkzh"></el-input>
+				  <el-form-item label="生产许可证号*:">
+				    <el-input v-model="scxkzh"></el-input>
 				  </el-form-item>
 				  <el-form-item label="规格:">
 				    <el-input v-model="gg"></el-input>
@@ -53,32 +50,49 @@
 				    <el-input v-model="sl"></el-input>
 				  </el-form-item>
 				  <el-form-item label="生产日期:">
-				    <el-input v-model="scrq"></el-input>
+				    <i class="time" @click="openPicker">
+		          		<el-input class="time" v-model="scrq"  placeholder="点击选择时间" :disabled="true"></el-input>
+		          	</i>
 				  </el-form-item>
 				  <el-form-item label="生产批号:">
 				    <el-input v-model="scph"></el-input>
 				  </el-form-item>
 				  <el-form-item label="有效期:">
-				    <el-input v-model="yxq"></el-input>
+				    <i class="time" @click="openPicker1">
+		          		<el-input class="time" v-model="yxq"  placeholder="点击选择时间" :disabled="true"></el-input>
+		          	</i>
 				  </el-form-item>
 				  <el-form-item label="批次检查报告:">
-				    <el-input v-model="jybg"></el-input>
+					<el-upload
+					  class="avatar-uploader"
+					  action="https://jsonplaceholder.typicode.com/posts/"
+					  :show-file-list="false"
+					  :on-change="getpic"
+					  :auto-upload="false">
+					  <img v-if="imageUrl" :src="imageUrl" class="avatar">
+					  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+					</el-upload>
 				  </el-form-item>
-				  <el-form-item label="合格证:">
-				    <el-input v-model="hgz"></el-input>
-				  </el-form-item>
-				  <el-form-item label="标签与文宣:">
-				    <el-input v-model="bqywx"></el-input>
-				  </el-form-item>
-				  <el-form-item label="质量情况:">
-				    <el-input v-model="zlqk"></el-input>
-				  </el-form-item>
-				  <el-form-item label="包装情况:">
-				    <el-input v-model="bzqk"></el-input>
-				  </el-form-item>
-				  <el-form-item label="外观质量:">
-				    <el-input v-model="wgzl"></el-input>
-				  </el-form-item>
+				  <p class="t">
+					<span class="hez">合格证:</span>
+					<el-radio class="radio" v-model="radio1" label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio1" label="1">不通过</el-radio><br>
+	  				<span class="bq">标签:</span>
+					<el-radio class="radio" v-model="radio2" label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio2" label="1">不通过</el-radio><br>
+	  				<span class="bz">广告文宣:</span>
+					<el-radio class="radio" v-model="radio3" label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio3" label="1">不通过</el-radio><br>
+	  				<span class="wx">质量情况:</span>
+					<el-radio class="radio" v-model="radio4" label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio4" label="1">不通过</el-radio><br>
+	  				<span class="zl">包装情况:</span>
+					<el-radio class="radio" v-model="radio5" label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio5" label="1">不通过</el-radio><br>
+	  				<span class="zl1">外观质量:</span>
+					<el-radio class="radio" v-model="radio6" label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio6" label="1">不通过</el-radio><br>
+				  </p>
 				  <el-form-item label="联系方式:">
 				    <el-input v-model="Tel"></el-input>
 				  </el-form-item>
@@ -90,7 +104,25 @@
 				  </el-form-item>
 				</el-form>
 			</div>
-			<mt-button type="primary" class="search">提交</mt-button>
+			<mt-datetime-picker
+			    ref="picker"
+			    type="date"
+			    yearFormat="{value} 年"
+			    monthFormat="{value} 月"
+			    dateFormat="{value} 日"
+			    v-model="pickerValue"
+			    @confirm="aa">
+			</mt-datetime-picker>
+			<mt-datetime-picker
+			    ref="picker1"
+			    type="date"
+			    yearFormat="{value} 年"
+			    monthFormat="{value} 月"
+			    dateFormat="{value} 日"
+			    v-model="pickerValue1"
+			    @confirm="bb">
+			</mt-datetime-picker>
+			<mt-button type="primary" class="search" @click="sub">提交</mt-button>
 		</div>
 	</div>
 </template>
@@ -100,41 +132,27 @@
 	export default {
 		data(){
 			return {
-		        jod:[['店长'],['进货岗'],['销售岗'],['质量安全负责岗'],['质量安全追踪岗']],
-		        // inputName:[['检验人:','testname'],
-		        // 		   ['检验日期:','jyrq'],
-		        // 		   ['产品名称*:','cpmc'],
-		        // 		   ['进货日期*:','jhrq'],
-		        // 		   ['供货企业*:','ghqy'],
-		        // 		   ['批准文号*:','pzwh'],
-		        // 		   ['生产厂商*:','sccs'],
-		        // 		   ['卫生许可证号*:','wsxkzh'],
-		        // 		   ['规格:','gg'],
-		        // 		   ['数量:','sl'],
-		        // 		   ['生产日期:','scrq'],
-		        // 		   ['生产批号:','scph'],
-		        // 		   ['有效期:','yxq'],
-		        // 		   ['批次检查报告:','jybg'],
-		        // 		   ['合格证:','hgz'],
-		        // 		   ['标签与文宣:','bqywx'],
-		        // 		   ['质量情况:','zlqk'],
-		        // 		   ['包装情况:','bzqk'],
-		        // 		   ['外观质量:','wgzl'],
-		        // 		   ['联系方式:','Tel'],
-		        // 		   ['验收结论:','jl'],
-		        // 		   ['备注:','Notes'],],
+		        company:'',
+		        product:'',
+		        pickerValue:'',
+		        pickerValue1:'',
 		        labelPosition:'right',		   
 		        companyName:'',
 		        pname:'',
 		        wenhao:'',
-		        testname:'',
-		        jyrq:'',
+		        productId:'',
+		        companyId:'',
 		        cpmc:'',
-		        jhrq:'',
+		       	radio4:'',
+		       	radio3:'',
+		       	radio1:'',
+		       	radio2:'',
+		       	radio5:'',
+		       	radio6:'',
 		        ghqy:'',
 		        pzwh:'',
 		        sccs:'',
-		        wsxkzh:'',
+		        scxkzh:'',
 		        gg:'',
 		        sl:'',
 		        scrq:'',
@@ -149,29 +167,158 @@
 		        Tel:'',
 		        jl:'',
 		        Notes:'',
+		        file1:'',
+		        imageUrl:''
 			}
 		},
 		created(){
-			this.getdata();
+			this.getData();
 		},
 		methods: {
+			getData(){
+				console.log(123)
+				this.$http.post(baseUrl+'/searchSupplier').then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+	              		this.company = res.data.data;
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		              this.$messagebox.alert("获取信息错误!");
+		          });
+			},
 			goback(){
 				this.$router.go(-1)
 			},
+			openPicker() {
+		        this.$refs.picker.open();
+		    },
+		    openPicker1() {
+		        this.$refs.picker1.open();
+		    },
+		    aa(){
+		    	let a = new Date(this.pickerValue);
+				let y = a.getFullYear();
+				let M = a.getMonth()+1;
+				let d = a.getDate();
+				M = M < 10 ? '0' + M : M
+				d = d < 10 ? '0' + d : d
+				let pickerValue = `${y}-${M}-${d}`
+				this.pickerValue = pickerValue;
+				this.scrq = this.pickerValue;
+		    },
+		    bb(){
+		    	let a = new Date(this.pickerValue1);
+				let y = a.getFullYear();
+				let M = a.getMonth()+1;
+				let d = a.getDate();
+				M = M < 10 ? '0' + M : M
+				d = d < 10 ? '0' + d : d
+				let pickerValue1 = `${y}-${M}-${d}`
+				this.pickerValue1 = pickerValue1;
+				this.yxq = this.pickerValue1;
+		    },
 			getCompany(){
-				console.log(this.companyName)
+				let index = this.companyName.split('-')[1];
+				this.ghqy = this.companyName.split('-')[0];
+				this.companyId = this.company[index].id
+				let obj = {enterprise_id:this.companyId}
+				// console.log(obj)
+				this.$http.post(baseUrl+'/searchProduct',obj).then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+	              		this.product = res.data.data;
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		              this.$messagebox.alert("获取信息错误!");
+		          });
 			},
 			getpname(){
-				console.log(this.pname)
+				let index = this.pname.split('-')[1];
+				this.wenhao = this.product[index].apply_sn;
+				this.cpmc = this.product[index].product_name;
+				this.pzwh = this.wenhao;
+				this.sccs = this.product[index].manufacturer;
+				this.scxkzh = this.product[index].produce_permit;
+				this.productId = this.product[index].id;
+				console.log(477974)
 			},
-			getwenhao(){
-				console.log(this.wenhao)
-			},
- 			getdata(){
- 				this.$http.post(baseUrl+'/searchUser').then((res)=>{
+			getpic(file) {
+		        this.imageUrl = URL.createObjectURL(file.raw);
+		        this.file1 = file.raw;
+		    },
+ 			sub(){
+ 				let formData = new FormData();
+			    formData.append('enterprise_id', this.companyId);
+	            formData.append('product_id', this.productId);
+	            formData.append('specification', this.gg);
+	            formData.append('quatity', this.sl);
+	            formData.append('manufacture_date', this.scrq);
+	            formData.append('batch_id', this.scph);
+	            formData.append('expire_date', this.yxq);
+	            formData.append('check_report', this.file1);
+	            formData.append('QC_OK', this.radio1);
+	            formData.append('label_OK', this.radio2);
+	            formData.append('advertise_OK', this.radio3);
+	            formData.append('quality_OK', this.radio4);
+	            formData.append('package_OK', this.radio5);
+	            formData.append('outward_OK', this.radio6);
+	            formData.append('contact', this.Tel);
+	            formData.append('results', this.jl);
+	            formData.append('notes', this.Notes);
+
+	            let config = {
+	              headers: {
+	                'Content-Type': 'multipart/form-data'
+	              }
+	            }
+ 				this.$http.post(baseUrl+'/addPurchase',formData,config).then((res)=>{
 	              	console.log(res)
 	              	if(res.data.retCode === 0){
-	              		this.data = res.data.data
+	              		this.$messagebox.alert('操作成功!').then(action => {
+	              			this.product = '';
+	              			this.company = '';
+	              			this.companyName = '';
+	              			this.pname = '';
+	              			this.pzwh = '';
+	              			this.wenhao = '';
+	              			this.cpmc = '';
+	              			this.scxkzh = '';
+	              			this.sccs = '';
+	              			this.gg = '';
+	              			this.ghqy = '';
+	              			this.sl = '';
+	              			this.scrq = '';
+	              			this.scph = '';
+	              			this.yxq = '';
+	              			this.file1 = '';
+	              			this.imageUrl = '';
+							this.radio1 = '';
+	              			this.radio2 = '';
+	              			this.radio3 = '';
+	              			this.radio4 = '';
+	              			this.radio5 = '';
+	              			this.radio6 = '';
+	              			this.Tel = '';
+	              			this.jl = '';
+	              			this.Notes = '';
+	              			
+	              			this.$http.post(baseUrl+'/searchSupplier').then((res)=>{
+								console.log(res)
+				              	if(res.data.retCode === 0){
+				              		this.company = res.data.data;
+				              	}else{
+				              		this.$messagebox.alert(res.data.retMessage);
+				              	}
+					          },(err)=>{
+					              this.$messagebox.alert("获取信息错误!");
+					          });
+					  this.$router.push({name:'index'})
+
+ 						});
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}

@@ -29,7 +29,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         '/api': {
-                target: 'http://api.credunion.org/h1',
+                target: 'http://api.credunion.org',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': ''

@@ -1,7 +1,7 @@
 <template>
 	<div class="equipmentRegistration_container">
 		<p class="equipmentRegistration_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click=goback>
 			<span>经营场所设施登记表</span>
 		</p>
 		<div class="main">

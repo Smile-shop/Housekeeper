@@ -79,7 +79,8 @@
 			}
 		},
 		created(){
-
+			let leg = JSON.stringify({xukezheng:this.xukezheng,pizhunwenhao:this.pizhunwenhao,beianpingzheng:this.beianpingzheng,xukepingjian:this.xukepingjian,youxiaoqi:this.youxiaoqi,jianyan:this.jianyan})
+				sessionStorage.setItem('leg',leg)
 		},
 		methods: {
 			choose1(){

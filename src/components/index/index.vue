@@ -45,19 +45,19 @@
 		    	<router-link to="Sale">	
 		    		<li><img src="../../assets/imgs/Salesmanagement (3).png" height="91" width="68" alt="" class="indeximg9"><br>销售管理</li>
 		    	</router-link>
-		    	<router-link to="regist">
+		    	<router-link to="">
 		    		<li><img src="../../assets/imgs/Qualitytracking (3).png" height="91" width="68" alt="" class="indeximg10"><br>质量追踪</li>
 		    	</router-link>
-		    	<router-link to="regist">
+		    	<router-link to="">
 		    		<li><img src="../../assets/imgs/file-19@3x.png" height="91" width="68" alt="" class="indeximg14"><br>追溯档案</li>
 		    	</router-link>
-		    	<router-link to="regist">	
+		    	<router-link to="">	
 		    		<li class="bott"><img src="../../assets/imgs/Cheats (3).png" height="91" width="68" alt="" class="indeximg11"><br>秘籍</li>
 		    	</router-link>
-		    	<router-link to="regist">	
+		    	<router-link to="">	
 		    		<li class="bott"><img src="../../assets/imgs/Auditorium (3).png" height="91" width="68" alt="" class="indeximg12"><br>大讲堂</li>
 		    	</router-link>
-		    	<router-link to="regist">	
+		    	<router-link to="">	
 		    		<li class="bott"><img src="../../assets/imgs/Messagetree (3).png" height="91" width="68" alt="" class="indeximg13"><br>消息树</li>
 		    	</router-link>	
 	    	</ul>

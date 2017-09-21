@@ -59,7 +59,8 @@
 			}
 		},
 		created(){
-
+			let acc = JSON.stringify({chayanzhidu:this.chayanzhidu,zhengjiancailiao:this.zhengjiancailiao,qiyedangan:this.qiyedangan,jinhuotaizhang:this.jinhuotaizhang})
+			sessionStorage.setItem('acc',acc)
 		},
 		methods: {
 			choose1(){

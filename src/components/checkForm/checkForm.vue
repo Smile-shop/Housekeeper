@@ -1,7 +1,7 @@
 <template>
 	<div class="checkForm_container">
 		<p class="checkForm_text">
-			<img src="../../assets/imgs/arrow (1).png" class="checkFormback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="checkFormback" @click=goback>
 			<span>企业主体责任履约自查表单</span>
 		</p>
 		<label for="companyname1" class="q">岗位：</label>

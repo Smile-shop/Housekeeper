@@ -1,7 +1,7 @@
 <template>
 	<div class="MonitoringManagement_container">
 		<p class="MonitoringManagement_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click=goback>
 			<span>监管记录</span>
 		</p>
 		<div class="main">
@@ -31,7 +31,7 @@
 		          <td><span>*</span>检查日期</td>
 		          <td>
 		          	<i class="time" @click="openPicker">
-		          		<el-input class="time" v-model="admin_date"  placeholder="点击选择时间"></el-input>
+		          		<el-input class="time" v-model="admin_date"  placeholder="点击选择时间" :disabled="true"></el-input>
 		          	</i>
 		          </td>
 		        </tr>

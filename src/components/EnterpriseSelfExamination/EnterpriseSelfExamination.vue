@@ -1,7 +1,7 @@
 <template>
 	<div class="EnterpriseSelfExamination_container">
 		<p class="EnterpriseSelfExamination_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click="goback">
 			<span>企业自查</span>
 		</p>
 		<div class="main">
@@ -35,43 +35,7 @@
 				     ['产品宣传、店内宣传','/Propaganda'],
 				     ['其他违法行为','/Others']],
 				isshow:true,
-				active:'0',
-
-				xukezheng:'',
-				pizhunwenhao:'',
-				beianpingzheng:'',
-				xukepingjian:'',
-				youxiaoqi:'',
-				jianyan:'',
-
-				hegebiaozhi:'',
-				guiding:'',
-				qiyedizhi:'',
-				dailidizhi:'',
-				shiyongdate:'',
-				bianhao:'',
-				pzwenhao:'',
-				bawenhao:'',
-
-				chayanzhidu:'',
-				zhengjiancailiao:'',
-				qiyedangan:'',
-				jinhuotaizhang:'',
-
-				guoqi:'',
-
-				neiwaizhengjie:'',
-				shesi1:'',
-				wuranshesi:'',
-				huazhuangpin:'',
-
-				xuanchuanliaoxiao:'',
-				yiliaoshuyu:'',
-				shiyingzheng:'',
-				kuada:'',
-				weigui:'',
-
-				zizhi:'',
+				active:0,
 			}
 		},
 		components: {
@@ -79,6 +43,7 @@
 		},
 		created(){
 			this.getRoute();
+			sessionStorage.setItem('index',0);
 			this.active = sessionStorage.getItem('index');
 		},
 		methods: {
@@ -145,9 +110,7 @@
 				this.$http.post(baseUrl+'/addSelfCheck',obj).then((res)=>{
 					console.log(res)
 	              	if(res.data.retCode === 0){
-	              		this.choose = res.data.data.self_check_period;
-	              		this.choose1 = res.data.data.self_check_period;
-	              		this.id = res.data.data.id;
+	              		this.$messagebox.alert('操作成功!');
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}

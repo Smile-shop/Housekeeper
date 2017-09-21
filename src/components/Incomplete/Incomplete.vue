@@ -1,7 +1,7 @@
 <template>
 	<div class="Incomplete_container">
 		<p class="Incomplete_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click="goback">
 			<span>未完成事件</span>
 		</p>
 		<div class="main">
@@ -15,11 +15,11 @@
 		        </tr>
 		      </thead>
 		      <tbody>
-		        <tr>
-		          <td>公共场所经营者卫生许可证</td>
-		          <td>开卷的</td>
-		          <td>店长</td>
-		          <td>13588888888</td>
+		        <tr v-for="arr in data">
+		          <td>{{arr.evt_name}}</td>
+		          <td>{{arr.charger}}</td>
+		          <td>{{arr.role}}</td>
+		          <td>{{arr.mobile}}</td>
 		        </tr>
 		      </tbody>
 		    </table>
@@ -32,8 +32,13 @@
 	export default {
 		data(){
 			return {
-				
+				data:'',
 			}
+		},
+		created(){
+			this.data = this.$route.params.sjx1;
+			// console.log(this.$route.params);
+			// console.log(this.data)
 		},
 		methods: {
 			goback(){

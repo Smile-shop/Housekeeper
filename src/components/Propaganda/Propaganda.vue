@@ -63,7 +63,8 @@
 			}
 		},
 		created(){
-
+			let pro = JSON.stringify({xuanchuanliaoxiao:this.xuanchuanliaoxiao,yiliaoshuyu:this.yiliaoshuyu,shiyingzheng:this.shiyingzheng,kuada:this.kuada,weigui:this.weigui})
+				sessionStorage.setItem('pro',pro)
 		},
 		methods: {
 			choose1(){

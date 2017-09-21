@@ -1,72 +1,102 @@
-.JobMonitoring_container{
-	max-width: 12.8rem;
-	height: 100%;
-	background-size:100% 100%;
-	text-align: center;
-	.JobMonitoring_text{
-		position: relative;
-		text-align: center;
-		height: 1rem;
-		font-size: .32rem;
-		background:#48A4F2;
-		color:#fff;
-		span{
-			line-height: 1rem;
-		}
-		.goback{
-			display: inline-block;
-			width: .2rem;height: .36rem;
-			position: absolute;
-			top: .3rem;
-			left: .38rem;
-		}
-	}
-	.main{
-		.jodtable{
-			border:1px solid #ccc;
-			border-top:none;
-			border-collapse: collapse;
-			width: 100%;
-			th{
-				background:#81bdef;
-				color:#fff;
-			}
-			tr,td,th{
-				border:1px solid #ccc;
-				border-collapse: collapse;
-				padding: 8px 2px 8px 2px;
-				font-size: 11px;
-				width: 50%;
-			}
-			tr{
-				td{
-					img{
-						width: 25px;
-					}
-				}
-			}
-			tr:nth-child(1){
-				border-top:none;
-				th{
-					border-top:none;
-				}
-			}
-		}
-		.jobx{
-				border-radius:20px;
-				width: 133px;
-				border:none;
-				border:1px solid #ccc;
-				height: 36px;
-				margin-top: 5px;
-				text-align: center;
-				color:#ccc;
-		}
-		.search{
-				border-radius:20px;
-				font-size: 14px;
-				width: 60px;
-				height: 36px;
-			}
-	}
+.JobMonitoring_container {
+    max-width: 12.8rem;
+    height: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    .JobMonitoring_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        span {
+            line-height: 1rem;
+        }
+        .goback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .3rem;
+            left: .38rem;
+        }
+    }
+    .main {
+        .jodtable {
+            border-top: none;
+            border-collapse: collapse;
+            width: 100%;
+            th {
+                background: #81bdef;
+                color: #fff;
+            }
+            tr,
+            td,
+            th {
+                border: .017778rem solid #ccc;
+                border-collapse: collapse;
+                border-right: none;
+                border-left: none;
+                padding: .142222rem .035556rem .142222rem .035556rem;
+                font-size: .195556rem;
+                width: 50%;
+            }
+            tr {
+                td {
+                    position: relative;
+                    img {
+                        display: inline-block;
+                        width: .444444rem;
+                    }
+                    .count1 {
+                        font-size: .213333rem;
+                        color: #fff;
+                        position: absolute;
+                        z-index: 10;
+                        left: .284444rem;
+                        top: .284444rem;
+                    }
+                    .count2 {
+                        font-size: .213333rem;
+                        color: #fff;
+                        position: absolute;
+                        z-index: 10;
+                        left: 1.28rem;
+                        top: .284444rem;
+                    }
+                    .count3 {
+                        font-size: .213333rem;
+                        color: #fff;
+                        position: absolute;
+                        z-index: 10;
+                        left: 2.293333rem;
+                        top: .284444rem;
+                    }
+                }
+            }
+            tr:nth-child(1) {
+                border-top: none;
+                th {
+                    border-top: none;
+                }
+            }
+        }
+        .jobx {
+            border-radius: .355556rem;
+            width: 2.364444rem;
+            border: none;
+            border: .017778rem solid #ccc;
+            height: .64rem;
+            margin-top: .088889rem;
+            text-align: center;
+            color: #ccc;
+        }
+        .search {
+            border-radius: .355556rem;
+            font-size: .248889rem;
+            width: 1.066667rem;
+            height: .64rem;
+        }
+    }
 }

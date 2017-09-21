@@ -23,7 +23,8 @@
 			}
 		},
 		created(){
-
+			let acc = JSON.stringify({guoqi:this.guoqi})
+			sessionStorage.setItem('guoqi',acc)
 		},
 		methods: {
 			choose1(){

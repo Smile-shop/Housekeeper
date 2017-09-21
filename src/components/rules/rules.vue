@@ -1,7 +1,7 @@
 <template>
 	<div class="rules_container">
 		<p class="rules_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click=goback>
 			<span>制度建设</span>
 		</p>
 		<div class="main">
@@ -23,9 +23,11 @@
 			    </el-table-column>
 			    <el-table-column label="操作">
 			      <template scope="scope">
-			        <el-button
-			          size="small"
-			          @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+			        <a :href="['http://api.credunion.org/h1/dl?table='+table+'&id='+id+'&field='+field]">
+			        	<el-button
+				          size="small"
+				          @click="handleEdit(scope.$index, scope.row)">下载</el-button>
+				    </a>
 			        <el-button
 			          size="small"
 			          type="primary"
@@ -37,7 +39,7 @@
 			      </template>
 			    </el-table-column>
 			  </el-table>
-			  <mt-button type="primary" class="sub" @click=sub>提交</mt-button>
+			  <mt-button type="primary" class="sub" @click="sub">提交</mt-button>
 		</div>
 	</div>
 </template>
@@ -64,8 +66,47 @@
 		        }, {
 		          name: '岗位说明书',
 		        }],
+		        data:'',
+		        table:'organ_system_file',
+		        field:"purchase_check_file",
+		        id:''
 
 			}
+		},
+		created(){
+			let data = JSON.parse(sessionStorage.getItem('data'))
+			console.log(data)
+			this.id = data.data.id;
+			// let obj = {table:this.table,id:data.data.id,field:this.field}
+			// this.$http.post(baseUrl+'/dl',obj).then((res)=>{
+			// 		console.log(res)
+	  //             	if(res.data.retCode === 0){
+	  //             		// this.$messagebox.alert("操作成功!").then(acton=>{
+	  //             		// 	this.userName = '';
+	  //             		// 	this.Opinion = '';
+	  //             		// })
+	  //             	}else{
+	  //             		this.$messagebox.alert(res.data.retMessage);
+	  //             	}
+		 //          },(err)=>{
+		 //              this.$messagebox.alert("获取信息错误!");
+		 //          });
+		 // this.$http({
+		 //              url: baseUrl+'/dl',
+		 //              method:'POST',
+		 //              params:{table:this.table,id:data.data.id,field:this.field},
+		 //              responseType: 'text'
+		 //              }).then((res)=>{
+		 //              	console.log(res)
+		 //              	if(res.data.retCode === 0){
+		 //              		// this.$router.push({name:'index'})
+		 //              	}else{
+		 //              		this.$messagebox.alert(res.data.retMessage);
+		 //              	}
+			//           },(err)=>{
+			//               console.log('err');
+			//               this.$messagebox.alert('登录错误！');
+			//           });
 		},
 		methods: {
 			goback(){
@@ -73,6 +114,23 @@
 			},
 			handleEdit(index, row) {
 		        console.log(index, row);
+		        if(index == 0){
+		        	this.field = 'purchase_check_file'
+		        }else if(index == 1){
+		        	this.field = 'flag_check_file'
+		        }else if(index == 2){
+		        	this.field = 'adr_report_file'
+		        }else if(index == 3){
+		        	this.field = 'recall_file'
+		        }else if(index == 4){
+		        	this.field = 'place_man_file'
+		        }else if(index == 5){
+		        	this.field = 'sale_man_file'
+		        }else if(index == 6){
+		        	this.field = 'ad_man_file'
+		        }else if(index == 7){
+		        	this.field = 'job_desc_file'
+		        }
 		      },
 		    handleDelete(index, row) {
 		        console.log(index, row);
@@ -83,9 +141,6 @@
 		      },
 		    sub(){
 		     	console.log(456)
-		     	let val={l:'dfa',a:'dfk'}
-		     	this.$router.push({name:'login',params:{val}})
-		     	console.log(this)
 		     }
 		}
 	}

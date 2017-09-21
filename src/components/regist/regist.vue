@@ -2,7 +2,7 @@
 	<div class="regist_container">
 		<img src="../../assets/imgs/loginBackground.png" alt="" class="resigt-background" >
 		<p class="regist_text">
-			<img src="../../assets/imgs/arrow (1).png" class="registback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="registback" @click=goback>
 			<span>企业注册</span>
 		</p>
 		<label for="companyname" class="q">企业名称：</label>
@@ -27,7 +27,6 @@
 		<a href="javascript:;" class="y">点击上传营业执照
 			<input id="fileId1" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange"/>
 		</a>
-		<img :src="file1" alt="">
 		<a href="javascript:;" class="w">点击上传卫生许可证
 			<input id="fileId2" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange1"/>
 		</a>

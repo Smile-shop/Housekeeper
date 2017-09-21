@@ -1,7 +1,7 @@
 <template>
 	<div class="EditInformation_container">
 		<p class="EditInformation_text">
-			<img src="../../assets/imgs/arrow (1).png" class="EditInformationback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="EditInformationback" @click=goback>
 			<span>修改企业信息</span>
 		</p>
 		<label for="companyname" class="q">企业名称：</label>
@@ -29,7 +29,7 @@
 		<a href="javascript:;" class="w">点击上传卫生许可证
 			<input id="fileId2" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange1"/>
 		</a>
-		<mt-button type="primary" class="EditInformationbtn" @click=EditInformation>提交</mt-button>
+		<mt-button type="primary" class="EditInformationbtn" @click="EditInformation">提交</mt-button>
 	</div>
 </template>
 

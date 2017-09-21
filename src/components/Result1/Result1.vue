@@ -1,7 +1,7 @@
 <template>
 	<div class="Result1_container">
 		<p class="Result1_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click='goback'>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click='goback'>
 			<span>查询结果</span>
 		</p>
 		<div class="main">
@@ -14,7 +14,6 @@
 				<p>产品已存在！不需要添加！</p>
 			</div>
 			<div class="exist">
-				
 			</div>
 		</div>
 	</div>
@@ -26,11 +25,19 @@
 		data(){
 			return {
 				show:true,
-				show1:''
+				show1:'',
 			}
 		},
 		created(){
-			console.log(this.$route.params.companyName)
+			let aaa = this.$route.params.data;
+			if(aaa.length == 0){
+				this.show = true;
+				this.show1 =false;
+			}else{
+				this.show = false;
+				this.show1 = true;
+				this.a = aaa;
+			}
 		},
 		methods: {
 			goback(){

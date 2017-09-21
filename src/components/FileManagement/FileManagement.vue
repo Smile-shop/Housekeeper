@@ -1,17 +1,24 @@
 <template>
 	<div class="FileManagement_container">
 		<p class="FileManagement_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click="goback">
 			<span>档案管理</span>
 		</p>
 		<div class="main">
 			<div class="dsearch">
-				<input type="text" class="fromname" placeholder="输入表单、台账、档案名称">
-				<input type="text" class="timestart" placeholder="输入开始时间">
-				<input type="text" class="timeend" placeholder="输入结束时间">
-				<mt-button type="primary" class="year">最近一个年</mt-button>
-				<mt-button type="primary" class="year">最近一个月</mt-button>
-				<mt-button type="primary" class="search">搜索</mt-button>
+				<!-- <input type="text" class="fromname" placeholder="输入表单、台账、档案名称" > -->
+				<el-select v-model="fileName" placeholder="请选择供货企业"  @change="getFile">
+			      <el-option v-for="(arr,index) in file" :label="arr" :value="arr+'-'+index"></el-option>
+			    </el-select>
+				<i class="time" @click="openPicker">
+					<input type="text" class="timestart" placeholder="开始时间" v-model="stime">
+				</i>
+				<i class="time" @click="openPicker1">
+					<input type="text" class="timeend" placeholder="结束时间" v-model="etime">
+				</i>
+				<mt-button type="primary" class="year" @click="preyear">上一年</mt-button>
+				<mt-button type="primary" class="year" @click="premonth">上个月</mt-button>
+				<mt-button type="primary" class="search" @click="search">搜索</mt-button>
 			</div>
 			<table class="jodtable">
 		      <thead>
@@ -26,7 +33,7 @@
 		          <td>产品与供贷企业合规信息登记表</td>
 		          <td>2017年5月10日</td>
 		          <td class="cao">
-		          	<mt-button type="primary" class="edit">编辑</mt-button>
+		          	<mt-button type="primary" class="edit">查看</mt-button>
 		          	<mt-button type="default" class="print">打印</mt-button>
 		          	<mt-button type="danger" class="del">删除</mt-button>
 		          </td>
@@ -34,6 +41,24 @@
 		      </tbody>
 		    </table>
 		</div>
+		<mt-datetime-picker
+			    ref="picker"
+			    type="date"
+			    yearFormat="{value} 年"
+			    monthFormat="{value} 月"
+			    dateFormat="{value} 日"
+			    v-model="pickerValue"
+			    @confirm="aa">
+			</mt-datetime-picker>
+			<mt-datetime-picker
+			    ref="picker1"
+			    type="date"
+			    yearFormat="{value} 年"
+			    monthFormat="{value} 月"
+			    dateFormat="{value} 日"
+			    v-model="pickerValue1"
+			    @confirm="bb">
+			</mt-datetime-picker>
 	</div>
 </template>
 
@@ -42,31 +67,90 @@
 	export default {
 		data(){
 			return {
-				formInline: {
-		          user: '',
-		          region: ''
-		        },
-		        jod:[['店长'],['进货岗'],['销售岗'],['质量安全岗'],['质量追踪岗']]
+				pickerValue:'',
+		        pickerValue1:'',
+		        stime:'',
+		        etime:'',
+		        fileName:'',
+		        id:'',
+		        file:['供货企业合规登记信息表','供货企业与产品合规信息登记表','进货工作记录表','产品销售记录表','经营场所设施登记表','不良反应信息登记表','召回通知单','召回登记表','企业主体责任履约自查表','客户意见簿','不良反应事件监测表']
 			}
 		},
 		methods: {
 			goback(){
 				this.$router.go(-1)
 			},
-			handleEdit(index, row) {
-		        console.log(index, row);
-		      },
-		    handleDelete(index, row) {
-		        console.log(index, row);
-		        row.splice(index, 1);
-		      },
-		    print(index, row) {
-		        console.log(index, row);
-		      },
+			openPicker() {
+		        this.$refs.picker.open();
+		    },
+		    openPicker1() {
+		        this.$refs.picker1.open();
+		    },
+		    aa(){
+		    	let a = new Date(this.pickerValue);
+				let y = a.getFullYear();
+				let M = a.getMonth()+1;
+				let d = a.getDate();
+				M = M < 10 ? '0' + M : M
+				d = d < 10 ? '0' + d : d
+				let pickerValue = `${y}-${M}-${d}`
+				this.pickerValue = pickerValue;
+				this.stime = this.pickerValue;
+		    },
+		    bb(){
+		    	let a = new Date(this.pickerValue1);
+				let y = a.getFullYear();
+				let M = a.getMonth()+1;
+				let d = a.getDate();
+				M = M < 10 ? '0' + M : M
+				d = d < 10 ? '0' + d : d
+				let pickerValue1 = `${y}-${M}-${d}`
+				this.pickerValue1 = pickerValue1;
+				this.etime = this.pickerValue1;
+		    },
+		    getFile(){
+				this.id = this.fileName.split('-')[1]+1;
+				
+			},
 		    search(){
-		     	console.log(this.formInline.region)
-		     	
-		     }
+		     	let obj = {id:this.id,stime:this.stime,etime:this.etime}
+				this.$http.post(baseUrl+'/searchFile',obj).then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+	              		
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		              this.$messagebox.alert("获取信息错误!");
+		          });
+		     },
+		     preyear(){
+		     	let obj = {id:this.id}
+				this.$http.post(baseUrl+'/searchFileLastYear',obj).then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+	              		
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		              this.$messagebox.alert("获取信息错误!");
+		          });
+		     },
+		     premonth(){
+		     	let obj = {id:this.id}
+				this.$http.post(baseUrl+'/searchFileLastMonth',obj).then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+	              		
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		              this.$messagebox.alert("获取信息错误!");
+		          });
+		     },
 		}
 	}
 </script>

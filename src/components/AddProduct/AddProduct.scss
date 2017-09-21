@@ -17,7 +17,7 @@
         background: #48A4F2;
         font-size: .32rem;
         color: #fff;
-        margin-bottom: 8px;
+        margin-bottom: .142222rem;
         span {
             line-height: 1rem;
         }
@@ -30,101 +30,106 @@
             left: .38rem;
         }
     }
-   .mint-tab-item{
-        z-index:1;
-   }
-   .title{
-        margin-top: 20px;
-        font-size: 14px;
-        margin-bottom: 20px;
+    .mint-tab-item {
+        z-index: 1;
     }
-    .el-form-item{
-        margin-bottom: 10px;
-        margin-right: 20px;
+    .title {
+        margin-top: .355556rem;
+        font-size: .248889rem;
+        margin-bottom: .355556rem;
     }
-    .el-form-item__label{
-        font-size: 11px;
+    .el-select {
+        width: 4.355556rem;
     }
-    .pedit{
+    .el-form-item {
+        margin-bottom: .177778rem;
+        margin-right: .355556rem;
+    }
+    .el-form-item__label {
+        font-size: .195556rem;
+    }
+    .pedit {
         width: 5.5rem;
-        margin:0.8rem 0 0.8rem 0;
+        margin: 0.8rem 0 0.8rem 0;
         font-size: .28rem;
     }
-    .t{
+    .t {
         text-align: left;
-        .hez{
+        .hez {
             display: inline-block;
-            margin-top: 8px;
-            margin-left: 44px;
-            margin-right: 20px;
-            font-size: 12px;
+            margin-top: .142222rem;
+            margin-left: .782222rem;
+            margin-right: .355556rem;
+            font-size: .213333rem;
         }
-        .bz,.bq{
+        .bz,
+        .bq {
             display: inline-block;
-            margin-top: 8px;
-            margin-left: 56px;
-            margin-right: 20px;
-            font-size: 12px;
+            margin-top: .142222rem;
+            margin-left: .995556rem;
+            margin-right: .355556rem;
+            font-size: .213333rem;
         }
-        .wx{
+        .wx {
             display: inline-block;
-            margin-top: 8px;
-            margin-bottom: 15px;
-            margin-left: 8px;
-            margin-right: 20px;
-            font-size: 12px;
+            margin-top: .142222rem;
+            margin-bottom: .266667rem;
+            margin-left: .142222rem;
+            margin-right: .355556rem;
+            font-size: .213333rem;
         }
     }
-    .bac{
+    .bac {
         width: 100%;
-        height: 10px;
-        background:#eee;
+        height: .177778rem;
+        background: #eee;
     }
-    .up{
-        margin-bottom: 25px;
+    .up {
+        margin-bottom: .444444rem;
     }
-    .yy{
+    .yy {
         text-align: left;
-        margin-left: -260px;
-        font-size: 12px;
+        margin-left: -4.32rem;
+        font-size: .213333rem;
     }
-    .yy1{
+    .yy1 {
         display: inline-block;
-        margin: 16px 0 16px 0;
+        margin: .284444rem 0 .284444rem 0;
         text-align: left;
-        margin-left: -260px;
-        font-size: 12px;
+        margin-left: -4.32rem;
+        font-size: .213333rem;
     }
     .avatar-uploader .el-upload {
-        border: 1px dashed #d9d9d9;
-        border-radius: 6px;
+        border: .017778rem dashed #d9d9d9;
+        border-radius: .106667rem;
         cursor: pointer;
         position: relative;
         overflow: hidden;
-      }
-      .avatar-uploader .el-upload:hover {
+        margin-bottom: .177778rem;
+    }
+    .avatar-uploader .el-upload:hover {
         border-color: #20a0ff;
-      }
-      .avatar-uploader-icon {
-        font-size: 28px;
+    }
+    .avatar-uploader-icon {
+        font-size: .497778rem;
         color: #8c939d;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
+        width: 1.777778rem;
+        height: 1.777778rem;
+        line-height: 1.777778rem;
         text-align: center;
-      }
-      .avatar {
-        width: 100px;
-        height: 100px;
+    }
+    .avatar {
+        width: 1.777778rem;
+        height: 1.777778rem;
         display: block;
-      }
-    .pz{
-        margin-top: 5px;
-        margin-bottom: 10px;
+    }
+    .pz {
+        margin-top: .088889rem;
+        margin-bottom: .177778rem;
         text-align: left;
-        font-size: 13px;
-        span{
-            font-size: 13px;
+        font-size: .231111rem;
+        span {
+            font-size: .231111rem;
             color: #48A4F2;
             transform: rotate(90deg);
             -ms-transform: rotate(90deg);

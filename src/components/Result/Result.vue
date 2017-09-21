@@ -1,20 +1,16 @@
 <template>
 	<div class="Result_container">
 		<p class="Result_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click='goback'>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click='goback'>
 			<span>查询结果</span>
 		</p>
 		<div class="main">
-			<div class="notfound" v-show="show">
-				<img src="../../assets/imgs/enquiries@3x.png" alt="">
-				<p>无结果</p>
-				<mt-button type="primary" class="pedit" @click="addCompany">添加首营企业</mt-button> 
-			</div>
-			<div class="get" v-show="show1">
-				<div class="list">
-					<el-radio class="radio" v-model="radio" :label="a[0]" v-for= "a in a">{{a[0]}}</el-radio>
+			<div class="get">
+				<div class="name">
+					搜索到的公司:
+					<el-radio disabled class="radio" v-model="radio" label="arr.enterprise_name" v-for= "arr in a">{{arr.enterprise_name}}</el-radio>
 				</div>
-				<el-form :label-position="labelPosition" label-width="95px">
+				<el-form :label-position="labelPosition" label-width="1.688889rem">
 				  <el-form-item label="产品名称:">
 				    <el-input v-model="cpmc"></el-input>
 				  </el-form-item>
@@ -32,22 +28,19 @@
 			return {
 				labelPosition:'right',
 				cpmc:'',
-				show:'',
-				show1:'',
 				radio:'',
-				a:[['aa'],['bb']]
+				a:[['aa'],['bb']],
+				id:''
 			}
 		},
 		created(){
-			let a = this.$route.params.data;
-			console.log(a.length)
-			if(a.length == 0){
-				this.show = true;
-				this.show1 =false;
-				console.log(this.show,123)
+			let aa = JSON.parse(sessionStorage.getItem('aaa'));
+			console.log(aa)
+			if(aa.length == 0){
+				this.$router.push({name:'Result3'})
 			}else{
-				this.show = false;
-				this.show1 = true;
+				this.a = aa;
+				this.id = aa[0].id;
 			}
 		},
 		methods: {
@@ -58,13 +51,25 @@
 				this.$router.push({name:'FirstBusiness'})
 			},
 		    search(){
-		    	if(this.radio===''){
-		    		this.$messagebox.alert('请选择公司名称!')
-		    	}else if(this.cpmc===''){
-		    		this.$messagebox.alert('请选择公司名称!')
+		    	if(this.cpmc===''){
+		    		this.$messagebox.alert('请输入产品名称!')
 		    	}else{
-			     	console.log(this.radio)
-			     	this.$router.push({name:'Result1'})
+		    		let obj = {enterprise_id:this.id,product_name:this.cpmc}
+		    		this.$http.post(baseUrl+'/searchProduct',obj).then((res)=>{
+						console.log(res)
+						let data = res.data.data;
+						this.$router.push({name:'Result1',params:{data}})
+		              	if(res.data.retCode === -11){
+		              		
+		              	}else{
+		              		
+		              	}
+			        },(err)=>{
+			             this.$messagebox.alert('操作失败,请稍后再试!');
+			        });
+
+			     	// console.log(this.radio)
+			     	// this.$router.push({name:'Result1'})
 		    	}
 		     }
 		}

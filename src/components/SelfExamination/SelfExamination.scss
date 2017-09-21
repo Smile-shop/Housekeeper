@@ -17,7 +17,7 @@
         background: #48A4F2;
         font-size: .32rem;
         color: #fff;
-        margin-bottom: 8px;
+        margin-bottom: .142222rem;
         span {
             line-height: 1rem;
         }
@@ -38,11 +38,11 @@
     }
     input.companyname {
         background-color: transparent;
-        width: 288px;
+        width: 5.12rem;
         height: .7rem;
         border: none;
         border-bottom: .02rem solid #ccc;
-        padding-left: 49px;
+        padding-left: .871111rem;
         margin-top: .36rem;
         color: #888;
         font-size: .28rem;
@@ -54,33 +54,32 @@
         font-size: .3rem;
         top: 2.68rem;
     }
-    
     label.f {
         position: absolute;
         color: #888;
         font-size: .3rem;
         top: 3.76rem;
-        left:13px;
+        left: .231111rem;
     }
-    .el-select{
-        margin-top: 20px;
-        margin-left: 43px;
-        input{
-            border-radius:20px;
-            width: 229px;
-            height: 36px;
+    .el-select {
+        margin-top: .355556rem;
+        margin-left: .764444rem;
+        input {
+            border-radius: .355556rem;
+            width: 4.071111rem;
+            height: .64rem;
         }
     }
-    .xian{
-        border-top:1px solid #ccc;
-        margin-top: 11px;
-        width: 337px;
+    .xian {
+        border-top: .017778rem solid #ccc;
+        margin-top: .195556rem;
+        width: 5.991111rem;
     }
-    .ctips{
-        margin-top: 50px;
-        font-size: 14px;
+    .ctips {
+        margin-top: .888889rem;
+        font-size: .248889rem;
         color: #48A4F2;
-        line-height: 30px;
+        line-height: .533333rem;
     }
     .checkFormbtn {
         background: #39D1AA;

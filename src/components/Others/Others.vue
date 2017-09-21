@@ -23,7 +23,8 @@
 			}
 		},
 		created(){
-
+			let acc = JSON.stringify({zizhi:this.zizhi})
+				sessionStorage.setItem('zizhi',acc)
 		},
 		methods: {
 			choose1(){

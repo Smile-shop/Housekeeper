@@ -1,1 +1,1 @@
-global.baseUrl = '/api';
+global.baseUrl = '/h1';

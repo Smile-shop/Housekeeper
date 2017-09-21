@@ -1,35 +1,36 @@
-.EditJobInformation_container{
-	max-width: 12.8rem;
-	height: 100%;
-	background-size:100% 100%;
-	text-align: center;
-	.EditJobInformation_text{
-		position: relative;
-		text-align: center;
-		height: 1rem;
-		font-size: .32rem;
-		background:#48A4F2;
-		color:#fff;
-		span{
-			line-height: 1rem;
-		}
-		.goback{
-			display: inline-block;
-			width: .2rem;height: .36rem;
-			position: absolute;
-			top: .3rem;
-			left: .38rem;
-		}
-	}
-	.editjod{
-		position: relative;
-		.qymc {
+.EditJobInformation_container {
+    max-width: 12.8rem;
+    height: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    .EditJobInformation_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        span {
+            line-height: 1rem;
+        }
+        .goback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .3rem;
+            left: .38rem;
+        }
+    }
+    .editjod {
+        position: relative;
+        .qymc {
             position: absolute;
             font-size: .25rem;
             top: 0.36rem;
             margin-left: .2rem;
         }
-		.scompanyname {
+        .scompanyname {
             background-color: rgba(0, 0, 0, 0.04);
             border-radius: .1rem;
             width: 4.18rem;
@@ -57,45 +58,45 @@
             padding-left: 1.5rem;
             font-size: .25rem;
         }
-        p{
-        	.ggg{
-        		margin-right: 281px;
-        		margin-top: 20px;
-        		display: inline-block;
-        	}
+        p {
+            .ggg {
+                margin-right: 4.995556rem;
+                margin-top: .355556rem;
+                display: inline-block;
+            }
         }
-        .qedit{
-			width: 6rem;
-	        margin:0.5rem 0 0.8rem 0;
-	        font-size: .28rem;
-		}
-	}
-	.gwei{
-			position: relative;
-			margin: 22px 1px 5px 1px;
-			padding: 6px;
-			display: inline-block;
-			border-radius:6px;
-			background:#a5a5a5;
-			font-size: 12px;
-			color:#fff;
-			overflow:hidden;
-			.a1{
-				position: absolute;
-				width: 300px;
-				left: -14px;
-				top: -23px;
-				height: 300px;
-				opacity: 0;
-			}
-		}
-		.spanActive{
-			margin: 22px 1px 5px 1px;
-			padding: 6px;
-			display: inline-block;
-			border-radius:6px;
-			background:#26a2ff;
-			font-size: 12px;
-			color:#fff;
-		}
+        .qedit {
+            width: 6rem;
+            margin: 0.5rem 0 0.8rem 0;
+            font-size: .28rem;
+        }
+    }
+    .gwei {
+        position: relative;
+        margin: .391111rem .017778rem .088889rem .017778rem;
+        padding: .106667rem;
+        display: inline-block;
+        border-radius: .106667rem;
+        background: #a5a5a5;
+        font-size: .213333rem;
+        color: #fff;
+        overflow: hidden;
+        .a1 {
+            position: absolute;
+            width: 5.333333rem;
+            left: -.248889rem;
+            top: -.408889rem;
+            height: 5.333333rem;
+            opacity: 0;
+        }
+    }
+    .spanActive {
+        margin: .391111rem .017778rem .088889rem .017778rem;
+        padding: .106667rem;
+        display: inline-block;
+        border-radius: .106667rem;
+        background: #26a2ff;
+        font-size: .213333rem;
+        color: #fff;
+    }
 }

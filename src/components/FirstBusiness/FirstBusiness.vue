@@ -1,29 +1,28 @@
 <template>
 	<div class="FirstBusiness_container">
 		<p class="FirstBusiness_text">
-			<img src="../../assets/imgs/arrow (1).png" class="goback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="goback" @click=goback>
 			<span>首营企业与产品自检</span>
 		</p>
 		<div class="main">
 			<p class="title">供货企业合规信息登记表</p>
-			<el-form :label-position="labelPosition" label-width="95px">
-			  <el-form-item label="许可查验人:">
-			    <el-input v-model="xkcyr"></el-input>
+			<el-form :label-position="labelPosition" label-width="1.688889rem">
+			  <el-form-item label="企业名称:">
+			    <el-input v-model="qymc"></el-input>
 			  </el-form-item>
-			  <el-form-item label="许可查验日期:">
-			    <el-input v-model="xkcydate"></el-input>
+			  <span class="lx">企业类型:</span>
+			  <el-select v-model="qylx" placeholder="请选择企业类型">
+			      <el-option label="生产企业" value="1" ></el-option>
+			      <el-option label="经营企业" value="2" ></el-option>
+			  </el-select>
+			  <el-form-item label="组织机构代码:">
+			    <el-input v-model="zzjgdm"></el-input>
 			  </el-form-item>
-			  <el-form-item label="ANO:">
-			    <el-input v-model="ANO"></el-input>
-			  </el-form-item>
-			  <el-form-item label="类别:">
-			    <el-input v-model="lb"></el-input>
-			  </el-form-item>
-			  <el-form-item label="供货企业名称:">
-			    <el-input v-model="ghqymc"></el-input>
+			  <el-form-item label="卫生许可证号:">
+			    <el-input v-model="wsxkzh"></el-input>
 			  </el-form-item>
 			</el-form>
-			<span class="yy">营业执照:</span>
+			<span class="yy">组织机构代码证(社会信用代码证）复印件（当年年检）:</span>
 			<el-upload
 			  class="avatar-uploader"
 			  action="https://jsonplaceholder.typicode.com/posts/"
@@ -43,6 +42,11 @@
 			  <img v-if="imageUrl1" :src="imageUrl1" class="avatar">
 			  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 			</el-upload>
+			<el-form :label-position="labelPosition" label-width="1.688889rem">
+			  <el-form-item label="检验结论:">
+			    <el-input v-model="jyjl"></el-input>
+			  </el-form-item>
+			</el-form>
 			<mt-button type="primary" class="search" @click = "tijiao">{{text}}</mt-button>
 		</div>
 	</div>
@@ -54,39 +58,53 @@
 		data(){
 			return {
 				labelPosition:'right',
-				// FirstBusiness:[['许可查验人:',xkcyr:''],
-		  //       		       ['许可查验日期:','xkcydate'],
-		  //       		       ['ANO:','ANO'],
-		  //       		       ['类别:','lb'],
-		  //       		       ['供货企业名称:','ghqymc']],
-		        xkcyr:'',
-		        xkcydate:'',
-		        ANO:'',
-		        lb:'',
-		        ghqymc:'',
+		        qymc:'',
+		        qylx:'',
+		        zzjgdm:'',
+		        wsxkzh:'',
         		file1:'',
         		file2:'',
         		imageUrl: '',
         		imageUrl1: '',
         		data:'',
+        		jyjl:'',
         		text:'提交'
 			}
 		},
 		created(){
-			if (this.data !== '') {
-				this.text = '添加产品';
-			}
+			
 		},
 		methods: {
 			goback(){
 				this.$router.go(-1)
 			},
 			tijiao(){
-				if (this.data !== '') {
-					this.$router.push({name:'Incomplete'})
-				}else if(this.data === ''){
-					//发送提交请求
-				}
+				let formData = new FormData();
+	            formData.append('enterprise_name', this.qymc);
+	            formData.append('enterprise_type', this.qylx);
+	            formData.append('enterprise_scid', this.zzjgdm);
+	            formData.append('health_permit', this.wsxkzh);
+	            formData.append('conclusion', this.jyjl);
+	            formData.append('enterprise_scid_img', this.file1);
+	            formData.append('health_permit_img', this.file2);
+	 			
+	            let config = {
+	              headers: {
+	                'Content-Type': 'multipart/form-data'
+	              }
+	            }
+	            this.$http.post(baseUrl+'/addSupplier',formData,config).then((res)=>{
+		              	console.log(res)
+		              	if(res.data.retCode === 0){
+		              		this.$messagebox.alert('操作成功!').then(action => {
+		              			this.$router.push({name:'Result2'})
+ 							});
+		              	}else{
+		              		this.$messagebox.alert(res.data.retMessage);
+		              	}
+			          },(err)=>{
+			              this.$messagebox.alert("操作失败!");
+			          });
 			},
 			handleRemove(file) {
 	        	console.log(file);

@@ -35,6 +35,8 @@ import Sale from '../components/Sale/Sale.vue'
 import FirstSelf from '../components/FirstSelf/FirstSelf.vue'
 import Result from '../components/Result/Result.vue'
 import Result1 from '../components/Result1/Result1.vue'
+import Result2 from '../components/Result2/Result2.vue'
+import Result3 from '../components/Result3/Result3.vue'
 
 
 Vue.use(VueRouter)
@@ -173,6 +175,14 @@ const router = new VueRouter({
         path:'/Result1',
         name:'Result1',
         component:Result1,
+    },{
+        path:'/Result2',
+        name:'Result2',
+        component:Result2,
+    },{
+        path:'/Result3',
+        name:'Result3',
+        component:Result3,
     },]
 })
 
