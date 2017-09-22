@@ -8,7 +8,7 @@
 			<div class="get">
 				<div class="name">
 					搜索到的公司:
-					<el-radio disabled class="radio" v-model="radio" label="arr.enterprise_name" v-for= "arr in a">{{arr.enterprise_name}}</el-radio>
+					<el-radio class="radio" v-model="radio" label="1" v-for= "arr in a">{{arr.enterprise_name}}</el-radio>
 				</div>
 				<el-form :label-position="labelPosition" label-width="1.688889rem">
 				  <el-form-item label="产品名称:">
@@ -28,7 +28,7 @@
 			return {
 				labelPosition:'right',
 				cpmc:'',
-				radio:'',
+				radio:'1',
 				a:[['aa'],['bb']],
 				id:''
 			}

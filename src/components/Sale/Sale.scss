@@ -47,18 +47,50 @@
         .el-textarea__inner {
             height: 3.555556rem;
         }
-        .el-input.is-disabled .el-input__inner {
+        .el-input__inner {
             background-color: #fff;
-           	border: 1px solid #bfcbd9;
-            color: #000;
+            border: 1px solid #bfcbd9;
+            color: rgb(72, 87, 106);
             cursor: not-allowed;
+        }
+        input:disabled{
+            border: .017778rem solid #bfcbd9;
+            background-color:#fff;
+            color:rgb(72, 87, 106);
+            -webkit-text-fill-color: rgb(72, 87, 106);
+            -webkit-opacity: 1;
         }
         .el-select {
             input {
                 border-radius: .088889rem;
                 width: 4.355556rem;
                 height: .64rem;
+                color: rgb(72, 87, 106);
             }
+            input:-ms-input-placeholder {
+                color: rgb(72, 87, 106);
+                font-size: .231111rem;
+                text-align: center;
+            }
+            /* Internet Explorer 10+ */
+            input::-webkit-input-placeholder {
+                color: rgb(72, 87, 106);
+                font-size: .231111rem;
+                text-align: center;
+            }
+            /* WebKit browsers */
+            input::-moz-placeholder {
+                color: rgb(72, 87, 106);
+                font-size: .231111rem;
+                text-align: center;
+            }
+            /* Mozilla Firefox 4 to 18 */
+            input:-moz-placeholder {
+                color: rgb(72, 87, 106);
+                font-size: .231111rem;
+                text-align: center;
+            }
+            /* Mozilla Firefox 19+ */
         }
     }
 }

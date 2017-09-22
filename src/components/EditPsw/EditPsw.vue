@@ -1,13 +1,13 @@
 <template>
 	<div class="EditPsw_container">
 		<p class="EditPsw_text">
-			<img src="../../assets/imgs/arrow (3).png" class="EditPswback" @click=goback>
+			<img src="../../assets/imgs/arrow (3).png" class="EditPswback" @click="goback">
 			<span>修改密码</span>
 		</p>
 		<label for="companyname1" class="q">原密码：</label>
-		<input type="text" id="companyname1" placeholder="" class="companyname" v-model="oldPsw"><br>
+		<input type="password" id="companyname1" placeholder="" class="companyname" v-model="oldPsw"><br>
 		<label for="companyname2" class="j">新密码：</label>
-		<input type="text" id="companyname2" placeholder="" class="companyname" v-model="newPsw"><br>
+		<input type="password" id="companyname2" placeholder="" class="companyname" v-model="newPsw"><br>
 		<mt-button type="primary" class="pedit" @click="EditPsw">提交</mt-button>
 	</div>
 </template>
@@ -26,6 +26,13 @@
 		},
 		methods:{
 			EditPsw(){
+				if(this.oldPsw === ''){
+		    		this.$messagebox.alert("原密码不能为空!");
+		    		return false;
+		    	}else if(this.newPsw === ''){
+		    		this.$messagebox.alert("新密码不能为空!");
+		    		return false;
+		    	}
 					let obj = {oldPwd:this.oldPsw,newPwd:this.newPsw}
 					this.$http.post(baseUrl+'/changePassword',obj).then((res)=>{
 		              	console.log(res)

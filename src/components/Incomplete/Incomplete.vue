@@ -36,7 +36,7 @@
 			}
 		},
 		created(){
-			this.data = this.$route.params.sjx1;
+			this.data = this.$route.params.data;
 			// console.log(this.$route.params);
 			// console.log(this.data)
 		},

@@ -47,7 +47,7 @@
 		      </thead>
 		      <tbody>
 		        <tr v-for = "(arr,index) in data">
-		          <td>{{arr.user_name}}</td>
+		          <td>{{arr.realname}}</td>
 		          <td>{{arr.mobile}}</td>
 		          <td><span v-for= 'arr2 in arr.role_ids' class= "s gwei">{{arr2}}</span></td>
 		          <td>
@@ -88,7 +88,7 @@
 		},
 		methods: {
 			goback(){
-				this.$router.go(-1)
+				this.$router.push({name:'housekeeper'})
 			},
 			dz(){
 				this.dz1 = !this.dz1
@@ -122,7 +122,8 @@
 		     	this.$http.post(baseUrl+'/searchUser',obj).then((res)=>{
 	              	// console.log(res)
 	              	if(res.data.retCode === 0){
-	              		this.data = res.data.data
+	              		this.data = res.data.data;
+	              		this.gangwei = '';
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}

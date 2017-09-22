@@ -140,7 +140,7 @@
 				let index = this.productName.split('-')[1];
 				this.productName1 = this.productName.split('-')[0];
 				this.scph = this.product[index].batch_id;
-				this.yxq = this.product[index].expire_date;
+				this.yxq = this.product[index].expire_date.split(" ")[0];
 				this.purchase_id = this.product[index].id;
 			},
 		    sub(){

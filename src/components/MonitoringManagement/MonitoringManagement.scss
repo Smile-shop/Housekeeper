@@ -58,6 +58,36 @@
                             padding-left: .266667rem;
                             color:#000;
                         }
+                        input:disabled{
+                            background-color:#fff;
+                            color:rgb(72, 87, 106);
+                            -webkit-text-fill-color: rgb(72, 87, 106);
+                            -webkit-opacity: 1;
+                        }
+                        input:-ms-input-placeholder {
+                            color: rgb(72, 87, 106);
+                            font-size: .231111rem;
+                            text-align: center;
+                        }
+                        /* Internet Explorer 10+ */
+                        input::-webkit-input-placeholder {
+                            color: rgb(72, 87, 106);
+                            font-size: .231111rem;
+                            text-align: center;
+                        }
+                        /* WebKit browsers */
+                        input::-moz-placeholder {
+                            color: rgb(72, 87, 106);
+                            font-size: .231111rem;
+                            text-align: center;
+                        }
+                        /* Mozilla Firefox 4 to 18 */
+                        input:-moz-placeholder {
+                            color: rgb(72, 87, 106);
+                            font-size: .231111rem;
+                            text-align: center;
+                        }
+                        /* Mozilla Firefox 19+ */
                     }
                     span {
                         color: red;

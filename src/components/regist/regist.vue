@@ -25,10 +25,10 @@
 		   <span style="white-space:pre">   </span><span class="line"></span>  
 		</div>
 		<a href="javascript:;" class="y">点击上传营业执照
-			<input id="fileId1" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange"/>
+			<input id="fileId1" type="file" capture="camera" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange"/>
 		</a>
 		<a href="javascript:;" class="w">点击上传卫生许可证
-			<input id="fileId2" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange1"/>
+			<input id="fileId2" type="file" capture="camera" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange1"/>
 		</a>
 		<mt-button type="primary" class="registbtn" @click="regist">企业注册</mt-button>
 	</div>

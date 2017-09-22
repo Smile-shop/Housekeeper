@@ -17,7 +17,7 @@
 			<textarea id="dzzname" class="dzzname" :disabled="true" v-model = "address"></textarea><br>
 			<label for="zdpzrname" class="zdpzr">制度批准人：</label>
 			<input type="text" id="zdpzrname" class="zdpzrname" :disabled="true" v-model= "legal_person">
-			<mt-button type="primary" class="yijianbtn" @click="yijian">一键制度</mt-button>
+			<mt-button type="primary" class="yijianbtn" @click="yijian">{{text}}</mt-button>
 		</div>
 	</div>
 </template>
@@ -33,7 +33,8 @@
 				quality_controller:'',
 				address:'',
 				data:'',
-				id:''
+				id:'',
+				text:''
 			}
 		},
 		created(){
@@ -48,6 +49,11 @@
 						this.address = res.data.data.address;
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+	              	if (res.data.data.status === 2) {
+	              		this.text = '查看制度'
+	              	}else if(res.data.data.status === 1){
+	              		this.text = '一键制度'
 	              	}
 		          },(err)=>{
 		              console.log('failed');
@@ -69,6 +75,7 @@
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
+	              	
 		          },(err)=>{
 		              console.log('failed');
 		              this.$messagebox.alert("获取信息错误!");

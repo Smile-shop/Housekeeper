@@ -10,8 +10,36 @@ import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
 import './global'
 
+
+// import {
+  
+//   Input,
+//   Radio,
+//   Select,
+//   Option,
+//   Button,
+//   Icon,
+//   Table,
+//   TableColumn,
+//   Upload,
+//   Form,
+//   FormItem,
+// } from 'element-ui'
+
+// Vue.use(Input)
+// Vue.use(Radio)
+// Vue.use(Select)
+// Vue.use(Option)
+// Vue.use(Button)
+// Vue.use(Upload)
+// Vue.use(Table)
+// Vue.use(Form)
+// Vue.use(FormItem)
+// Vue.use(TableColumn)
+
 Vue.use(Mint);
-// Vue.component(DatetimePicker.name, DatetimePicker);
+
+
 Vue.prototype.$http = axios;
 Vue.use(ElementUI);
 Vue.config.productionTip = false;

@@ -19,7 +19,7 @@
 				    </el-select><br>
 				  </el-form-item>
 				  <el-form-item label="批准文号:">
-				    <el-input v-model="wenhao"></el-input>
+				    <el-input v-model="wenhao" :disabled="true"></el-input>
 				  </el-form-item>
 				</el-form>
 			</div>
@@ -28,23 +28,23 @@
 				<el-form :label-position="labelPosition" label-width="95px">
 				  
 				  <el-form-item label="产品名称*:">
-				    <el-input v-model="cpmc"></el-input>
+				    <el-input v-model="cpmc" :disabled="true"></el-input>
 				  </el-form-item>
 				 
 				  <el-form-item label="供货企业*:">
-				    <el-input v-model="ghqy"></el-input>
+				    <el-input v-model="ghqy" :disabled="true"></el-input>
 				  </el-form-item>
 				  <el-form-item label="批准文号*:">
-				    <el-input v-model="pzwh"></el-input>
+				    <el-input v-model="pzwh" :disabled="true"></el-input>
 				  </el-form-item>
 				  <el-form-item label="生产厂商*:">
-				    <el-input v-model="sccs"></el-input>
+				    <el-input v-model="sccs" :disabled="true"></el-input>
 				  </el-form-item>
 				  <el-form-item label="生产许可证号*:">
-				    <el-input v-model="scxkzh"></el-input>
+				    <el-input v-model="scxkzh" :disabled="true"></el-input>
 				  </el-form-item>
 				  <el-form-item label="规格:">
-				    <el-input v-model="gg"></el-input>
+				    <el-input v-model="gg" :disabled="true"></el-input>
 				  </el-form-item>
 				  <el-form-item label="数量:">
 				    <el-input v-model="sl"></el-input>
@@ -244,6 +244,7 @@
 				this.sccs = this.product[index].manufacturer;
 				this.scxkzh = this.product[index].produce_permit;
 				this.productId = this.product[index].id;
+				this.gg = this.product[index].specification
 				console.log(477974)
 			},
 			getpic(file) {

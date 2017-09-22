@@ -674,147 +674,15 @@
 				lb1:'',
 				ghqymc1:'',
 				a:{
-					cpmc:'',
-					bapzh1:'',
-					jybg1:'',
-					qymc1:'',
-					qydm1:'',
-					scxkzh1:'',
-					lx1:'',
-					gg1:'',
-					cctj1:'',
-					qt1:'',
-					radio1:'',
-					radio2:'',
-					radio3:'',
-					radio4:'',
-					jyjl:'',
-					file1:'',
-					file2:'',
-					file3:'',
-					file4:'',
-					file5:'',
-					file6:'',
-					file7:'',
-					file8:'',
-					file9:'',
-					imageUrl1:'',
-					imageUrl2:'',
-					imageUrl3:'',
-					imageUrl4:'',
-					imageUrl5:'',
-					imageUrl6:'',
-					imageUrl7:'',
-					imageUrl8:'',
+					cpmc:'',bapzh1:'',jybg1:'',qymc1:'',qydm1:'',scxkzh1:'',lx1:'',gg1:'',cctj1:'',qt1:'',radio1:'',radio2:'',radio3:'',radio4:'',jyjl:'',file1:'',file2:'',file3:'',file4:'',file5:'',file6:'',file7:'',file8:'',file9:'',imageUrl1:'',imageUrl2:'',imageUrl3:'',imageUrl4:'',imageUrl5:'',imageUrl6:'',imageUrl7:'',imageUrl8:'',
 				},
 				b:{
-					cpmc:'',
-					bapzh1:'',
-					bapzh2:'',
-					jybg2:'',
-					qydm2:'',
-					zdph2:'',
-					scgj1:'',
-					qymc1:'',
-					scpp1:'',
-					lx1:'',
-					gg1:'',
-					cctj1:'',
-					qt1:'',
-					radio1:'',
-					radio2:'',
-					radio3:'',
-					radio4:'',
-					jyjl:'',
-					file1:'',
-					file2:'',
-					file3:'',
-					file4:'',
-					file5:'',
-					file6:'',
-					file7:'',
-					file8:'',
-					file9:'',
-					imageUrl1:'',
-					imageUrl2:'',
-					imageUrl3:'',
-					imageUrl4:'',
-					imageUrl5:'',
-					imageUrl6:'',
-					imageUrl7:'',
-					imageUrl8:'',
+					cpmc:'',bapzh1:'',bapzh2:'',jybg2:'',qydm2:'',zdph2:'',scgj1:'',qymc1:'',scpp1:'',lx1:'',gg1:'',cctj1:'',qt1:'',radio1:'',radio2:'',radio3:'',radio4:'',jyjl:'',file1:'',file2:'',file3:'',file4:'',file5:'',file6:'',file7:'',file8:'',file9:'',imageUrl1:'',imageUrl2:'',imageUrl3:'',imageUrl4:'',imageUrl5:'',imageUrl6:'',imageUrl7:'',imageUrl8:'',
 				},
 				c:{
-					cpmc:'',
-					zcpzh1:'',
-					jybg1:'',
-					qymc1:'',
-					qydm1:'',
-					scxkzh1:'',
-					lx1:'',
-					gg1:'',
-					cctj1:'',
-					qt1:'',
-					radio1:'',
-					radio2:'',
-					radio3:'',
-					radio4:'',
-					jyjl:'',
-					file1:'',
-					file2:'',
-					file3:'',
-					file4:'',
-					file5:'',
-					file6:'',
-					file7:'',
-					file8:'',
-					file9:'',
-					imageUrl1:'',
-					imageUrl2:'',
-					imageUrl3:'',
-					imageUrl4:'',
-					imageUrl5:'',
-					imageUrl6:'',
-					imageUrl7:'',
-					imageUrl8:'',
+					cpmc:'',zcpzh1:'',jybg1:'',qymc1:'',qydm1:'',scxkzh1:'',lx1:'',gg1:'',cctj1:'',qt1:'',radio1:'',radio2:'',radio3:'',radio4:'',jyjl:'',file1:'',file2:'',file3:'',file4:'',file5:'',file6:'',file7:'',file8:'',file9:'',imageUrl1:'',imageUrl2:'',imageUrl3:'',imageUrl4:'',imageUrl5:'',imageUrl6:'',imageUrl7:'',imageUrl8:'',
 				},
-				d:{
-					cpmc:'',
-					bapzh1:'',
-					jybg1:'',
-					bapzh2:'',
-					jybg2:'',
-					qydm2:'',
-					zdph2:'',
-					scgj1:'',
-					qymc1:'',
-					scpp1:'',
-					lx1:'',
-					gg1:'',
-					cctj1:'',
-					qt1:'',
-					radio1:'',
-					radio2:'',
-					radio3:'',
-					radio4:'',
-					jyjl:'',
-					file1:'',
-					file2:'',
-					file3:'',
-					file4:'',
-					file5:'',
-					file6:'',
-					file7:'',
-					file8:'',
-					file9:'',
-					imageUrl1:'',
-					imageUrl2:'',
-					imageUrl3:'',
-					imageUrl4:'',
-					imageUrl5:'',
-					imageUrl6:'',
-					imageUrl7:'',
-					imageUrl8:'',
+				d:{cpmc:'',bapzh1:'',jybg1:'',bapzh2:'',jybg2:'',qydm2:'',zdph2:'',scgj1:'',qymc1:'',scpp1:'',lx1:'',gg1:'',cctj1:'',qt1:'',radio1:'',radio2:'',radio3:'',radio4:'',jyjl:'',file1:'',file2:'',file3:'',file4:'',file5:'',file6:'',file7:'',file8:'',file9:'',imageUrl1:'',imageUrl2:'',imageUrl3:'',imageUrl4:'',imageUrl5:'',imageUrl6:'',imageUrl7:'',imageUrl8:'',
 				},
 			}
 		},
@@ -868,14 +736,14 @@
 	            this.$http.post(baseUrl+'/addProduct',formData,config).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('操作成功!点击确定按钮跳回主页.').then(action => {
+		              		this.$messagebox.alert('操作成功！点击确定按钮跳回主页。').then(action => {
 		              			this.$router.push({name:'index'})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败!");
+			              this.$messagebox.alert("操作失败！");
 			          });
 			},
 			jinkouteshu(){
@@ -916,14 +784,14 @@
 	            this.$http.post(baseUrl+'/addProduct',formData,config).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('操作成功!点击确定按钮跳回主页.').then(action => {
+		              		this.$messagebox.alert('操作成功！点击确定按钮跳回主页。').then(action => {
 		              			this.$router.push({name:'index'})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败!");
+			              this.$messagebox.alert("操作失败！");
 			          });
 			},
 			guochan(){
@@ -961,14 +829,14 @@
 	            this.$http.post(baseUrl+'/addProduct',formData,config).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('操作成功!点击确定按钮跳回主页.').then(action => {
+		              		this.$messagebox.alert('操作成功！点击确定按钮跳回主页。').then(action => {
 		              			this.$router.push({name:'index'})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败!");
+			              this.$messagebox.alert("操作失败！");
 			          });				
 			},
 			guochanteshu(){
@@ -1006,14 +874,14 @@
 	            this.$http.post(baseUrl+'/addProduct',formData,config).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('操作成功!点击确定按钮跳回主页.').then(action => {
+		              		this.$messagebox.alert('操作成功！点击确定按钮跳回主页。').then(action => {
 		              			this.$router.push({name:'index'})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败!");
+			              this.$messagebox.alert("操作失败！");
 			          });
 			},
 			goback(){

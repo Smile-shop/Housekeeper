@@ -47,31 +47,32 @@
                     position: relative;
                     img {
                         display: inline-block;
-                        width: .444444rem;
+                        height: .444444rem;
+                        margin: 0.124444rem;
                     }
                     .count1 {
                         font-size: .213333rem;
                         color: #fff;
                         position: absolute;
                         z-index: 10;
-                        left: .284444rem;
-                        top: .284444rem;
+                        left: 0.764444rem;
+                        top:  0.355556rem;
                     }
                     .count2 {
                         font-size: .213333rem;
                         color: #fff;
                         position: absolute;
                         z-index: 10;
-                        left: 1.28rem;
-                        top: .284444rem;
+                        left: 1.546667rem;
+                        top: 0.355556rem;
                     }
                     .count3 {
                         font-size: .213333rem;
                         color: #fff;
                         position: absolute;
                         z-index: 10;
-                        left: 2.293333rem;
-                        top: .284444rem;
+                        left: 2.328889rem;
+                        top:  0.355556rem;
                     }
                 }
             }

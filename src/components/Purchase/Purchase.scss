@@ -39,6 +39,7 @@
                     border-radius: .088889rem;
                     width: 4.355556rem;
                     height: 0.64rem;
+                    color:rgb(72, 87, 106);
                 }
             }
             .el-form-item__label {
@@ -50,10 +51,23 @@
                 height: .568889rem;
             }
             .el-input__inner {
-                height: 36px;
+                height: 0.64rem;
             }
             .el-form {
                 margin-top: .177778rem;
+            }
+            .el-input__inner {
+                background-color: #fff;
+                border: 1px solid #bfcbd9;
+                color: rgb(72, 87, 106);
+                cursor: not-allowed;
+            }
+            input:disabled{
+                border: .017778rem solid #bfcbd9;
+                background-color:#fff;
+                color:rgb(72, 87, 106);
+                -webkit-text-fill-color: rgb(72, 87, 106);
+                -webkit-opacity: 1;
             }
             input:-ms-input-placeholder {
                 color: rgb(72, 87, 106);
@@ -139,11 +153,18 @@
                     font-size: .177778rem;
                 }
             }
-            .el-input.is-disabled .el-input__inner {
+            .el-input__inner {
                 background-color: #fff;
                	border: 1px solid #bfcbd9;
-                color: #000;
+                color: rgb(72, 87, 106);
                 cursor: not-allowed;
+            }
+            input:disabled{
+                border: .017778rem solid #bfcbd9;
+                background-color:#fff;
+                color:rgb(72, 87, 106);
+                -webkit-text-fill-color: rgb(72, 87, 106);
+                -webkit-opacity: 1;
             }
             .el-form-item {
                 margin-bottom: .177778rem;

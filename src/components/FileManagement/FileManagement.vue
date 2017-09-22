@@ -7,14 +7,16 @@
 		<div class="main">
 			<div class="dsearch">
 				<!-- <input type="text" class="fromname" placeholder="输入表单、台账、档案名称" > -->
-				<el-select v-model="fileName" placeholder="请选择供货企业"  @change="getFile">
+				<el-select v-model="fileName" placeholder="请选择档案类型"  @change="getFile">
 			      <el-option v-for="(arr,index) in file" :label="arr" :value="arr+'-'+index"></el-option>
 			    </el-select>
 				<i class="time" @click="openPicker">
-					<input type="text" class="timestart" placeholder="开始时间" v-model="stime">
+					<el-input v-model="stime" placeholder="开始时间" class="timestart" :disabled="true"></el-input>
+					<!-- <input type="text" class="timestart" placeholder="开始时间" v-model="stime" disabled="disabled"> -->
 				</i>
 				<i class="time" @click="openPicker1">
-					<input type="text" class="timeend" placeholder="结束时间" v-model="etime">
+					<el-input v-model="etime" placeholder="结束时间" class="timeend" :disabled="true"></el-input>
+					<!-- <input type="text" class="timeend" placeholder="结束时间" v-model="etime" disabled="disabled"> -->
 				</i>
 				<mt-button type="primary" class="year" @click="preyear">上一年</mt-button>
 				<mt-button type="primary" class="year" @click="premonth">上个月</mt-button>
@@ -109,15 +111,24 @@
 				this.etime = this.pickerValue1;
 		    },
 		    getFile(){
-				this.id = this.fileName.split('-')[1]+1;
+				this.id = Number(this.fileName.split('-')[1])+1;
 				
 			},
 		    search(){
+		    	if(this.id === ''){
+		    		this.$messagebox.alert("档案类型不能为空!");
+		    		return false;
+		    	}else if(this.stime === ''||this.etime === ''){
+		    		this.$messagebox.alert("时间不能为空!");
+		    		return false;
+		    	}
 		     	let obj = {id:this.id,stime:this.stime,etime:this.etime}
 				this.$http.post(baseUrl+'/searchFile',obj).then((res)=>{
 					console.log(res)
+	              	this.fileName = '';
+	              	this.stime = '';
+	              	this.etime = '';
 	              	if(res.data.retCode === 0){
-	              		
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
@@ -126,11 +137,16 @@
 		          });
 		     },
 		     preyear(){
+		     	if(this.id === ''){
+		    		this.$messagebox.alert("档案类型不能为空!");
+		    		return false;
+		    	}
 		     	let obj = {id:this.id}
 				this.$http.post(baseUrl+'/searchFileLastYear',obj).then((res)=>{
 					console.log(res)
+	              	this.fileName = '';
 	              	if(res.data.retCode === 0){
-	              		
+
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
@@ -139,11 +155,15 @@
 		          });
 		     },
 		     premonth(){
+		     	if(this.id === ''){
+		    		this.$messagebox.alert("档案类型不能为空!");
+		    		return false;
+		    	}
 		     	let obj = {id:this.id}
 				this.$http.post(baseUrl+'/searchFileLastMonth',obj).then((res)=>{
 					console.log(res)
+	              	this.fileName = '';
 	              	if(res.data.retCode === 0){
-	              		
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}

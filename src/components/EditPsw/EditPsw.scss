@@ -3,6 +3,7 @@
     height: 100%;
     overflow: hidden;
     text-align: center;
+    position: relative;
     .resigt-background {
         width: 100%;
         height: 100%;
@@ -31,10 +32,11 @@
         }
     }
     label.q {
-        position: fixed;
+        position: absolute;
         color: #888;
         font-size: .25rem;
-        top: 1.65rem;
+        top: 1.67rem;
+        left: 0.231111rem;
     }
     input.companyname {
         background-color: transparent;
@@ -53,12 +55,13 @@
         color: #888;
         font-size: .25rem;
         top: 2.74rem;
+        left: 0.231111rem;
     }
     label.f {
         position: absolute;
         color: #888;
         font-size: .25rem;
-        top: 3.76rem;
+        top: 3.768rem;
         left: .231111rem;
     }
     .pedit {
