@@ -45,10 +45,10 @@
 		    	<router-link to="Sale">	
 		    		<li><img src="../../assets/imgs/Salesmanagement (3).png" height="91" width="68" alt="" class="indeximg9"><br>销售管理</li>
 		    	</router-link>
-		    	<router-link to="">
+		    	<router-link to="QualityTracking">
 		    		<li><img src="../../assets/imgs/Qualitytracking (3).png" height="91" width="68" alt="" class="indeximg10"><br>质量追踪</li>
 		    	</router-link>
-		    	<router-link to="">
+		    	<router-link to="TraceabilityFile">
 		    		<li><img src="../../assets/imgs/file-19@3x.png" height="91" width="68" alt="" class="indeximg14"><br>追溯档案</li>
 		    	</router-link>
 		    	<router-link to="">	

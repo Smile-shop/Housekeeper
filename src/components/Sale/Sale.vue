@@ -32,7 +32,7 @@
 				    <el-input v-model="xsry"></el-input>
 				  </el-form-item>
 				   <el-form-item label="产品名称:">
-					    <el-select v-model="productName" placeholder="请选择供货企业"  @change="getProduct">
+					    <el-select v-model="productName" placeholder="请选择产品名称"  @change="getProduct">
 					      <el-option v-for="(arr,index) in product" :label="arr.product_name" :value="arr.product_name+'-'+index"></el-option>
 					    </el-select><br>
 				  </el-form-item>
@@ -174,6 +174,7 @@
 	              			this.gg = '';
 	              			this.scph = '';
 	              			this.yxq = '';
+	              			this.productName = '';
 	              		})
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);

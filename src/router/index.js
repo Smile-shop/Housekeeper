@@ -37,6 +37,13 @@ import Result from '../components/Result/Result.vue'
 import Result1 from '../components/Result1/Result1.vue'
 import Result2 from '../components/Result2/Result2.vue'
 import Result3 from '../components/Result3/Result3.vue'
+import QualityTracking from '../components/QualityTracking/QualityTracking.vue'
+import TraceabilityFile from '../components/TraceabilityFile/TraceabilityFile.vue'
+import Recall from '../components/Recall/Recall.vue'
+import RecallInformation from '../components/RecallInformation/RecallInformation.vue'
+import RecallNote from '../components/RecallNote/RecallNote.vue'
+
+
 
 
 Vue.use(VueRouter)
@@ -183,6 +190,26 @@ const router = new VueRouter({
         path:'/Result3',
         name:'Result3',
         component:Result3,
+    },{
+        path:'/QualityTracking',
+        name:'QualityTracking',
+        component:QualityTracking,
+    },{
+        path:'/TraceabilityFile',
+        name:'TraceabilityFile',
+        component:TraceabilityFile,
+    },{
+        path:'/Recall',
+        name:'Recall',
+        component:Recall,
+    },{
+        path:'/RecallInformation',
+        name:'RecallInformation',
+        component:RecallInformation,
+    },{
+        path:'/RecallNote',
+        name:'RecallNote',
+        component:RecallNote,
     },]
 })
 

@@ -23,114 +23,155 @@
         }
     }
     .main {
-        .qymc {
-            position: absolute;
-            font-size: .25rem;
-            top: 1.37rem;
-            margin-left: .2rem;
-        }
-        .scompanyname {
-            background-color: rgba(0, 0, 0, 0.04);
-            border-radius: .1rem;
-            width: 4.48rem;
-            height: .66rem;
-            margin-top: .2rem;
-            border: none;
-            border: .02rem solid rgb(220, 220, 220);
-            padding-left: 1.68rem;
-            font-size: .25rem;
-        }
-        .jyxkzh {
-            position: absolute;
-            font-size: .25rem;
-            top: 2.27rem;
-            margin-left: .2rem;
-        }
-        .jyxkzhname {
-            background-color: rgba(0, 0, 0, 0.04);
-            border-radius: .1rem;
-            width: 3.96rem;
-            height: .66rem;
-            margin-top: .2rem;
-            border: none;
-            border: .02rem solid rgb(220, 220, 220);
-            padding-left: 2.2rem;
-            font-size: .25rem;
-        }
-        .sfr {
-            position: absolute;
-            font-size: .25rem;
-            top: 3.19rem;
-            margin-left: .2rem;
-        }
-        .sfrname {
-            background-color: rgba(0, 0, 0, 0.04);
-            border-radius: .1rem;
-            width: 5.02rem;
-            height: .66rem;
-            margin-top: .2rem;
-            border: none;
-            border: .02rem solid rgb(220, 220, 220);
-            padding-left: 1.12rem;
-            font-size: .25rem;
-        }
-        .zlfzr {
-            position: absolute;
-            font-size: .25rem;
-            top: 4.09rem;
-            margin-left: .2rem;
-        }
-        .zlfzrname {
-            background-color: rgba(0, 0, 0, 0.04);
-            border-radius: .1rem;
-            width: 4.22rem;
-            height: .66rem;
-            margin-top: .2rem;
-            border: none;
-            border: .02rem solid rgb(220, 220, 220);
-            padding-left: 1.94rem;
-            font-size: .25rem;
-        }
-        .zdpzr {
-            position: absolute;
-            font-size: .25rem;
-            top: 6.27rem;
-            margin-left: .2rem;
-        }
-        .zdpzrname {
-            background-color: rgba(0, 0, 0, 0.04);
-            border-radius: .1rem;
-            width: 4.22rem;
-            height: .66rem;
-            margin-top: .2rem;
-            border: none;
-            border: .02rem solid rgb(220, 220, 220);
-            padding-left: 1.94rem;
-            font-size: .25rem;
-        }
-        .dzz {
-            position: absolute;
-            font-size: .25rem;
-            top: 4.88rem;
-            margin-left: .2rem;
-        }
-        .dzzname {
-            background-color: rgba(0, 0, 0, 0.04);
-            border-radius: .1rem;
-            width: 5.02rem;
-            height: .9rem;
-            margin-top: .2rem;
-            border: none;
-            border: .02rem solid rgb(220, 220, 220);
-            padding-left: 1.12rem;
-            font-size: .25rem;
-            padding-top: .06rem;
-            font-family: 'Microsoft YaHei', "Comic Sans MS", "幼圆", "黑体", sans-serif;
-            resize: none;
-        }
+        .el-input__inner {
+                background-color: #fff;
+                border: 1px solid #bfcbd9;
+                color: rgb(72, 87, 106);
+                cursor: not-allowed;
+            }
+            input:disabled{
+                border: .017778rem solid #bfcbd9;
+                background-color:#fff;
+                color:rgb(72, 87, 106);
+                -webkit-text-fill-color: rgb(72, 87, 106);
+                -webkit-opacity: 1;
+                font-size: 0.195556rem;
+            }
+            .el-form-item__label {
+                font-size: .195556rem;
+            }
+            .el-form-item {
+                margin-bottom: 0.266667rem;
+                margin-right: .355556rem;
+                height: .568889rem;
+            }
+            .el-form-item:nth-child(1) {
+                margin-top: 0.355556rem;
+            }
+            .el-form-item:nth-child(5) {
+                margin-bottom: 0.504444rem;
+            }
+            .el-textarea{
+                margin-bottom: 0.355556rem;
+            }
+            textarea:disabled{
+                font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
+                border: .017778rem solid #bfcbd9;
+                background-color:#fff;
+                color:rgb(72, 87, 106);
+                -webkit-text-fill-color: rgb(72, 87, 106);
+                -webkit-opacity: 1;
+                font-size: 0.195556rem;    
+            }
+        // .qymc {
+        //     position: absolute;
+        //     font-size: .25rem;
+        //     top: 1.37rem;
+        //     margin-left: .2rem;
+        // }
+        // .scompanyname {
+        //     background-color: rgba(0, 0, 0, 0.04);
+        //     border-radius: .1rem;
+        //     width: 4.48rem;
+        //     height: .66rem;
+        //     margin-top: .2rem;
+        //     border: none;
+        //     border: .02rem solid rgb(220, 220, 220);
+        //     padding-left: 1.68rem;
+        //     font-size: .25rem;
+        // }
+        // .jyxkzh {
+        //     position: absolute;
+        //     font-size: .25rem;
+        //     top: 2.27rem;
+        //     margin-left: .2rem;
+        // }
+        // .jyxkzhname {
+        //     background-color: rgba(0, 0, 0, 0.04);
+        //     border-radius: .1rem;
+        //     width: 3.96rem;
+        //     height: .66rem;
+        //     margin-top: .2rem;
+        //     border: none;
+        //     border: .02rem solid rgb(220, 220, 220);
+        //     padding-left: 2.2rem;
+        //     font-size: .25rem;
+        // }
+        // .sfr {
+        //     position: absolute;
+        //     font-size: .25rem;
+        //     top: 3.19rem;
+        //     margin-left: .2rem;
+        // }
+        // .sfrname {
+        //     background-color: rgba(0, 0, 0, 0.04);
+        //     border-radius: .1rem;
+        //     width: 5.02rem;
+        //     height: .66rem;
+        //     margin-top: .2rem;
+        //     border: none;
+        //     border: .02rem solid rgb(220, 220, 220);
+        //     padding-left: 1.12rem;
+        //     font-size: .25rem;
+        // }
+        // .zlfzr {
+        //     position: absolute;
+        //     font-size: .25rem;
+        //     top: 4.09rem;
+        //     margin-left: .2rem;
+        // }
+        // .zlfzrname {
+        //     background-color: rgba(0, 0, 0, 0.04);
+        //     border-radius: .1rem;
+        //     width: 4.22rem;
+        //     height: .66rem;
+        //     margin-top: .2rem;
+        //     border: none;
+        //     border: .02rem solid rgb(220, 220, 220);
+        //     padding-left: 1.94rem;
+        //     font-size: .25rem;
+        // }
+        // .zdpzr {
+        //     position: absolute;
+        //     font-size: .25rem;
+        //     top: 6.27rem;
+        //     margin-left: .2rem;
+        // }
+        // .zdpzrname {
+        //     background-color: rgba(0, 0, 0, 0.04);
+        //     border-radius: .1rem;
+        //     width: 4.22rem;
+        //     height: .66rem;
+        //     margin-top: .2rem;
+        //     border: none;
+        //     border: .02rem solid rgb(220, 220, 220);
+        //     padding-left: 1.94rem;
+        //     font-size: .25rem;
+        // }
+        // .dzz {
+        //     position: absolute;
+        //     font-size: .25rem;
+        //     top: 4.88rem;
+        //     margin-left: .2rem;
+        // }
+        // .dzzname {
+        //     background-color: rgba(0, 0, 0, 0.04);
+        //     border-radius: .1rem;
+        //     width: 5.02rem;
+        //     height: .9rem;
+        //     margin-top: .2rem;
+        //     border: none;
+        //     border: .02rem solid rgb(220, 220, 220);
+        //     padding-left: 1.12rem;
+        //     font-size: .25rem;
+        //     padding-top: .06rem;
+        //     font-family: 'Microsoft YaHei', "Comic Sans MS", "幼圆", "黑体", sans-serif;
+        //     resize: none;
+        // }
         .yijianbtn {
             width: 5.74rem;
-            margin-top: 2.24rem;
+            margin-top: 1.24rem;
+            margin-bottom:1.24rem ;
             background: #2ab3ea;
         }
     }

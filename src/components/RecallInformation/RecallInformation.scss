@@ -1,0 +1,82 @@
+.RecallInformation_container {
+    max-width: 12.8rem;
+    height: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    .RecallInformation_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        span {
+            line-height: 1rem;
+        }
+        .goback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .3rem;
+            left: .38rem;
+        }
+    }
+    .main {
+        .titles{
+            font-size: 13px;
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            border-bottom:1px solid #e2e2e2;
+        }
+        .el-input__inner {
+                background-color: #fff;
+                color: rgb(72, 87, 106);
+                cursor: not-allowed;
+            }
+            input{
+                background-color:#fff;
+                color:rgb(72, 87, 106);
+                -webkit-text-fill-color: rgb(72, 87, 106);
+                -webkit-opacity: 1;
+                font-size: 0.195556rem;
+            }
+            .el-form-item__label {
+                font-size: .195556rem;
+            }
+            .el-form-item {
+                margin-bottom: 0.266667rem;
+                margin-right: .355556rem;
+                height: .568889rem;
+            }
+            .el-form-item:nth-child(4) {
+               margin-top: 33px;
+            }
+            .el-form-item:nth-child(1) {
+                margin-top: 0.355556rem;
+            }
+            .el-form-item:nth-child(5) {
+                margin-bottom: 0.504444rem;
+            }
+            .el-textarea{
+                margin-bottom: 0.355556rem;
+            }
+            textarea{
+                font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
+                background-color:#fff;
+                color:rgb(72, 87, 106);
+                -webkit-text-fill-color: rgb(72, 87, 106);
+                -webkit-opacity: 1;
+                font-size: 0.195556rem;    
+            }
+      
+        .yijianbtn {
+            width: 5.74rem;
+            margin-top: 1.24rem;
+            margin-bottom:1.24rem ;
+            background: #2ab3ea;
+        }
+    }
+}
