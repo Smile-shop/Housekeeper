@@ -51,13 +51,13 @@
                 margin-right: .355556rem;
                 height: .568889rem;
             }
-            .el-form-item:nth-child(4) {
-               margin-top: 33px;
-            }
+            // .el-form-item:nth-child(4) {
+            //    margin-top: 33px;
+            // }
             .el-form-item:nth-child(1) {
                 margin-top: 0.355556rem;
             }
-            .el-form-item:nth-child(5) {
+            .el-form-item:nth-child(7) {
                 margin-bottom: 0.504444rem;
             }
             .el-textarea{
@@ -77,6 +77,8 @@
             margin-top: 1.24rem;
             margin-bottom:1.24rem ;
             background: #2ab3ea;
+            font-size: 13px;
+            height: 35px;
         }
     }
 }

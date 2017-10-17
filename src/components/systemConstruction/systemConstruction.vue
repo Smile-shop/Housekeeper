@@ -71,9 +71,9 @@
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
-	              	if (res.data.data.status === 2) {
+	              	if (res.data.data.status === 1) {
 	              		this.text = '查看制度'
-	              	}else if(res.data.data.status === 1){
+	              	}else if(res.data.data.status === 2){
 	              		this.text = '一键制度'
 	              	}
 		          },(err)=>{

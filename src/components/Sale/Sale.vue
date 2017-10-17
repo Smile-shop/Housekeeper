@@ -135,6 +135,14 @@
 		    },
 		    openPicker() {
 		        this.$refs.picker.open();
+		        let a = new Date();
+				let y = a.getFullYear();
+				let M = a.getMonth()+1;
+				let d = a.getDate();
+				M = M < 10 ? '0' + M : M
+				d = d < 10 ? '0' + d : d
+				let time = `${y}-${M}-${d}`;
+				this.pickerValue = time;
 		    },
 		    getProduct(){
 				let index = this.productName.split('-')[1];
@@ -160,7 +168,7 @@
 		          });
 		    },
 		    sub1(){
-		    	let obj = {user_name:this.yhxm,user_mobile:this.yhdh,user_addr:this.yhdz,create_time:this.xsrq,saler:this.xsry,quatity:this.sl,purchase_id:this.purchase_id};
+		    	let obj = {user_name:this.yhxm,user_mobile:this.yhdh,user_addr:this.yhdz,create_time:this.xsrq,saler:this.xsry,quantity:this.sl,purchase_id:this.purchase_id};
 		    	this.$http.post(baseUrl+'/addSales',obj).then((res)=>{
 					console.log(res)
 	              	if(res.data.retCode === 0){

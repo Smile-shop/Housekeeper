@@ -1,9 +1,9 @@
-.RecallNote_container {
+.SendNotice_container {
     max-width: 12.8rem;
     height: 100%;
     background-size: 100% 100%;
     text-align: center;
-    .RecallNote_text {
+    .SendNotice_text {
         position: relative;
         text-align: center;
         height: 1rem;
@@ -23,9 +23,11 @@
         }
     }
     .main {
+        text-align: center;
         .jobsearch {
             width: 100%;
             height: .924444rem;
+            background: #ddd;
             .jobx {
                 width: 131px;
                 border: none;
@@ -71,45 +73,37 @@
             }
             /* Mozilla Firefox 19+ */
         }
-        .result{
-            font-size: 13px;
-            line-height: 90px;
-            span{
-                color:red;
-                font-size: 14px;
-                font-weight: bold;
+        
+        .jodtable {
+            border: .017778rem solid #ededed;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: .355556rem;
+            tr,
+            td,
+            th {
+                border: .017778rem solid #ededed;
+                border-collapse: collapse;
+                padding: .142222rem .035556rem .142222rem .035556rem;
+                font-size: .213333rem;
+            }
+            th {
+                background: #81bdef;
+                color: #fff;
+                border-top: none;
+                border-left: none;
+                border-right: none;
             }
         }
-        .el-input,.el-textarea{
-            width: 90%;
-            margin-top: 10px;
-            .el-input__inner {
-                background-color: #fff;
-                color: rgb(72, 87, 106);
-                cursor: not-allowed;
-                font-size: 0.195556rem;   
-            }
-        }
-        .el-textarea{
-            width: 90%;
-            height: 300px;
-            textarea{
-                height: 300px;
-            }
-        }
-        textarea{
-            font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
-            background-color:#fff;
-            color:rgb(72, 87, 106);
-            font-size: 0.195556rem;    
-        }
-        .yijianbtn {
-            width: 5.74rem;
-            margin-top: 1.24rem;
-            margin-bottom:1.24rem ;
-            background: #2ab3ea;
-            font-size: 14px;
-            height: 35px;
-        }
+    }
+    .send{
+        width: 316px;
+        height: 34px;
+        font-size: 13px;
+        margin: 50px 0  50px 0;
+        background:#2ab3ea;
     }
 }

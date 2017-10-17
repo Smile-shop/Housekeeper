@@ -5,10 +5,15 @@
 			<span>召回通知单</span>
 		</p>
 		<div class="main">
-		    <el-input v-model="sjr" placeholder="收件人"></el-input>
-		    <el-input type="textarea" v-model="zw" placeholder="正文"></el-input>
-		    <el-input v-model="fjr" placeholder="发件人"></el-input>
-			<mt-button type="primary" class="yijianbtn" @click="yijian">提交</mt-button>
+			<div class="jobsearch">
+				<el-input v-model="cpmc" class="jobx" placeholder="产品名称"></el-input>
+				<el-input v-model="cppc" class="jobx" placeholder="产品批次"></el-input>
+				<mt-button type="primary" class="search" @click="search">搜索</mt-button>
+			</div>
+			<p class="result" v-show = "found">本批次产品在本公司卖出<span>{{quantity}}</span>件，共<span>{{user_count}}</span>人</p>
+			<p class="result" v-show = "notfound">没有相应的查找结果！</p>
+		    <el-input type="textarea" v-model="zw" placeholder="请输入召回通知内容" v-show = "found"></el-input>
+			<mt-button type="primary" class="yijianbtn" @click="yijian" v-show = "found">通知消费者</mt-button>
 		</div>
 		
 	</div>
@@ -19,29 +24,19 @@
 	export default {
 		data(){
 			return {
-				sjr:'',
-				fjr:'',
 				zw:'',
-				
+				cpmc:'',
+				cppc:'',
+				cpmc1:'',
+				cppc1:'',
+				user_count:'',
+				quantity:'',
+				found:false,
+				notfound:false,				
 			}
 		},
 		created(){
-			this.$http.get(baseUrl+'/findStore').then((res)=>{
-	              	console.log(res)
-	              	if(res.data.retCode === 0){
-	              		
-	              	}else{
-	              		this.$messagebox.alert(res.data.retMessage);
-	              	}
-	              	if (res.data.data.status === 2) {
-	              		this.text = '查看制度'
-	              	}else if(res.data.data.status === 1){
-	              		this.text = '一键制度'
-	              	}
-		          },(err)=>{
-		              console.log('failed');
-		              this.$messagebox.alert("获取信息错误!");
-		          });
+	
 		},
 		methods: {
 			goback(){
@@ -61,23 +56,44 @@
 		    openPicker() {
 		        this.$refs.picker.open();
 		    },
-			yijian(){
-				this.$http.get(baseUrl+'/findRegularFile').then((res)=>{
+		    search(){
+		    	this.cpmc1 = this.cpmc;
+		    	this.cppc1 = this.cppc;
+		    	let obj = {product_name:this.cpmc,batch_id:this.cppc}
+				this.$http.post(baseUrl+'/getNoticeUsers',obj).then((res)=>{
 	              	console.log(res)
+	              	this.cpmc = '';
+	              	this.cppc = '';
 	              	if(res.data.retCode === 0){
-	              		this.data = res.data.data;
-	              		let data = JSON.stringify({data:this.data})
-						sessionStorage.setItem('data',data)
-	              		this.$router.push({name:'rules'});
+	              		this.found = true;
+	              		this.user_count = res.data.data.user_count;
+	              		this.quantity = res.data.data.quantity;
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 	              	
-		          },(err)=>{
-		              console.log('failed');
-		              this.$messagebox.alert("获取信息错误!");
-		          });
-				
+		        },(err)=>{
+	              console.log('failed');
+	              this.$messagebox.alert("获取信息错误!");
+	          });
+			},
+			yijian(){
+				let obj = {product_name:this.cpmc1,batch_id:this.cppc1,notice:this.zw}
+				this.$http.post(baseUrl+'/noticeUsers',obj).then((res)=>{
+	              	console.log(res)
+	              	if(res.data.retCode === 0){
+	              		this.$messagebox.alert("操作成功！").then(action=>{
+	              			this.$router.push({name:'Recall'});
+	              		});
+	              		
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+	              	
+		        },(err)=>{
+	              console.log('failed');
+	              this.$messagebox.alert("获取信息错误!");
+	          });
 			}
 		}
 	}

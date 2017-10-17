@@ -21,7 +21,7 @@
 	export default {
 		data(){
 			return {
-				QualityTracking:[['bad@3x.png','/systemConstruction'],
+				QualityTracking:[['bad@3x.png','/FillDirections'],
 		        		    	 ['recall@3x.png','/Recall']],
 			}
 		},

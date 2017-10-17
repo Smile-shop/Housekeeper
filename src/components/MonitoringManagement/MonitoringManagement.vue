@@ -96,7 +96,14 @@
 			},
 			openPicker() {
 		        this.$refs.picker.open();
-		        
+		        let a = new Date();
+				let y = a.getFullYear();
+				let M = a.getMonth()+1;
+				let d = a.getDate();
+				M = M < 10 ? '0' + M : M
+				d = d < 10 ? '0' + d : d
+				let time = `${y}-${M}-${d}`;
+				this.pickerValue = time;
 		        console.log(this.pickerValue)
 		    },
 		    aa(){

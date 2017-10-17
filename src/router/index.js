@@ -42,6 +42,9 @@ import TraceabilityFile from '../components/TraceabilityFile/TraceabilityFile.vu
 import Recall from '../components/Recall/Recall.vue'
 import RecallInformation from '../components/RecallInformation/RecallInformation.vue'
 import RecallNote from '../components/RecallNote/RecallNote.vue'
+import SendNotice from '../components/SendNotice/SendNotice.vue'
+import FillDirections from '../components/FillDirections/FillDirections.vue'
+import FillTable from '../components/FillTable/FillTable.vue'
 
 
 
@@ -210,6 +213,18 @@ const router = new VueRouter({
         path:'/RecallNote',
         name:'RecallNote',
         component:RecallNote,
+    },{
+        path:'/SendNotice',
+        name:'SendNotice',
+        component:SendNotice,
+    },{
+        path:'/FillDirections',
+        name:'FillDirections',
+        component:FillDirections,
+    },{
+        path:'/FillTable',
+        name:'FillTable',
+        component:FillTable,
     },]
 })
 

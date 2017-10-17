@@ -48,6 +48,8 @@
 		              }).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
+		              		sessionStorage.setItem('juese',JSON.stringify(res.data.data.role_ids))
+		              		let id = 
 		              		this.$router.push({name:'index'})
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);

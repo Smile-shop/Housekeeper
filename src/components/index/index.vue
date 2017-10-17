@@ -48,9 +48,9 @@
 		    	<router-link to="QualityTracking">
 		    		<li><img src="../../assets/imgs/Qualitytracking (3).png" height="91" width="68" alt="" class="indeximg10"><br>质量追踪</li>
 		    	</router-link>
-		    	<router-link to="TraceabilityFile">
+		    	<!-- <router-link to="TraceabilityFile"> -->
 		    		<li><img src="../../assets/imgs/file-19@3x.png" height="91" width="68" alt="" class="indeximg14"><br>追溯档案</li>
-		    	</router-link>
+		    	<!-- </router-link> -->
 		    	<router-link to="">	
 		    		<li class="bott"><img src="../../assets/imgs/Cheats (3).png" height="91" width="68" alt="" class="indeximg11"><br>秘籍</li>
 		    	</router-link>
@@ -71,10 +71,12 @@
 		data(){
 			return {
 				show:false,
+				id:''
 			}
 		},
 		created(){
 			this.$indicator.close('加载中...'); 
+			this.id = this.$route.params.id;
 		},
 		methods:{
 			isshow(){
@@ -89,7 +91,7 @@
 			},
 			EditPsw(){
 				this.$router.push({name:'EditPsw'})
-			}
+			},
 		},
 	
 	}
