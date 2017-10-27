@@ -45,7 +45,7 @@
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			        },(err)=>{
-			             this.$messagebox.alert('操作失败,请稍后再试!');
+			            console.log(err)
 			        });
 				
 			},

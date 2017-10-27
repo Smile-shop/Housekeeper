@@ -24,12 +24,30 @@
 		   <span style="white-space:pre">   </span><span class="txt">附件</span>  
 		   <span style="white-space:pre">   </span><span class="line"></span>  
 		</div>
-		<a href="javascript:;" class="y">点击上传营业执照
-			<input id="fileId1" type="file" capture="camera" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange"/>
-		</a>
-		<a href="javascript:;" class="w">点击上传卫生许可证
-			<input id="fileId2" type="file" capture="camera" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange1"/>
-		</a>
+		<div class="u1">
+			<span class="yy">上传营业执照:</span>
+			<el-upload
+			class="avatar-uploader uploader1"
+			action="https://jsonplaceholder.typicode.com/posts/"
+			:show-file-list="false"
+			:on-change="getpic1"
+			:auto-upload="false">
+			<img v-if="imageUrl1" :src="imageUrl1" class="avatar">
+			<i v-else class="el-icon-plus avatar-uploader-icon"></i>
+			</el-upload>
+		</div>
+		<div class="u2">	
+		<span class="yy yy1">上传卫生许可证:</span>
+		<el-upload
+		  class="avatar-uploader uploader2"
+		  action="https://jsonplaceholder.typicode.com/posts/"
+		  :show-file-list="false"
+		  :on-change="getpic2"
+		  :auto-upload="false">
+		  <img v-if="imageUrl2" :src="imageUrl2" class="avatar">
+		  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+		</el-upload>
+		</div>
 		<mt-button type="primary" class="registbtn" @click="regist">企业注册</mt-button>
 	</div>
 </template>
@@ -46,8 +64,11 @@
 				zname:'',
 				zphonenumber:'',
 				dadress:'',
+				
 				file1:'',
-				file2:''
+				file2:'',
+				imageUrl1:'',
+				imageUrl2:''
 			}
 		},
 		created(){
@@ -61,6 +82,14 @@
 			onChange1(event){
 				this.file2 = event.target.files[0];
 				console.log(this.file2)
+			},
+			getpic1(file) {
+		        this.imageUrl1 = URL.createObjectURL(file.raw);
+		        this.file1 = file.raw;
+			},
+			getpic2(file) {
+		        this.imageUrl2 = URL.createObjectURL(file.raw);
+		        this.file2 = file.raw;
 			},
 			regist(){
 				switch (''){
@@ -82,9 +111,15 @@
 					case this.zphonenumber:
 						this.$messagebox.alert('质量负责人手机号不能为空！');
 						return;
+					case this.file1:
+						this.$messagebox.alert('请选择需要上传的营业执照！');
+						return;
+					case this.file2:
+						this.$messagebox.alert('请选择需要上传的卫生许可证！');
+						return;
 					case this.dadress:
 						this.$messagebox.alert('地址不能为空！');
-						return;			
+						return;				
 				}
 				if(!/^1[34578]\d{9}$/.test(this.fphonenumber)){
 					this.$messagebox.alert('请输入正确的法人手机号');
@@ -119,10 +154,10 @@
 		              			this.$router.push({name:'login'})
  							});
 		              	}else{
-		              		this.$messagebox.alert(res.data.retMessage);
+		              		this.$messagebox.alert("注册失败!");
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("注册失败!");
+			              console.log(err)
 			          });
 			},
 			goback(){

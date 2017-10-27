@@ -24,45 +24,45 @@
     }
     .main {
         .el-input__inner {
-                background-color: #fff;
-                border: 1px solid #bfcbd9;
-                color: rgb(72, 87, 106);
-                cursor: not-allowed;
-            }
-            input:disabled{
-                border: .017778rem solid #bfcbd9;
-                background-color:#fff;
-                color:rgb(72, 87, 106);
-                -webkit-text-fill-color: rgb(72, 87, 106);
-                -webkit-opacity: 1;
-                font-size: 0.195556rem;
-            }
-            .el-form-item__label {
-                font-size: .195556rem;
-            }
-            .el-form-item {
-                margin-bottom: 0.266667rem;
-                margin-right: .355556rem;
-                height: .568889rem;
-            }
-            .el-form-item:nth-child(1) {
-                margin-top: 0.355556rem;
-            }
-            .el-form-item:nth-child(5) {
-                margin-bottom: 0.504444rem;
-            }
-            .el-textarea{
-                margin-bottom: 0.355556rem;
-            }
-            textarea:disabled{
-                font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
-                border: .017778rem solid #bfcbd9;
-                background-color:#fff;
-                color:rgb(72, 87, 106);
-                -webkit-text-fill-color: rgb(72, 87, 106);
-                -webkit-opacity: 1;
-                font-size: 0.195556rem;    
-            }
+            background-color: #fff;
+            border: .017778rem solid #bfcbd9;
+            color: rgb(72, 87, 106);
+            cursor: not-allowed;
+        }
+        input:disabled {
+            border: .017778rem solid #bfcbd9;
+            background-color: #fff;
+            color: rgb(72, 87, 106);
+            -webkit-text-fill-color: rgb(72, 87, 106);
+            -webkit-opacity: 1;
+            font-size: 0.195556rem;
+        }
+        .el-form-item__label {
+            font-size: .195556rem;
+        }
+        .el-form-item {
+            margin-bottom: 0.266667rem;
+            margin-right: .355556rem;
+            height: .568889rem;
+        }
+        .el-form-item:nth-child(1) {
+            margin-top: 0.355556rem;
+        }
+        .el-form-item:nth-child(5) {
+            margin-bottom: 0.504444rem;
+        }
+        .el-textarea {
+            margin-bottom: 0.355556rem;
+        }
+        textarea:disabled {
+            font-family: 'Microsoft YaHei', "Comic Sans MS", "幼圆", "黑体", sans-serif;
+            border: .017778rem solid #bfcbd9;
+            background-color: #fff;
+            color: rgb(72, 87, 106);
+            -webkit-text-fill-color: rgb(72, 87, 106);
+            -webkit-opacity: 1;
+            font-size: 0.195556rem;
+        }
         // .qymc {
         //     position: absolute;
         //     font-size: .25rem;
@@ -171,7 +171,7 @@
         .yijianbtn {
             width: 5.74rem;
             margin-top: 1.24rem;
-            margin-bottom:1.24rem ;
+            margin-bottom: 1.24rem;
             background: #2ab3ea;
         }
     }

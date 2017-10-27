@@ -19,13 +19,7 @@ axios.interceptors.response.use((response)=> {
     return response
 },(error)=> {
     Indicator.close();
-    if (error.response.status === 401) {
-        router.replace({
-            path: '/login',
-        });
-        // sessionStorage.removeItem('token')
-        sessionStorage.removeItem('user')
-    }
+    MessageBox('提示', '数据请求失败,请稍候再试!');
     return Promise.reject(error);
 });
 export default axios;

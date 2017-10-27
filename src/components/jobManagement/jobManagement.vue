@@ -114,7 +114,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		             console.log(err);
 		          });
  			},
 		    search(){
@@ -161,7 +161,7 @@
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("添加失败!");
+			             console.log(err)
 			          });
 		     },
 		    edit(index){
@@ -183,7 +183,7 @@
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert('删除失败!');
+			             console.log(err)
 			          });
  				});
 		     	

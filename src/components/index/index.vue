@@ -13,6 +13,9 @@
 				</div>
 			</div>
 		</transition>
+		<i class="el-icon-message" v-show = "news" @click = "gonews">
+			<span class="num" v-show = "num">{{count}}</span>
+		</i>
 		<p class="index_text">
 			<span>主页</span>
 		</p>
@@ -45,8 +48,9 @@
 		    		<li @click = "QualityTracking"><img src="../../assets/imgs/Qualitytracking (3).png" height="91" width="68" alt="" class="indeximg10"><br>质量追踪</li>
 		    	
 		    	<!-- <router-link to="TraceabilityFile"> -->
+		    	<router-link to="">
 		    		<li><img src="../../assets/imgs/file-19@3x.png" height="91" width="68" alt="" class="indeximg14"><br>追溯档案</li>
-		    	<!-- </router-link> -->
+		    	</router-link>
 		    	<router-link to="">	
 		    		<li class="bott"><img src="../../assets/imgs/Cheats (3).png" height="91" width="68" alt="" class="indeximg11"><br>秘籍</li>
 		    	</router-link>
@@ -67,12 +71,33 @@
 		data(){
 			return {
 				show:false,
-				juese:''
+				juese:'',
+				count:'',
+				news:false,
+				num:false
 			}
 		},
 		created(){
 			this.$indicator.close('加载中...'); 
 			this.juese = JSON.parse(sessionStorage.getItem('juese'))
+			this.news = !this.news;
+			this.id = this.$route.params.id;
+			if(sessionStorage.getItem('num') == null){
+				this.$http.get(baseUrl+'/getAlarmCount').then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+	          			this.count = res.data.data[0].count;
+	          			if(this.count > 0){
+	          				this.num = true;
+	          				sessionStorage.setItem("num",this.num)
+	          			}
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		          	console.log(err)
+		          });
+			}
 		},
 		methods:{
 			isshow(){
@@ -95,23 +120,11 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(a == 0){
+				if(a != -1){
 					this.$router.push({name:'housekeeper'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
-				
 			},
 			MonitoringManagement(){
 				let a = this.juese.indexOf('店长')
@@ -119,21 +132,10 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d == 0){
+				if(d != -1){
 					this.$router.push({name:'MonitoringManagement'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
 				
 			},
@@ -143,21 +145,10 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d == 0){
+				if(d != -1){
 					this.$router.push({name:'EnterpriseSelfExamination'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
 				
 			},
@@ -167,21 +158,10 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d == 0){
+				if(d != -1){
 					this.$router.push({name:'AuditsManagement'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
 				
 			},
@@ -191,23 +171,11 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(a == 0 || d == 0){
+				if(d != -1 || a != -1){
 					this.$router.push({name:'JobMonitoring'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
-				
 			},
 			Purchase(){
 				let a = this.juese.indexOf('店长')
@@ -215,23 +183,12 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(c == 0){
+				console.log(typeof(c),c)
+				if(c != -1){
 					this.$router.push({name:'Purchase'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
-				
 			},
 			FirstSelf(){
 				let a = this.juese.indexOf('店长')
@@ -239,23 +196,11 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(c == 0){
+				if(c != -1){
 					this.$router.push({name:'FirstSelf'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
-				
 			},
 			Sale(){
 				let a = this.juese.indexOf('店长')
@@ -263,23 +208,12 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b == 0){
+				console.log(b)
+				if(b != -1){
 					this.$router.push({name:'Sale'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
-				
 			},
 			QualityTracking(){
 				let a = this.juese.indexOf('店长')
@@ -287,24 +221,16 @@
 				let c = this.juese.indexOf('进货岗')
 				let d = this.juese.indexOf('质量安全负责岗')
 				let e = this.juese.indexOf('质量安全追踪岗')
-				if(a != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(b != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					return false;
-					
-				}else if(c != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(d != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-					
-				}else if(e != 0){
-					this.$messagebox.alert("您没有权限访问该功能！");
-				}else if(e == 0){
+				if(e != -1){
 					this.$router.push({name:'QualityTracking'})
+				}else if(a == -1 || b == -1 || c == -1 || d == -1 || e == -1){
+					this.$messagebox.alert("您没有权限访问该功能！");
 				}
-				
 			},
+			gonews(){
+				this.$router.push({name:'newsdetail'})
+				this.num = false;
+			}
 			
 		},
 	

@@ -44,85 +44,85 @@
                 border-top: none;
                 border-left: none;
                 border-right: none;
-                height: 30px;
+                height: .533333rem;
             }
-            tr{
+            tr {
                 border-top: none;
-                td{
-                    min-height:30px;
-                    padding:8px 3px;
-                    .tips{
-                        font-size: 12px;
+                td {
+                    min-height: .533333rem;
+                    padding: .142222rem .053333rem;
+                    .tips {
+                        font-size: .213333rem;
                         display: inline-block;
-                        margin-bottom: 5px;
+                        margin-bottom: .088889rem;
                     }
-                    .el-form-item{
-                        margin-bottom: 5px;
+                    .el-form-item {
+                        margin-bottom: .088889rem;
                     }
-                    .cai{
-                       span{
-                        text-align: left;
-                        float: left;
-                       }
+                    .cai {
+                        span {
+                            text-align: left;
+                            float: left;
+                        }
                     }
-                    span{
-                        font-size: 12px;
+                    span {
+                        font-size: .213333rem;
                     }
                     .el-textarea__inner {
                         height: 2.555556rem;
-                        border:none;
+                        border: none;
                         font-family: 'Microsoft YaHei', "Comic Sans MS", "幼圆", "黑体", sans-serif;
-                        font-size: 12px;
+                        font-size: .213333rem;
                     }
                     .el-input__inner {
                         background-color: #fff;
                         color: rgb(72, 87, 106);
                         cursor: not-allowed;
                         text-align: center;
-                        font-size: 12px;
+                        font-size: .213333rem;
                     }
-                    input:disabled{
+                    input:disabled {
                         border: .017778rem solid #bfcbd9;
-                        height: 35px;
-                        background-color:#fff;
-                        color:rgb(72, 87, 106);
+                        height: .622222rem;
+                        background-color: #fff;
+                        color: rgb(72, 87, 106);
                         -webkit-text-fill-color: rgb(72, 87, 106);
                         -webkit-opacity: 1;
                     }
-                    .text{
+                    .text {
                         .el-input__inner {
-                           border:none;
+                            border: none;
                         }
                     }
-                    .time{
+                    .time {
                         .el-input__inner {
-                          width: 160px;
-                          height: 30px;
+                            width: 2.844444rem;
+                            height: .533333rem;
                         }
                     }
                 }
-                td:nth-child(2){
+                td:nth-child(2) {
                     width: 70%;
-                    .el-checkbox{
-                        margin-left: 5px;
-                        margin-top: 5px;
+                    .el-checkbox {
+                        margin-left: .088889rem;
+                        margin-top: .088889rem;
                     }
-                    .el-form-item__content{
-                        margin-left: 50px;
-                        margin-right: 5px;
-                        .el-input__inner{
-                            height: 30px;
+                    .el-form-item__content {
+                        margin-left: .888889rem;
+                        margin-right: .088889rem;
+                        .el-input__inner {
+                            height: .533333rem;
                         }
                     }
                 }
             }
         }
     }
-    .send{
-        width: 316px;
-        height: 34px;
-        font-size: 13px;
-        margin: 50px 0  50px 0;
-        background:#2ab3ea;
+    .send {
+        width: 5.617778rem;
+        height: .604444rem;
+        font-size: .231111rem;
+        margin: .888889rem 0 .888889rem 0;
+        background: #2ab3ea;
     }
 }

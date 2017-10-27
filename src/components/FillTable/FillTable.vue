@@ -622,7 +622,7 @@
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("添加失败!");
+			              console.log(err)
 			          });
 		     },
 		}

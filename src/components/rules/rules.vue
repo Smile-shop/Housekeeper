@@ -39,7 +39,7 @@
 			      </template>
 			    </el-table-column>
 			  </el-table>
-			  <mt-button type="primary" class="sub" @click="sub">提交</mt-button>
+			  <mt-button type="primary" class="sub" @click="sub">返回激活管家</mt-button>
 		</div>
 	</div>
 </template>
@@ -140,7 +140,7 @@
 		        console.log(index, row);
 		      },
 		    sub(){
-		     	console.log(456)
+		     	this.$router.push({name:'housekeeper'})
 		     }
 		}
 	}

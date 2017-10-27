@@ -151,8 +151,8 @@
         font-size: .25rem;
     }
     .order {
-        height: 1.2rem;
-        line-height: 1.2rem;
+        height: 1rem;
+        line-height: 1rem;
         text-align: center;
         .line {
             display: inline-block;
@@ -189,9 +189,9 @@
     .EditInformationbtn {
         background: #39D1AA;
         width: 5rem;
-        margin-top: .9rem;
         font-size: .28rem;
         margin-bottom: 1rem;
+        margin-top: .444444rem;
     }
     .y,
     .w {
@@ -215,13 +215,43 @@
             color: #004974;
             text-decoration: none;
         }
-        #fileId1,
-        #fileId2 {
-            position: absolute;
-            font-size: 2rem;
-            right: 0;
-            top: 0;
-            opacity: 0;
-        }
+    }
+    .avatar-uploader .el-upload {
+        border: .017778rem dashed #888;
+        border-radius: .106667rem;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: .177778rem;
+    }
+    .u1 {
+        float: left;
+        margin-left: 1.048889rem;
+    }
+    .u2 {
+        float: left;
+        margin-left: .711111rem;
+    }
+    .avatar-uploader .el-upload:hover {
+        border-color: #20a0ff;
+    }
+    .avatar-uploader-icon {
+        font-size: .497778rem;
+        color: #888;
+        width: 1.777778rem;
+        height: 1.777778rem;
+        line-height: 1.777778rem;
+        text-align: center;
+    }
+    .avatar {
+        width: 1.777778rem;
+        height: 1.777778rem;
+        display: block;
+    }
+    .yy {
+        display: inline-block;
+        margin-bottom: .177778rem;
+        font-size: .213333rem;
+        color: #888;
     }
 }

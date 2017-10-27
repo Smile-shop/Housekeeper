@@ -115,7 +115,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		              console.log(err)
 		          });
 		},
 		methods: {
@@ -150,8 +150,17 @@
 				this.scph = this.product[index].batch_id;
 				this.yxq = this.product[index].expire_date.split(" ")[0];
 				this.purchase_id = this.product[index].id;
+				this.gg = this.product[index].specification;
 			},
 		    sub(){
+		    	switch (''){
+					case this.userName:
+						this.$messagebox.alert('用户姓名不能为空！');
+						return;
+					case this.Opinion:
+						this.$messagebox.alert('意见内容不能为空！');
+						return;	
+				}
 		    	let obj = {consumer_name:this.userName,feedback:this.Opinion};
 		    	this.$http.post(baseUrl+'/addFeedback',obj).then((res)=>{
 					console.log(res)
@@ -164,10 +173,33 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		              console.log(err)
 		          });
 		    },
 		    sub1(){
+		    	switch (''){
+					case this.yhxm:
+						this.$messagebox.alert('用户姓名不能为空！');
+						return;
+					case this.yhdh:
+						this.$messagebox.alert('用户电话不能为空！');
+						return;	
+					case this.yhdz:
+						this.$messagebox.alert('用户地址不能为空！');
+						return;
+					case this.xsry:
+						this.$messagebox.alert('销售人员不能为空！');
+						return;	
+					case this.sl:
+						this.$messagebox.alert('数量不能为空！');
+						return;	
+					case this.gg:
+						this.$messagebox.alert('规格不能为空！');
+						return;
+					case this.dadress:
+						this.$messagebox.alert('地址不能为空！');
+						return;			
+				}
 		    	let obj = {user_name:this.yhxm,user_mobile:this.yhdh,user_addr:this.yhdz,create_time:this.xsrq,saler:this.xsry,quantity:this.sl,purchase_id:this.purchase_id};
 		    	this.$http.post(baseUrl+'/addSales',obj).then((res)=>{
 					console.log(res)
@@ -188,7 +220,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		              console.log(err)
 		          });
 		    },
 			toIncomplete(){

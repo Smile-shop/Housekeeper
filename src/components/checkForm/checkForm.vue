@@ -27,14 +27,15 @@
 				choose:'',
 				choose1:'',
 				time:[['一周/次',1],['两周/次',2],['三周/次',3],['四周/次',4]],
-				id:''
+				id:'',
+				count:0
 			}
 		},
 		created(){
 			this.$http.post(baseUrl+'/findSelfCheckPeriod').then((res)=>{
               	if(res.data.retCode === 0){
               		this.choose = res.data.data.self_check_period;
-              		this.choose1 = res.data.data.self_check_period;
+              		// this.choose1 = res.data.data.self_check_period;
               		this.id = res.data.data.id;
               	}else{
               		this.$messagebox.alert(res.data.retMessage);
@@ -45,19 +46,23 @@
 		},
 		methods:{
 			checkForm(){
-				if(this.choose !== this.choose1){
+				// if(this.count == 0){
 					let obj = {self_check_period:this.choose,id:this.id}
 					this.$http.post(baseUrl+'/setSelfCheck',obj).then((res)=>{
 		              	console.log(res)
-		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert("操作成功!");
-		              	}else{
-		              		this.$messagebox.alert(res.data.retMessage);
+		              	console.log(this.count)
+		              	if(this.count > 0){
+		              		if(res.data.retCode === 0){
+			              		this.$messagebox.alert("操作成功!");
+			              	}else{
+			              		this.$messagebox.alert(res.data.retMessage);
+			              	}
 		              	}
+		              	this.count = this.count + 1;
 			        },(err)=>{
-			             this.$messagebox.alert('操作失败,请稍后再试!');
+			             console.log(err)
 			        });
-				}
+				// }
 			},
 			goback(){
 				this.$router.go(-1);

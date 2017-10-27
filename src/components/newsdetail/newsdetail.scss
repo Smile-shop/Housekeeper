@@ -1,11 +1,9 @@
-.Recall_container {
+.newsdetail_container {
     max-width: 12.8rem;
     height: 100%;
     background-size: 100% 100%;
-    overflow-y: scroll;
     text-align: center;
-    padding-bottom: .533333rem;
-    .Recall_text {
+    .newsdetail_text {
         position: relative;
         text-align: center;
         height: 1rem;
@@ -24,12 +22,17 @@
             left: .38rem;
         }
     }
-    .main ul li img.Recall_navimg {
-        width: 80%;
-        height: auto;
-        margin-top: .6rem;
-    }
-    .main ul li:nth-child(1) a img.Recall_navimg {
-        margin-top: 2rem;
+    .main {
+        .el-collapse-item {
+            text-align: left;
+            div {
+                div {
+                    margin-top: .177778rem;
+                }
+                &:nth-child(1) {
+                    margin-top: 0;
+                }
+            }
+        }
     }
 }

@@ -110,7 +110,7 @@
 	              		}
 	              	}
 		        },(err)=>{
-		             this.$messagebox.alert('服务器错误！');
+		             console.log(err)
 		        });
 			},
 			goback(){
@@ -162,7 +162,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		        },(err)=>{
-		             this.$messagebox.alert('操作失败,请稍后再试!');
+		            console.log(err)
 		        });
 		    },
 		    editData(){
@@ -178,7 +178,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		        },(err)=>{
-		             this.$messagebox.alert('操作失败,请稍后再试!');
+		            console.log(err)
 		        });
 		    }
 		},

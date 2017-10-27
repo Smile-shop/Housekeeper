@@ -185,7 +185,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		          	console.log(err)
 		          });
 			},
 			goback(){
@@ -236,11 +236,19 @@
 				this.yxq = this.pickerValue1;
 		    },
 			getCompany(){
+				this.pname = '';
+				this.wenhao = '';
+				this.cpmc = '';
+				this.pzwh = '';
+				this.sccs = '';
+				this.scxkzh = '';
+				this.productId = '';
+				this.gg = '';
 				let index = this.companyName.split('-')[1];
 				this.ghqy = this.companyName.split('-')[0];
 				this.companyId = this.company[index].id
 				let obj = {enterprise_id:this.companyId}
-				// console.log(obj)
+				console.log(obj)
 				this.$http.post(baseUrl+'/searchProduct',obj).then((res)=>{
 					console.log(res)
 	              	if(res.data.retCode === 0){
@@ -249,7 +257,6 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
 		          });
 			},
 			getpname(){
@@ -260,7 +267,7 @@
 				this.sccs = this.product[index].manufacturer;
 				this.scxkzh = this.product[index].produce_permit;
 				this.productId = this.product[index].id;
-				this.gg = this.product[index].specification
+				this.gg = this.product[index].specification;
 				console.log(477974)
 			},
 			getpic(file) {
@@ -331,7 +338,6 @@
 				              		this.$messagebox.alert(res.data.retMessage);
 				              	}
 					          },(err)=>{
-					              this.$messagebox.alert("获取信息错误!");
 					          });
 					  this.$router.push({name:'index'})
 
@@ -340,7 +346,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		          	console.log(err)
 		        });
  			},
 		}

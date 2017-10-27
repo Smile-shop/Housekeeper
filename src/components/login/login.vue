@@ -56,7 +56,6 @@
 		              	}
 			          },(err)=>{
 			              console.log('err');
-			              this.$messagebox.alert('登录错误！');
 			          });
 				}else{
 					this.$messagebox.alert('请输入正确的手机号码！');

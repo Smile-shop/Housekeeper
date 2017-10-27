@@ -151,12 +151,22 @@
 		     	this.$http.post(baseUrl+'/addRegulatory',obj).then((res)=>{
 		     		console.log(res)
 	              	if(res.data.retCode === 0){
-	              		
+	              		this.$messagebox.alert("操作成功！").then(action => {
+		              		this.record_no = '';
+		              		this.admin_unit = '';
+		              		this.admin_method = '';
+		              		this.admin_content = '';
+		              		this.admin_conclusion = '';
+		              		this.admin_date = '';
+		              		this.checker = '';
+		              		this.checked = '';
+		              		this.notes = '';
+						});
 	              	}else{
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		        },(err)=>{
-		             this.$messagebox.alert('操作失败,请稍后再试!');
+		            console.log(err)
 		        });
 		     }
 		}

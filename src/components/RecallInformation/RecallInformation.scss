@@ -23,62 +23,61 @@
         }
     }
     .main {
-        .titles{
-            font-size: 13px;
+        .titles {
+            font-size: .231111rem;
             display: inline-block;
             width: 100%;
-            height: 50px;
-            line-height: 50px;
-            border-bottom:1px solid #e2e2e2;
+            height: .888889rem;
+            line-height: .888889rem;
+            border-bottom: .017778rem solid #e2e2e2;
         }
         .el-input__inner {
-                background-color: #fff;
-                color: rgb(72, 87, 106);
-                cursor: not-allowed;
-            }
-            input{
-                background-color:#fff;
-                color:rgb(72, 87, 106);
-                -webkit-text-fill-color: rgb(72, 87, 106);
-                -webkit-opacity: 1;
-                font-size: 0.195556rem;
-            }
-            .el-form-item__label {
-                font-size: .195556rem;
-            }
-            .el-form-item {
-                margin-bottom: 0.266667rem;
-                margin-right: .355556rem;
-                height: .568889rem;
-            }
-            // .el-form-item:nth-child(4) {
-            //    margin-top: 33px;
-            // }
-            .el-form-item:nth-child(1) {
-                margin-top: 0.355556rem;
-            }
-            .el-form-item:nth-child(7) {
-                margin-bottom: 0.504444rem;
-            }
-            .el-textarea{
-                margin-bottom: 0.355556rem;
-            }
-            textarea{
-                font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
-                background-color:#fff;
-                color:rgb(72, 87, 106);
-                -webkit-text-fill-color: rgb(72, 87, 106);
-                -webkit-opacity: 1;
-                font-size: 0.195556rem;    
-            }
-      
+            background-color: #fff;
+            color: rgb(72, 87, 106);
+            cursor: not-allowed;
+        }
+        input {
+            background-color: #fff;
+            color: rgb(72, 87, 106);
+            -webkit-text-fill-color: rgb(72, 87, 106);
+            -webkit-opacity: 1;
+            font-size: 0.195556rem;
+        }
+        .el-form-item__label {
+            font-size: .195556rem;
+        }
+        .el-form-item {
+            margin-bottom: 0.266667rem;
+            margin-right: .355556rem;
+            height: .568889rem;
+        }
+        // .el-form-item:nth-child(4) {
+        //    margin-top: .586667rem;
+        // }
+        .el-form-item:nth-child(1) {
+            margin-top: 0.355556rem;
+        }
+        .el-form-item:nth-child(7) {
+            margin-bottom: 0.504444rem;
+        }
+        .el-textarea {
+            margin-bottom: 0.355556rem;
+        }
+        textarea {
+            font-family: 'Microsoft YaHei', "Comic Sans MS", "幼圆", "黑体", sans-serif;
+            background-color: #fff;
+            color: rgb(72, 87, 106);
+            -webkit-text-fill-color: rgb(72, 87, 106);
+            -webkit-opacity: 1;
+            font-size: 0.195556rem;
+        }
         .yijianbtn {
             width: 5.74rem;
             margin-top: 1.24rem;
-            margin-bottom:1.24rem ;
+            margin-bottom: 1.24rem;
             background: #2ab3ea;
-            font-size: 13px;
-            height: 35px;
+            font-size: .231111rem;
+            height: .622222rem;
         }
     }
 }

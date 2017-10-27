@@ -28,27 +28,53 @@
             height: .924444rem;
             background: #ddd;
             .jobx {
-                border-radius: .355556rem;
-                width: 2.364444rem;
-                border: none;
-                border: .017778rem solid #ccc;
+                width: 1.635556rem;
                 height: .64rem;
                 margin-top: .124444rem;
                 text-align: center;
-                color: #ccc;
+                display: inline-block;
+                .el-input__inner {
+                    border-radius: .355556rem;
+                    width: 1.635556rem;
+                    height: .64rem;
+                    text-align: center;
+                    color: #666;
+                }
             }
             .search {
                 border-radius: .355556rem;
                 font-size: .248889rem;
                 width: 1.066667rem;
                 height: .64rem;
+                border: none;
+                margin-top: .124444rem;
             }
+        }
+        .ti {
+            margin-top: .355556rem;
+            font-size: .213333rem;
+            color: red;
+        }
+        .el-select {
+            input {
+                border-radius: .088889rem;
+                color: rgb(72, 87, 106);
+                border: .017778rem solid #bfcbd9;
+            }
+        }
+        input:disabled {
+            border: .017778rem solid #bfcbd9;
+            background-color: #fff;
+            color: rgb(72, 87, 106);
+            -webkit-text-fill-color: rgb(72, 87, 106);
+            -webkit-opacity: 1;
         }
         .el-input__inner {
             background: #fff;
             color: #000;
             width: 4.746667rem;
             font-size: .231111rem;
+            color: #666;
         }
         .rtips {
             display: inline-block;
@@ -57,6 +83,12 @@
             color: #48A4F2;
             line-height: .533333rem;
             margin-bottom: .355556rem;
+        }
+        .qedit {
+            margin: .728889rem 0;
+            font-size: .248889rem;
+            width: 5.6rem;
+            height: .64rem;
         }
     }
 }

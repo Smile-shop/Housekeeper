@@ -27,13 +27,13 @@
             width: 100%;
             height: .924444rem;
             .jobx {
-                width: 131px;
+                width: 2.328889rem;
                 border: none;
                 margin-top: .177778rem;
                 .el-input__inner {
                     height: .568889rem;
                     border-radius: .355556rem;
-                    color:#888;
+                    color: #888;
                 }
             }
             .search {
@@ -71,45 +71,46 @@
             }
             /* Mozilla Firefox 19+ */
         }
-        .result{
-            font-size: 13px;
-            line-height: 90px;
-            span{
-                color:red;
-                font-size: 14px;
+        .result {
+            font-size: .231111rem;
+            line-height: 1.6rem;
+            span {
+                color: red;
+                font-size: .248889rem;
                 font-weight: bold;
             }
         }
-        .el-input,.el-textarea{
+        .el-input,
+        .el-textarea {
             width: 90%;
-            margin-top: 10px;
+            margin-top: .177778rem;
             .el-input__inner {
                 background-color: #fff;
                 color: rgb(72, 87, 106);
                 cursor: not-allowed;
-                font-size: 0.195556rem;   
+                font-size: 0.195556rem;
             }
         }
-        .el-textarea{
+        .el-textarea {
             width: 90%;
-            height: 300px;
-            textarea{
-                height: 300px;
+            height: 5.333333rem;
+            textarea {
+                height: 5.333333rem;
             }
         }
-        textarea{
-            font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
-            background-color:#fff;
-            color:rgb(72, 87, 106);
-            font-size: 0.195556rem;    
+        textarea {
+            font-family: 'Microsoft YaHei', "Comic Sans MS", "幼圆", "黑体", sans-serif;
+            background-color: #fff;
+            color: rgb(72, 87, 106);
+            font-size: 0.195556rem;
         }
         .yijianbtn {
             width: 5.74rem;
             margin-top: 1.24rem;
-            margin-bottom:1.24rem ;
+            margin-bottom: 1.24rem;
             background: #2ab3ea;
-            font-size: 14px;
-            height: 35px;
+            font-size: .248889rem;
+            height: .622222rem;
         }
     }
 }

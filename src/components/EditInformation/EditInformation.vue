@@ -22,13 +22,31 @@
 		   <span style="white-space:pre">   </span><span class="line" ></span>  
 		   <span style="white-space:pre">   </span><span class="txt">附件</span>  
 		   <span style="white-space:pre">   </span><span class="line"></span>  
-		</div>  
-		<a href="javascript:;" class="y">点击上传营业执照
-			<input id="fileId1" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange"/>
-		</a>
-		<a href="javascript:;" class="w">点击上传卫生许可证
-			<input id="fileId2" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="file" @change="onChange1"/>
-		</a>
+		</div> 
+		<div class="u1">
+			<span class="yy">更改营业执照:</span>
+			<el-upload
+			  class="avatar-uploader uploader1"
+			  action="https://jsonplaceholder.typicode.com/posts/"
+			  :show-file-list="false"
+			  :on-change="getpic1"
+			  :auto-upload="false">
+			  <img v-if="imageUrl1" :src="imageUrl1" class="avatar">
+			  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+			</el-upload>
+		</div> 
+		<div class="u2">
+			<span class="yy yy1">更改卫生许可证:</span>
+			<el-upload
+			  class="avatar-uploader uploader2"
+			  action="https://jsonplaceholder.typicode.com/posts/"
+			  :show-file-list="false"
+			  :on-change="getpic2"
+			  :auto-upload="false">
+			  <img v-if="imageUrl2" :src="imageUrl2" class="avatar">
+			  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+			</el-upload>
+		</div>
 		<mt-button type="primary" class="EditInformationbtn" @click="EditInformation">提交</mt-button>
 	</div>
 </template>
@@ -46,30 +64,13 @@
 				zphonenumber:'',
 				dadress:'',
 				file1:'',
-				file2:''
+				file2:'',
+				imageUrl1:'',
+				imageUrl2:''
 			}
 		},
 		created(){
-			this.$http({
-              url: baseUrl+'/findStore',
-              method:'GET',
-              }).then((res)=>{
-              	console.log(res)
-              	if(res.data.retCode === 0){
-					this.companyname = res.data.data.full_name;
-					this.jnumber = res.data.data.code;
-					this.fname = res.data.data.property.legal_person;
-					this.zname = res.data.data.property.quality_controller;
-					this.dadress = res.data.data.address;
-					this.fphonenumber = res.data.data.property.legal_mobile
-					this.zphonenumber = res.data.data.property.quality_mobile
-              	}else{
-              		this.$messagebox.alert(res.data.retMessage);
-              	}
-	          },(err)=>{
-	              console.log('failed');
-	              this.$messagebox.alert("获取信息错误!");
-	          });
+			this.getData();
 		},
 		methods:{
 			onChange(event){
@@ -80,8 +81,39 @@
 				this.file2 = event.target.files[0];
 				console.log(this.file2)
 			},
+			getpic1(file) {
+		        this.imageUrl1 = URL.createObjectURL(file.raw);
+		        this.file1 = file.raw;
+			},
+			getpic2(file) {
+		        this.imageUrl2 = URL.createObjectURL(file.raw);
+		        this.file2 = file.raw;
+			},
+			getData(){
+				this.$http({
+	              url: baseUrl+'/findStore',
+	              method:'GET',
+	              }).then((res)=>{
+	              	console.log(res)
+	              	if(res.data.retCode === 0){
+						this.companyname = res.data.data.full_name;
+						this.jnumber = res.data.data.code;
+						this.fname = res.data.data.property.legal_person;
+						this.zname = res.data.data.property.quality_controller;
+						this.dadress = res.data.data.address;
+						this.fphonenumber = res.data.data.property.legal_mobile
+						this.zphonenumber = res.data.data.property.quality_mobile
+						this.imageUrl1 = ['http://api.credunion.org/h1/dl?table=organ_property&id=' + res.data.data.property.id + '&field=scid_img']
+						this.imageUrl2 = ['http://api.credunion.org/h1/dl?table=organ_property&id=' + res.data.data.property.id + '&field=health_permit_img']
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		              console.log('failed');
+		              console.log(err);
+		          });
+			},
 			EditInformation(){
-				console.log(this.phone,this.password)
 				switch (''){
 					case this.companyname:
 						this.$messagebox.alert('企业名称不能为空！');
@@ -103,6 +135,12 @@
 						return;
 					case this.dadress:
 						this.$messagebox.alert('地址不能为空！');
+						return;
+					case this.imageUrl1:
+						this.$messagebox.alert('请选择需要上传的营业执照！');
+						return;
+					case this.imageUrl2:
+						this.$messagebox.alert('请选择需要上传的卫生许可证！');
 						return;			
 				}
 				if(!/^1[34578]\d{9}$/.test(this.fphonenumber)){
@@ -137,11 +175,13 @@
 		              			this.$router.push({name:'housekeeper'})
  							});
 		              	}else{
-		              		this.$messagebox.alert(res.data.retMessage);
+		              		this.$messagebox.alert(res.data.retMessage).then(action => {
+		              			this.getData();
+		              		});
 		              	}
-			          },function(err){
+			          },(err)=>{
 			              console.log('failed');
-			              this.$messagebox.alert('修改失败,请稍后再试!');
+			              
 			          });
 			},
 			goback(){

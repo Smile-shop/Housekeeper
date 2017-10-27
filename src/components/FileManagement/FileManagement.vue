@@ -6,23 +6,20 @@
 		</p>
 		<div class="main">
 			<div class="dsearch">
-				<!-- <input type="text" class="fromname" placeholder="输入表单、台账、档案名称" > -->
 				<el-select v-model="fileName" placeholder="请选择档案类型"  @change="getFile">
 			      <el-option v-for="(arr,index) in file" :label="arr" :value="arr+'-'+index"></el-option>
 			    </el-select>
 				<i class="time" @click="openPicker">
 					<el-input v-model="stime" placeholder="开始时间" class="timestart" :disabled="true"></el-input>
-					<!-- <input type="text" class="timestart" placeholder="开始时间" v-model="stime" disabled="disabled"> -->
 				</i>
 				<i class="time" @click="openPicker1">
 					<el-input v-model="etime" placeholder="结束时间" class="timeend" :disabled="true"></el-input>
-					<!-- <input type="text" class="timeend" placeholder="结束时间" v-model="etime" disabled="disabled"> -->
 				</i>
 				<mt-button type="primary" class="year" @click="preyear">上一年</mt-button>
 				<mt-button type="primary" class="year" @click="premonth">上个月</mt-button>
 				<mt-button type="primary" class="search" @click="search">搜索</mt-button>
 			</div>
-			<table class="jodtable">
+			<!-- <table class="jodtable">
 		      <thead>
 		        <tr>
 		          <th>表单、台账、档案名称</th>
@@ -41,7 +38,7 @@
 		          </td>
 		        </tr>
 		      </tbody>
-		    </table>
+		    </table> -->
 		</div>
 		<mt-datetime-picker
 			    ref="picker"
@@ -149,7 +146,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		              console.log(err);
 		          });
 		     },
 		     preyear(){
@@ -167,7 +164,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		              console.log(err);
 		          });
 		     },
 		     premonth(){
@@ -184,7 +181,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		              console.log(err);
 		          });
 		     },
 		}

@@ -11,14 +11,14 @@
         ;
         position: fixed;
         top: 0;
-        z-index: 3;
+        z-index: 5;
     }
     .person {
         width: .4rem;
         position: absolute;
         top: .34rem;
         left: 5.6rem;
-        z-index: 4;
+        z-index: 6;
     }
     .all {
         z-index: 5;
@@ -30,7 +30,7 @@
                 width: 2.2rem;
                 height: 1.4rem;
                 background: #fff;
-                border: .02rem solid rgba(204, 204, 204, 0.74);
+                border: .01rem solid rgba(204, 204, 204, 0.74);
                 border-top: 0;
                 box-shadow: 0 .04rem .1rem #ccc;
                 z-index: 10;
@@ -47,7 +47,7 @@
                     text-align: center;
                     line-height: .7rem;
                     &:nth-child(1) {
-                        border-bottom: .02rem solid #ccc;
+                        border-bottom: .01rem solid #ccc;
                     }
                     &:hover {
                         background: #ebebeb;
@@ -77,7 +77,7 @@
             top: .8rem;
             width: .32rem;
             height: .32rem;
-            border: .02rem solid rgba(204, 204, 204, 0.74);
+            border: .01rem solid rgba(204, 204, 204, 0.74);
             background: #fff;
             transform: rotate(45deg);
             -ms-transform: rotate(45deg);
@@ -103,6 +103,29 @@
             line-height: 1rem;
         }
     }
+    .el-icon-message {
+        color: #fff;
+        font-size: .355556rem;
+        position: absolute;
+        z-index: 3;
+        top: .32rem;
+        left: .408889rem;
+    }
+    .num {
+        display: inline-block;
+        width: .266667rem;
+        height: .266667rem;
+        font-size: .177778rem;
+        position: absolute;
+        z-index: 4;
+        background: red;
+        color: #fff;
+        border-radius: .266667rem;
+        text-align: center;
+        line-height: .266667rem;
+        left: .213333rem;
+        top: -.142222rem;
+    }
 }
 
 .mchli li {
@@ -124,12 +147,12 @@
 }
 
 .mchli li:nth-child(even) {
-    border-left: .02rem solid #E5E5E5;
-    border-bottom: .02rem solid #E5E5E5;
+    border-left: .01rem solid #E5E5E5;
+    border-bottom: .01rem solid #E5E5E5;
 }
 
 .mchli li:nth-child(odd) {
-    border-bottom: .02rem solid #E5E5E5;
+    border-bottom: .01rem solid #E5E5E5;
 }
 
 .mchli li img {
@@ -242,5 +265,5 @@
 }
 
 .mchli li:nth-last-child(odd) {
-    border-left: .02rem solid #E5E5E5;
+    border-left: .01rem solid #E5E5E5;
 }

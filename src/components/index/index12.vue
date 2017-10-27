@@ -13,6 +13,9 @@
 				</div>
 			</div>
 		</transition>
+		<i class="el-icon-message" v-show = "news" @click = "gonews">
+			<span class="num" v-show = "num">{{count}}</span>
+		</i>
 		<p class="index_text">
 			<span>主页</span>
 		</p>
@@ -71,12 +74,32 @@
 		data(){
 			return {
 				show:false,
-				id:''
+				id:'',
+				count:'',
+				news:false,
+				num:false
 			}
 		},
 		created(){
+			this.news = !this.news;
 			this.$indicator.close('加载中...'); 
 			this.id = this.$route.params.id;
+			if(sessionStorage.getItem('num') == null){
+				this.$http.get(baseUrl+'/getAlarmCount').then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+	          			this.count = res.data.data[0].count;
+	          			if(this.count > 0){
+	          				this.num = true;
+	          				sessionStorage.setItem("num",this.num)
+	          			}
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              	}
+		          },(err)=>{
+		          	console.log(err)
+		          });
+			}
 		},
 		methods:{
 			isshow(){
@@ -92,6 +115,10 @@
 			EditPsw(){
 				this.$router.push({name:'EditPsw'})
 			},
+			gonews(){
+				this.$router.push({name:'newsdetail'})
+				this.num = false;
+			}
 		},
 	
 	}

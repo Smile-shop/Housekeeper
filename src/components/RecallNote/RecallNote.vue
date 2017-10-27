@@ -73,8 +73,7 @@
 	              	}
 	              	
 		        },(err)=>{
-	              console.log('failed');
-	              this.$messagebox.alert("获取信息错误!");
+	             console.log(err)
 	          });
 			},
 			yijian(){
@@ -91,8 +90,7 @@
 	              	}
 	              	
 		        },(err)=>{
-	              console.log('failed');
-	              this.$messagebox.alert("获取信息错误!");
+	             console.log(err)
 	          });
 			}
 		}

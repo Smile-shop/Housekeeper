@@ -45,6 +45,7 @@ import RecallNote from '../components/RecallNote/RecallNote.vue'
 import SendNotice from '../components/SendNotice/SendNotice.vue'
 import FillDirections from '../components/FillDirections/FillDirections.vue'
 import FillTable from '../components/FillTable/FillTable.vue'
+import newsdetail from '../components/newsdetail/newsdetail.vue'
 
 
 
@@ -225,12 +226,17 @@ const router = new VueRouter({
         path:'/FillTable',
         name:'FillTable',
         component:FillTable,
+    },{
+        path:'/newsdetail',
+        name:'newsdetail',
+        component:newsdetail,
     },]
 })
 
 //对将要进入的路由进行权判断
 router.beforeEach((to, from, next) =>{
 	// console.log(to);
+    window.scrollTo(0, 0)
 	if(to.path.indexOf('login') < 0 && !window.sessionStorage.getItem('user')){
 		router.replace('login');
 		next();

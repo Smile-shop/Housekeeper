@@ -57,7 +57,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("获取信息错误!");
+		              console.log(err);
 		          });
 			},
 			goback(){
@@ -76,7 +76,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		              this.$messagebox.alert("操作失败!");
+		             console.log(err)
 		          });
 		     },
 		    look(index){

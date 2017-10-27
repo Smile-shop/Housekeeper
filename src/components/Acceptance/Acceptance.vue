@@ -1,12 +1,6 @@
 <template>
 	<table class="listtable">
 	    <tbody>
-	        <!-- <tr v-for="(item,index) in list">
-	          <td>{{item[0]}}</td>
-	          <td>
-	          	<mt-button type="primary" @click="choose(index,indexs)" class="yes" :class="{'yesActive': active == indexs&&actives == index}" v-for="(arr,indexs) in item[1]">{{arr}}</mt-button><br>
-	          </td>
-	        </tr> -->
 	         <tr>
 	          <td>检查化妆品经营企业是否执行化妆品进货查验制度。</td>
 	          <td>

@@ -28,7 +28,7 @@
             border-top: none;
             border-collapse: collapse;
             width: 100%;
-            border-right:none;
+            border-right: none;
             border-left: none;
             th {
                 background: #81bdef;
@@ -44,7 +44,6 @@
             }
             tr {
                 td {
-
                     .time {
                         display: inline-block;
                         width: 100%;
@@ -56,11 +55,11 @@
                             border: none;
                             background-color: #fff;
                             padding-left: .266667rem;
-                            color:#000;
+                            color: #000;
                         }
-                        input:disabled{
-                            background-color:#fff;
-                            color:rgb(72, 87, 106);
+                        input:disabled {
+                            background-color: #fff;
+                            color: rgb(72, 87, 106);
                             -webkit-text-fill-color: rgb(72, 87, 106);
                             -webkit-opacity: 1;
                         }
@@ -110,7 +109,7 @@
                     width: 20%;
                     background: #81bdef;
                     border-top: 0.017778rem rgba(204, 204, 204, 0.28) solid;
-                    border-right:none;
+                    border-right: none;
                     color: #fff;
                 }
             }

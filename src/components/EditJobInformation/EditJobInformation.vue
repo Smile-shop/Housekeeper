@@ -50,7 +50,7 @@
 		mounted(){
 			this.data = this.$route.params.a;
 			console.log(this.data)
-			this.full_name = this.data.user_name;
+			this.full_name = this.data.realname;
 			this.mobile = this.data.mobile;
 			this.checkedNames = this.data.role_ids;
 	     	if(this.checkedNames.indexOf("店长")!==-1){
@@ -101,7 +101,7 @@
 	              		this.$messagebox.alert(res.data.retMessage);
 	              	}
 		          },(err)=>{
-		             this.$messagebox.alert('修改失败,请稍后再试!');
+		             console.log(err)
 		          });
  			},
 		}

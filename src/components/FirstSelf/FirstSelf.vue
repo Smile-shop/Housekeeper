@@ -37,6 +37,7 @@
 		    	}else{
 		    		let obj = {enterprise_name:this.qymc}
 		    		this.$http.post(baseUrl+'/searchSupplier',obj).then((res)=>{
+		    			console.log(res)
 						let data = res.data.data;
 						sessionStorage.setItem('aaa',JSON.stringify(data));
 						this.$router.push({name:'Result'})

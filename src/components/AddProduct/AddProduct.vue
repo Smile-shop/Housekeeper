@@ -18,10 +18,10 @@
 			    <el-input v-model="a.cpmc"></el-input>
 			  </el-form-item>
 			  <el-form-item label="企业类别:">
-			    <el-input v-model="lb1"></el-input>
+			    <el-input v-model="lb1" :disabled="true"></el-input>
 			  </el-form-item>
 			  <el-form-item label="供货企业名称:">
-			    <el-input v-model="ghqymc1"></el-input>
+			    <el-input v-model="ghqymc1" :disabled="true"></el-input>
 			  </el-form-item>
 			</el-form>
 			<div class="bac"></div>
@@ -173,10 +173,10 @@
 			    <el-input v-model="b.cpmc"></el-input>
 			  </el-form-item>
 			  <el-form-item label="企业类别:">
-			    <el-input v-model="lb1"></el-input>
+			    <el-input v-model="lb1" :disabled="true"></el-input>
 			  </el-form-item>
 			  <el-form-item label="供货企业名称:">
-			    <el-input v-model="ghqymc1"></el-input>
+			    <el-input v-model="ghqymc1" :disabled="true"></el-input>
 			  </el-form-item>
 			</el-form>
 			<div class="bac"></div>
@@ -346,10 +346,10 @@
 			    <el-input v-model="c.cpmc"></el-input>
 			  </el-form-item>
 			  <el-form-item label="企业类别:">
-			    <el-input v-model="lb1"></el-input>
+			    <el-input v-model="lb1"  :disabled="true"></el-input>
 			  </el-form-item>
 			  <el-form-item label="供货企业名称:">
-			    <el-input v-model="ghqymc1"></el-input>
+			    <el-input v-model="ghqymc1"  :disabled="true"></el-input>
 			  </el-form-item>
 			</el-form>
 			<div class="bac"></div>
@@ -496,10 +496,10 @@
 			    <el-input v-model="d.cpmc"></el-input>
 			  </el-form-item>
 			  <el-form-item label="企业类别:">
-			    <el-input v-model="lb1"></el-input>
+			    <el-input v-model="lb1"  :disabled="true"></el-input>
 			  </el-form-item>
 			  <el-form-item label="供货企业名称:">
-			    <el-input v-model="ghqymc1"></el-input>
+			    <el-input v-model="ghqymc1"  :disabled="true"></el-input>
 			  </el-form-item>
 			</el-form>
 			<div class="bac"></div>
@@ -711,7 +711,7 @@
 	            formData.append('manufacturer', this.b.qymc1);
 	            formData.append('brand', this.b.scpp1);
 	            formData.append('product_form', this.b.lx1);
-	            formData.append('spec', this.b.gg1);
+	            formData.append('specification', this.b.gg1);
 	            formData.append('storage_spec', this.b.cctj1);
 	            formData.append('other_spec', this.b.qt1);
 	            formData.append('QC_OK', this.b.radio1);
@@ -743,7 +743,7 @@
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败！");
+			              console.log(err)
 			          });
 			},
 			jinkouteshu(){
@@ -759,7 +759,7 @@
 	            formData.append('manufacturer', this.d.qymc1);
 	            formData.append('brand', this.d.scpp1);
 	            formData.append('product_form', this.d.lx1);
-	            formData.append('spec', this.d.gg1);
+	            formData.append('specification', this.d.gg1);
 	            formData.append('storage_spec', this.d.cctj1);
 	            formData.append('other_spec', this.d.qt1);
 	            formData.append('QC_OK', this.d.radio1);
@@ -791,7 +791,7 @@
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败！");
+			              console.log(err)
 			          });
 			},
 			guochan(){
@@ -804,7 +804,7 @@
 	            formData.append('manufacturer_scid', this.a.qydm1);
 	            formData.append('produce_permit', this.a.scxkzh1);
 	            formData.append('product_form', this.a.lx1);
-	            formData.append('spec', this.a.gg1);
+	            formData.append('specification', this.a.gg1);
 	            formData.append('storage_spec', this.a.cctj1);
 	            formData.append('other_spec', this.a.qt1);
 	            formData.append('QC_OK', this.a.radio1);
@@ -836,7 +836,7 @@
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败！");
+			              console.log(err)
 			          });				
 			},
 			guochanteshu(){
@@ -849,7 +849,7 @@
 	            formData.append('manufacturer_scid', this.c.qydm1);
 	            formData.append('produce_permit', this.c.scxkzh1);
 	            formData.append('product_form', this.c.lx1);
-	            formData.append('spec', this.c.gg1);
+	            formData.append('specification', this.c.gg1);
 	            formData.append('storage_spec', this.c.cctj1);
 	            formData.append('other_spec', this.c.qt1);
 	            formData.append('QC_OK', this.c.radio1);
@@ -881,7 +881,7 @@
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败！");
+			              console.log(err)
 			          });
 			},
 			goback(){

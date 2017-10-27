@@ -349,7 +349,7 @@
               		this.$messagebox.alert(res.data.retMessage);
               	}
 	          },(err)=>{
-	              this.$messagebox.alert("获取信息错误!");
+	              console.log(err);
 	          });
 		},
 		methods: {

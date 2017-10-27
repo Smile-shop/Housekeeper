@@ -21,7 +21,17 @@
 			}
 		},
 		created(){
-			
+			let obj = {enterprise_name:this.$route.params.qymc}
+			console.log(obj)
+			this.$http.post(baseUrl+'/searchSupplier',obj).then((res)=>{
+				console.log(res)
+	          	if(res.data.retCode === 0){
+				let data = res.data.data;
+				sessionStorage.setItem('aaa',JSON.stringify(data));
+	          	}
+	        },(err)=>{
+	             console.log(err)
+	        });
 		},
 		methods: {
 			goback(){

@@ -97,13 +97,13 @@
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
 		              		this.$messagebox.alert('操作成功!').then(action => {
-		              			this.$router.push({name:'Result2'})
+		              			this.$router.push({name:'Result2',params:{qymc:this.qymc}})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
 		              	}
 			          },(err)=>{
-			              this.$messagebox.alert("操作失败!");
+			              console.log(err)
 			          });
 			},
 			handleRemove(file) {
