@@ -23,24 +23,30 @@
 				   <el-form-item label="用户地址:">
 				    <el-input v-model="yhdz"></el-input>
 				  </el-form-item>
+				  <el-form-item label="销售人员:">
+				    <el-input v-model="xsry"></el-input>
+				  </el-form-item>
+				  <el-form-item label="产品名称:">
+					    <el-select v-model="productName" placeholder="请选择产品名称"  @change="getProduct">
+					      <el-option v-for="(arr,index) in product" :label="arr.product_name" :value="arr.product_name+'-'+index"></el-option>
+					    </el-select><br>
+				  </el-form-item>
+				  <el-form-item label="进货日期:">
+				    <el-input v-model="jhrq"></el-input>
+				  </el-form-item>
 				   <el-form-item label="销售日期:">
 				     <i class="time" @click="openPicker">
 		          		<el-input class="time" v-model="xsrq"  placeholder="点击选择时间" :disabled="true"></el-input>
 		          	</i>
 				  </el-form-item>
-				   <el-form-item label="销售人员:">
-				    <el-input v-model="xsry"></el-input>
-				  </el-form-item>
-				   <el-form-item label="产品名称:">
-					    <el-select v-model="productName" placeholder="请选择产品名称"  @change="getProduct">
-					      <el-option v-for="(arr,index) in product" :label="arr.product_name" :value="arr.product_name+'-'+index"></el-option>
-					    </el-select><br>
-				  </el-form-item>
 				   <el-form-item label="规格:">
 				    <el-input v-model="gg"></el-input>
 				  </el-form-item>
-				   <el-form-item label="数量:">
-				    <el-input v-model="sl"></el-input>
+				  <el-form-item label="进货数量:">
+				    <el-input v-model="count"></el-input>
+				  </el-form-item>
+				  <el-form-item label="销售数量:">
+				    <el-input type='number' v-model="sl" @change='change'></el-input>
 				  </el-form-item>
 				   <el-form-item label="生产批号:">
 				    <el-input v-model="scph"></el-input>
@@ -104,6 +110,8 @@
 		        productName:'',
 		        productName1:'',
 		        purchase_id:'',
+		        count:'',
+		        jhrq:'',
 			}
 		},
 		created(){
@@ -122,6 +130,13 @@
 			goback(){
 				this.$router.go(-1)
 			},
+			change(){
+				this.sl = Number(this.sl)
+				if(this.sl > this.count){
+					this.sl = '';
+					this.$messagebox.alert('销售数量不能大于进货数量！');
+				}
+			},
 			aa(){
 		    	let a = new Date(this.pickerValue);
 				let y = a.getFullYear();
@@ -132,6 +147,10 @@
 				let pickerValue = `${y}-${M}-${d}`
 				this.pickerValue = pickerValue;
 				this.xsrq = this.pickerValue;
+				if(this.xsrq < this.jhrq){
+					this.$messagebox.alert('销售日期不能早于进货日期！');
+					this.xsrq = '';
+				}
 		    },
 		    openPicker() {
 		        this.$refs.picker.open();
@@ -151,6 +170,10 @@
 				this.yxq = this.product[index].expire_date.split(" ")[0];
 				this.purchase_id = this.product[index].id;
 				this.gg = this.product[index].specification;
+				this.count = this.product[index].quatity;
+				this.jhrq = this.product[index].create_time.split(' ')[0];
+				this.xsrq = '';
+				this.sl = '';
 			},
 		    sub(){
 		    	switch (''){
@@ -200,7 +223,7 @@
 						this.$messagebox.alert('地址不能为空！');
 						return;			
 				}
-		    	let obj = {user_name:this.yhxm,user_mobile:this.yhdh,user_addr:this.yhdz,create_time:this.xsrq,saler:this.xsry,quantity:this.sl,purchase_id:this.purchase_id};
+		    	let obj = {user_name:this.yhxm,user_mobile:this.yhdh,user_addr:this.yhdz,sale_time:this.xsrq,saler:this.xsry,quantity:this.sl,purchase_id:this.purchase_id};
 		    	this.$http.post(baseUrl+'/addSales',obj).then((res)=>{
 					console.log(res)
 	              	if(res.data.retCode === 0){

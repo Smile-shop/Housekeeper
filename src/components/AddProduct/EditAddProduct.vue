@@ -2,7 +2,7 @@
 	<div class="AddProduct_container">
 		<p class="AddProduct_text">
 			<img src="../../assets/imgs/arrow (3).png" class="AddProductback" @click="goback">
-			<span>添加产品</span>
+			<span>修改首营产品信息</span>
 		</p>
 		<mt-navbar v-model="selected">
 		  <mt-tab-item id="1">A国产非特</mt-tab-item>
@@ -65,17 +65,17 @@
 			</el-form>
 			<p class="t">
 				<span class="hez">合格证:</span>
-				<el-radio class="radio" v-model="a.radio1" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="a.radio1" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="a.radio1" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="a.radio1" :label="0">不通过</el-radio><br>
   				<span class="bq">标签:</span>
-				<el-radio class="radio" v-model="a.radio2" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="a.radio2" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="a.radio2" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="a.radio2" :label="0">不通过</el-radio><br>
   				<span class="bz">包装:</span>
-				<el-radio class="radio" v-model="a.radio3" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="a.radio3" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="a.radio3" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="a.radio3" :label="0">不通过</el-radio><br>
   				<span class="wx">文宣禁忌用词:</span>
-				<el-radio class="radio" v-model="a.radio4" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="a.radio4" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="a.radio4" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="a.radio4" :label="0">不通过</el-radio><br>
 			</p>
 			<div class="bac"></div>
 			<p class="pz"><span class="el-icon-minus"></span>凭证拍照</p>
@@ -238,17 +238,17 @@
 			</el-form>
 			<p class="t">
 				<span class="hez">合格证:</span>
-				<el-radio class="radio" v-model="b.radio1" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="b.radio1" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="b.radio1" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="b.radio1" :label="0">不通过</el-radio><br>
   				<span class="bq">标签:</span>
-				<el-radio class="radio" v-model="b.radio2" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="b.radio2" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="b.radio2" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="b.radio2" :label="0">不通过</el-radio><br>
   				<span class="bz">包装:</span>
-				<el-radio class="radio" v-model="b.radio3" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="b.radio3" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="b.radio3" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="b.radio3" :label="0">不通过</el-radio><br>
   				<span class="wx">文宣禁忌用词:</span>
-				<el-radio class="radio" v-model="b.radio4" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="b.radio4" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="b.radio4" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="b.radio4" :label="0">不通过</el-radio><br>
 			</p>
 			<div class="bac"></div>
 			<p class="pz"><span class="el-icon-minus"></span>凭证拍照</p>
@@ -392,17 +392,17 @@
 			</el-form>
 			<p class="t">
 				<span class="hez">合格证:</span>
-				<el-radio class="radio" v-model="c.radio1" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="c.radio1" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="c.radio1" ::label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="c.radio1" :label="0">不通过</el-radio><br>
   				<span class="bq">标签:</span>
-				<el-radio class="radio" v-model="c.radio2" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="c.radio2" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="c.radio2" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="c.radio2" :label="0">不通过</el-radio><br>
   				<span class="bz">包装:</span>
-				<el-radio class="radio" v-model="c.radio3" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="c.radio3" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="c.radio3" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="c.radio3" :label="0">不通过</el-radio><br>
   				<span class="wx">文宣禁忌用词:</span>
-				<el-radio class="radio" v-model="c.radio4" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="c.radio4" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="c.radio4" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="c.radio4" :label="0">不通过</el-radio><br>
 			</p>
 			<div class="bac"></div>
 			<p class="pz"><span class="el-icon-minus"></span>凭证拍照</p>
@@ -546,7 +546,7 @@
 			  </el-form-item>
 			  <div class="bac"></div>
 			  <p class="pz"><span class="el-icon-minus"></span>产品信息</p>
-			   <el-form-item label="类型:">
+			  <el-form-item label="类型:">
 			     <el-select v-model="d.lx1" placeholder="请选择产品类型">
 				      <el-option label="粉状" value="粉状" ></el-option>
 				      <el-option label="液体" value="液体" ></el-option>
@@ -565,17 +565,17 @@
 			</el-form>
 			<p class="t">
 				<span class="hez">合格证:</span>
-				<el-radio class="radio" v-model="d.radio1" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="d.radio1" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="d.radio1" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="d.radio1" :label="0">不通过</el-radio><br>
   				<span class="bq">标签:</span>
-				<el-radio class="radio" v-model="d.radio2" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="d.radio2" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="d.radio2" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="d.radio2" :label="0">不通过</el-radio><br>
   				<span class="bz">包装:</span>
-				<el-radio class="radio" v-model="d.radio3" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="d.radio3" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="d.radio3" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="d.radio3" :label="0">不通过</el-radio><br>
   				<span class="wx">文宣禁忌用词:</span>
-				<el-radio class="radio" v-model="d.radio4" label="1">通过</el-radio>
-  				<el-radio class="radio" v-model="d.radio4" label="0">不通过</el-radio><br>
+				<el-radio class="radio" v-model="d.radio4" :label="1">通过</el-radio>
+  				<el-radio class="radio" v-model="d.radio4" :label="0">不通过</el-radio><br>
 			</p>
 			<div class="bac"></div>
 			<p class="pz"><span class="el-icon-minus"></span>凭证拍照</p>
@@ -695,15 +695,193 @@
 			}
 		},
 		created(){
-			let aa = JSON.parse(sessionStorage.getItem('aaa'));
-			this.ghqymc1 = aa[0].enterprise_name;
-			this.id = aa[0].id;
-			console.log(this.id)
-			if(aa[0].enterprise_type == 1){
-				this.lb1 = "生产企业";
-			}else if(aa[0].enterprise_type == 2){
-				this.lb1 = "经营企业";
-			}
+			let obj = {id:this.$route.params.id}
+				this.$http.post(baseUrl+'/findProduct',obj).then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+			            this.selected = res.data.data.product_type.toString();
+			            let data1 = res.data.data;
+			            if(this.selected == '2'){
+			            	this.b.cpmc = data1.product_name;
+			            	this.lb1 = data1.enterprise_type == 1 ? '生产企业' : '经营企业'
+			            	this.ghqymc1 = data1.enterprise_name
+			            	this.b.bapzh1 = data1.apply_sn;
+			            	this.b.bapzh2 = data1.declare_scid;
+			            	this.b.qydm2 = data1.manufacturer_scid
+			            	this.b.zdph2 = data1.agent_license;
+			            	this.b.scgj1 = data1.produce_country;
+			            	this.b.qymc1 = data1.manufacturer;
+			            	this.b.scpp1 = data1.brand;
+			            	this.b.lx1 = data1.product_form;
+			            	this.b.gg1 = data1.specification;
+			            	this.b.cctj1 = data1.storage_spec;
+			            	this.b.qt1 = data1.other_spec;
+			            	this.b.radio1 = Number(data1.QC_OK);
+			            	this.b.radio2 = Number(data1.label_OK);
+			            	this.b.radio3 = Number(data1.package_OK);
+			            	this.b.radio4 = Number(data1.advertise_OK);
+			            	this.b.jyjl = data1.results;
+			            	this.id = data1.enterprise_id;
+			            	if(data1.apply_img != null && data1.apply_img != undefined){
+								this.b.imageUrl1 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=apply_img']
+							}
+							if(data1.cosmetic_permits != null && data1.cosmetic_permits != undefined){
+								this.b.imageUrl2 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=cosmetic_permits']
+							}
+							if(data1.health_permits != null && data1.health_permits != undefined){
+								this.b.imageUrl3 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=health_permits']
+							}
+							if(data1.check_report != null && data1.check_report != undefined){
+								this.b.imageUrl4 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=check_report']
+							}
+							if(data1.qc_img != null && data1.qc_img != undefined){
+								this.b.imageUrl5 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=qc_img']
+							}
+							if(data1.label_img != null && data1.label_img != undefined){
+								this.b.imageUrl6= ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=label_img']
+							}
+							if(data1.pkg_img != null && data1.pkg_img != undefined){
+								this.b.imageUrl7 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=pkg_img']
+							}
+							if(data1.other_img != null && data1.other_img != undefined){
+								this.b.imageUrl8 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=other_img']
+							}
+			            }else if(this.selected == '1'){
+			            	this.a.cpmc = data1.product_name;
+			            	this.lb1 = data1.enterprise_type == 1 ? '生产企业' : '经营企业'
+			            	this.ghqymc1 = data1.enterprise_name
+			            	this.a.bapzh1 = data1.apply_sn;
+			            	this.a.qymc1 = data1.manufacturer;
+			            	this.a.qydm1 = data1.manufacturer_scid
+			            	this.a.scxkzh1 = data1.produce_permit
+			            	this.a.lx1 = data1.product_form;
+			            	this.a.gg1 = data1.specification;
+			            	this.a.cctj1 = data1.storage_spec;
+			            	this.a.qt1 = data1.other_spec;
+			            	this.a.radio1 = Number(data1.QC_OK);
+			            	this.a.radio2 = Number(data1.label_OK);
+			            	this.a.radio3 = Number(data1.package_OK);
+			            	this.a.radio4 = Number(data1.advertise_OK);
+			            	this.a.jyjl = data1.results;
+			            	this.id = data1.enterprise_id;
+			            	if(data1.apply_img != null && data1.apply_img != undefined){
+								this.a.imageUrl1 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=apply_img']
+							}
+							if(data1.cosmetic_permits != null && data1.cosmetic_permits != undefined){
+								this.a.imageUrl2 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=cosmetic_permits']
+							}
+							if(data1.health_permits != null && data1.health_permits != undefined){
+								this.a.imageUrl3 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=health_permits']
+							}
+							if(data1.check_report != null && data1.check_report != undefined){
+								this.a.imageUrl4 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=check_report']
+							}
+							if(data1.qc_img != null && data1.qc_img != undefined){
+								this.a.imageUrl5 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=qc_img']
+							}
+							if(data1.label_img != null && data1.label_img != undefined){
+								this.a.imageUrl6= ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=label_img']
+							}
+							if(data1.pkg_img != null && data1.pkg_img != undefined){
+								this.a.imageUrl7 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=pkg_img']
+							}
+							if(data1.other_img != null && data1.other_img != undefined){
+								this.a.imageUrl8 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=other_img']
+							}
+			            }else if(this.selected == '3'){
+			            	this.c.cpmc = data1.product_name;
+			            	this.lb1 = data1.enterprise_type == 1 ? '生产企业' : '经营企业'
+			            	this.ghqymc1 = data1.enterprise_name
+			            	this.c.zcpzh1 = data1.apply_sn;
+			            	this.c.qymc1 = data1.manufacturer;
+			            	this.c.qydm1 = data1.manufacturer_scid
+			            	this.c.scxkzh1 = data1.produce_permit
+			            	this.c.lx1 = data1.product_form;
+			            	this.c.gg1 = data1.specification;
+			            	this.c.cctj1 = data1.storage_spec;
+			            	this.c.qt1 = data1.other_spec;
+			            	this.c.radio1 = Number(data1.QC_OK);
+			            	this.c.radio2 = Number(data1.label_OK);
+			            	this.c.radio3 = Number(data1.package_OK);
+			            	this.c.radio4 = Number(data1.advertise_OK);
+			            	this.c.jyjl = data1.results;
+			            	this.id = data1.enterprise_id;
+			            	if(data1.apply_img != null && data1.apply_img != undefined){
+								this.c.imageUrl1 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=apply_img']
+							}
+							if(data1.cosmetic_permits != null && data1.cosmetic_permits != undefined){
+								this.c.imageUrl2 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=cosmetic_permits']
+							}
+							if(data1.health_permits != null && data1.health_permits != undefined){
+								this.c.imageUrl3 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=health_permits']
+							}
+							if(data1.check_report != null && data1.check_report != undefined){
+								this.c.imageUrl4 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=check_report']
+							}
+							if(data1.qc_img != null && data1.qc_img != undefined){
+								this.c.imageUrl5 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=qc_img']
+							}
+							if(data1.label_img != null && data1.label_img != undefined){
+								this.c.imageUrl6= ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=label_img']
+							}
+							if(data1.pkg_img != null && data1.pkg_img != undefined){
+								this.c.imageUrl7 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=pkg_img']
+							}
+							if(data1.other_img != null && data1.other_img != undefined){
+								this.c.imageUrl8 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=other_img']
+							}
+			            }else if(this.selected == '4'){
+			            	this.d.cpmc = data1.product_name;
+			            	this.lb1 = data1.enterprise_type == 1 ? '生产企业' : '经营企业'
+			            	this.ghqymc1 = data1.enterprise_name
+			            	this.d.bapzh1 = data1.apply_sn;
+			            	this.d.bapzh2 = data1.declare_scid;
+			            	this.d.qydm2 = data1.manufacturer_scid
+			            	this.d.zdph2 = data1.agent_license;
+			            	this.d.scgj1 = data1.produce_country;
+			            	this.d.qymc1 = data1.manufacturer;
+			            	this.d.scpp1 = data1.brand;
+			            	this.d.lx1 = data1.product_form;
+			            	this.d.gg1 = data1.specification;
+			            	this.d.cctj1 = data1.storage_spec;
+			            	this.d.qt1 = data1.other_spec;
+			            	this.d.radio1 = Number(data1.QC_OK);
+			            	this.d.radio2 = Number(data1.label_OK);
+			            	this.d.radio3 = Number(data1.package_OK);
+			            	this.d.radio4 = Number(data1.advertise_OK);
+			            	this.d.jyjl = data1.results;
+			            	this.id = data1.enterprise_id;
+			            	if(data1.apply_img != null && data1.apply_img != undefined){
+								this.d.imageUrl1 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=apply_img']
+							}
+							if(data1.cosmetic_permits != null && data1.cosmetic_permits != undefined){
+								this.d.imageUrl2 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=cosmetic_permits']
+							}
+							if(data1.health_permits != null && data1.health_permits != undefined){
+								this.d.imageUrl3 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=health_permits']
+							}
+							if(data1.check_report != null && data1.check_report != undefined){
+								this.d.imageUrl4 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=check_report']
+							}
+							if(data1.qc_img != null && data1.qc_img != undefined){
+								this.d.imageUrl5 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=qc_img']
+							}
+							if(data1.label_img != null && data1.label_img != undefined){
+								this.d.imageUrl6= ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=label_img']
+							}
+							if(data1.pkg_img != null && data1.pkg_img != undefined){
+								this.d.imageUrl7 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=pkg_img']
+							}
+							if(data1.other_img != null && data1.other_img != undefined){
+								this.d.imageUrl8 = ['http://api.credunion.org/h1/dl?table=first_product&id=' + data1.id + '&field=other_img']
+							}
+			            }
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              		
+	              	}
+		          },(err)=>{
+		        });
 		},
 		methods:{
 			jinkou(){
@@ -735,17 +913,18 @@
 	            formData.append('label_img', this.b.file6);
 	            formData.append('pkg_img', this.b.file7);
 	            formData.append('other_img', this.b.file8);
-
+	            formData.append('is_check', 0);
+	            formData.append('id', this.$route.params.id);
 	            let config = {
 	              headers: {
 	                'Content-Type': 'multipart/form-data'
 	              }
 	            }
-	            this.$http.post(baseUrl+'/addProduct',formData,config).then((res)=>{
+	            this.$http.post(baseUrl+'/updateProduct',formData,config).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('操作成功！点击确定按钮跳回主页。').then(action => {
-		              			this.$router.push({name:'index'})
+		              		this.$messagebox.alert('操作成功').then(action => {
+		              			this.$router.push({name:'workStatus'})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
@@ -784,17 +963,18 @@
 	            formData.append('label_img', this.d.file6);
 	            formData.append('pkg_img', this.d.file7);
 	            formData.append('other_img', this.d.file8);
-
+	            formData.append('id', this.$route.params.id);
+	            formData.append('is_check', 0);
 	            let config = {
 	              headers: {
 	                'Content-Type': 'multipart/form-data'
 	              }
 	            }
-	            this.$http.post(baseUrl+'/addProduct',formData,config).then((res)=>{
+	            this.$http.post(baseUrl+'/updateProduct',formData,config).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('操作成功！点击确定按钮跳回主页。').then(action => {
-		              			this.$router.push({name:'index'})
+		              		this.$messagebox.alert('操作成功！').then(action => {
+		              			this.$router.push({name:'workStatus'})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
@@ -829,17 +1009,18 @@
 	            formData.append('label_img', this.a.file6);
 	            formData.append('pkg_img', this.a.file7);
 	            formData.append('other_img', this.a.file8);
-
+	            formData.append('id', this.$route.params.id);
+	            formData.append('is_check', 0);
 	            let config = {
 	              headers: {
 	                'Content-Type': 'multipart/form-data'
 	              }
 	            }
-	            this.$http.post(baseUrl+'/addProduct',formData,config).then((res)=>{
+	            this.$http.post(baseUrl+'/updateProduct',formData,config).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('操作成功！点击确定按钮跳回主页。').then(action => {
-		              			this.$router.push({name:'index'})
+		              		this.$messagebox.alert('操作成功！').then(action => {
+		              			this.$router.push({name:'workStatus'})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);
@@ -874,17 +1055,18 @@
 	            formData.append('label_img', this.c.file6);
 	            formData.append('pkg_img', this.c.file7);
 	            formData.append('other_img', this.c.file8);
-
+	            formData.append('id', this.$route.params.id);
+	            formData.append('is_check', 0);
 	            let config = {
 	              headers: {
 	                'Content-Type': 'multipart/form-data'
 	              }
 	            }
-	            this.$http.post(baseUrl+'/addProduct',formData,config).then((res)=>{
+	            this.$http.post(baseUrl+'/updateProduct',formData,config).then((res)=>{
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
-		              		this.$messagebox.alert('操作成功！点击确定按钮跳回主页。').then(action => {
-		              			this.$router.push({name:'index'})
+		              		this.$messagebox.alert('操作成功！').then(action => {
+		              			this.$router.push({name:'workStatus'})
  							});
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);

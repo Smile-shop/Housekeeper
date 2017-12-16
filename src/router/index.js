@@ -15,6 +15,7 @@ import checkForm from '../components/checkForm/checkForm.vue'
 import remind from '../components/remind/remind.vue'
 import AuditsManagement from '../components/AuditsManagement/AuditsManagement.vue'
 import FileManagement from '../components/FileManagement/FileManagement.vue'
+import FileManagementType from '../components/FileManagement/FileManagementType.vue'
 import JobMonitoring from '../components/JobMonitoring/JobMonitoring.vue'
 import Incomplete from '../components/Incomplete/Incomplete.vue'
 import MonitoringManagement from '../components/MonitoringManagement/MonitoringManagement.vue'
@@ -29,8 +30,13 @@ import Others from '../components/Others/Others.vue'
 import StorageCondition from '../components/StorageCondition/StorageCondition.vue'
 import Propaganda from '../components/Propaganda/Propaganda.vue'
 import Purchase from '../components/Purchase/Purchase.vue'
+import EditPurchase from '../components/Purchase/EditPurchase.vue'
+import workStatus from '../components/Purchase/workStatus.vue'
+import PurchaseLie from '../components/Purchase/PurchaseLie.vue'
 import FirstBusiness from '../components/FirstBusiness/FirstBusiness.vue'
+import EditFirstBusiness from '../components/FirstBusiness/EditFirstBusiness.vue'
 import AddProduct from '../components/AddProduct/AddProduct.vue'
+import EditAddProduct from '../components/AddProduct/EditAddProduct.vue'
 import Sale from '../components/Sale/Sale.vue'
 import FirstSelf from '../components/FirstSelf/FirstSelf.vue'
 import Result from '../components/Result/Result.vue'
@@ -111,6 +117,10 @@ const router = new VueRouter({
         name:'FileManagement',
         component:FileManagement,
     },{
+        path:'/FileManagementType',
+        name:'FileManagementType',
+        component:FileManagementType,
+    },{
         path:'/JobMonitoring',
         name:'JobMonitoring',
         component:JobMonitoring,
@@ -163,13 +173,33 @@ const router = new VueRouter({
         name:'Purchase',
         component:Purchase,
     },{
+        path:'/EditPurchase',
+        name:'EditPurchase',
+        component:EditPurchase,
+    },{
+        path:'/workStatus',
+        name:'workStatus',
+        component:workStatus,
+    },{
+        path:'/PurchaseLie',
+        name:'PurchaseLie',
+        component:PurchaseLie,
+    },{
         path:'/FirstBusiness',
         name:'FirstBusiness',
         component:FirstBusiness,
     },{
+        path:'/EditFirstBusiness',
+        name:'EditFirstBusiness',
+        component:EditFirstBusiness,
+    },{
         path:'/AddProduct',
         name:'AddProduct',
         component:AddProduct,
+    },{
+        path:'/EditAddProduct',
+        name:'EditAddProduct',
+        component:EditAddProduct,
     },{
         path:'/Sale',
         name:'Sale',
@@ -233,7 +263,7 @@ const router = new VueRouter({
     },]
 })
 
-//对将要进入的路由进行权判断
+// 对将要进入的路由进行权判断
 router.beforeEach((to, from, next) =>{
 	// console.log(to);
     window.scrollTo(0, 0)

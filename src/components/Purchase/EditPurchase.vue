@@ -2,19 +2,19 @@
 	<div class="Purchase_container">
 		<p class="Purchase_text">
 			<img src="../../assets/imgs/arrow (3).png" class="goback" @click="goback">
-			<span>进货管理</span>
+			<span>编辑进货信息</span>
 		</p>
 		<div class="main">
 			<div class="select">
 			    <el-form :label-position="labelPosition" label-width="95px">
 			      <el-form-item label="供货企业:">
 				   <el-select v-model="companyName" placeholder="请选择供货企业"  @change="getCompany">
-				      <el-option v-for="(arr,index) in company" :label="arr.enterprise_name" :value="arr.enterprise_name+'-'+index"></el-option>
+				      <el-option v-for="(arr,index) in company" :label="arr.enterprise_name" :value="arr.id"></el-option>
 				    </el-select><br>
 				  </el-form-item>
 				  <el-form-item label="产品名称:">
 				    <el-select v-model="pname" placeholder="请选择产品名称" @change="getpname">
-				      <el-option v-for="(arr,index) in product" :label="arr.product_name" :value="arr.product_name+'-'+index" ></el-option>
+				      <el-option v-for="(arr,index) in product" :label="arr.product_name" :value="arr.id" ></el-option>
 				    </el-select><br>
 				  </el-form-item>
 				  <el-form-item label="批准文号:">
@@ -74,23 +74,23 @@
 				  </el-form-item>
 				  <p class="t">
 					<span class="hez">合格证:</span>
-					<el-radio class="radio" v-model="radio1" label="0">通过</el-radio>
-	  				<el-radio class="radio" v-model="radio1" label="1">不通过</el-radio><br>
+					<el-radio class="radio" v-model="radio1" :label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio1" :label="1">不通过</el-radio><br>
 	  				<span class="bq">标签:</span>
-					<el-radio class="radio" v-model="radio2" label="0">通过</el-radio>
-	  				<el-radio class="radio" v-model="radio2" label="1">不通过</el-radio><br>
+					<el-radio class="radio" v-model="radio2" :label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio2" :label="1">不通过</el-radio><br>
 	  				<span class="bz">广告文宣:</span>
-					<el-radio class="radio" v-model="radio3" label="0">通过</el-radio>
-	  				<el-radio class="radio" v-model="radio3" label="1">不通过</el-radio><br>
+					<el-radio class="radio" v-model="radio3" :label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio3" l:abel="1">不通过</el-radio><br>
 	  				<span class="wx">质量情况:</span>
-					<el-radio class="radio" v-model="radio4" label="0">通过</el-radio>
+					<el-radio class="radio" v-model="radio4" :label="0">通过</el-radio>
 	  				<el-radio class="radio" v-model="radio4" label="1">不通过</el-radio><br>
 	  				<span class="zl">包装情况:</span>
-					<el-radio class="radio" v-model="radio5" label="0">通过</el-radio>
-	  				<el-radio class="radio" v-model="radio5" label="1">不通过</el-radio><br>
+					<el-radio class="radio" v-model="radio5" :label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio5" :label="1">不通过</el-radio><br>
 	  				<span class="zl1">外观质量:</span>
-					<el-radio class="radio" v-model="radio6" label="0">通过</el-radio>
-	  				<el-radio class="radio" v-model="radio6" label="1">不通过</el-radio><br>
+					<el-radio class="radio" v-model="radio6" :label="0">通过</el-radio>
+	  				<el-radio class="radio" v-model="radio6" :label="1">不通过</el-radio><br>
 				  </p>
 				  <el-form-item label="联系方式:">
 				    <el-input v-model="Tel"></el-input>
@@ -174,10 +174,9 @@
 			this.getData();
 		},
 		methods: {
-			getData(){
-				console.log(123)
+			getData(){//获取供货企业
 				this.$http.post(baseUrl+'/searchSupplier').then((res)=>{
-					console.log(res)
+					// console.log(res)
 	              	if(res.data.retCode === 0){
 	              		this.company = res.data.data;
 	              	}else{
@@ -186,6 +185,54 @@
 		          },(err)=>{
 		          	console.log(err)
 		          });
+				//获取进货详情
+				let obj = {id:this.$route.params.id}
+				this.$http.get(baseUrl+'/findPurchaseDetail', {params:obj}).then((res)=>{
+						console.log(res)
+		              	if(res.data.retCode === 0){
+							let data1 = res.data.data;
+							this.companyName = data1.enterprise_id;
+							this.companyId = data1.enterprise_id;
+							//获取产品名称
+							let obj = {enterprise_id:data1.enterprise_id}
+							this.$http.post(baseUrl+'/searchProduct',obj).then((res)=>{
+				              	if(res.data.retCode === 0){
+				              		this.product = res.data.data;
+									this.pname = data1.product_id;
+									this.productId = data1.product_id;
+									this.wenhao = data1.apply_sn;
+									this.cpmc = data1.product_name;
+									this.ghqy = data1.enterprise_name;
+									this.pzwh = data1.apply_sn;
+									this.sccs = data1.manufacturer;
+									this.scxkzh = data1.produce_permit;
+									this.gg = data1.specification;
+									this.sl = data1.quatity;
+									this.scrq = data1.manufacture_date.split(' ')[0];
+									this.scph = data1.batch_id;
+									this.yxq = data1.expire_date.split(' ')[0];
+									this.imageUrl = ['http://api.credunion.org/h1/dl?table=purchase_info&id=' + data1.id + '&field=check_report'];
+									this.radio1 = data1.QC_OK;
+									this.radio2 = data1.label_OK;
+									this.radio3 = data1.package_OK;
+									this.radio4 = data1.advertise_OK;
+									this.radio5 = data1.quality_OK;
+									this.radio6 = data1.outward_OK;
+									this.Tel = data1.contact;
+									this.jl = data1.results;
+									this.Notes = data1.notes;
+				              	}else{
+				              		this.$messagebox.alert(res.data.retMessage);
+				              		this.product = '';
+				              	}
+					          },(err)=>{
+					          });
+		              	}else{
+		              		this.$messagebox.alert(res.data.retMessage);
+		              	}
+			          },(err)=>{
+			              console.log(err);
+			          });
 			},
 			goback(){
 				this.$router.go(-1)
@@ -270,13 +317,10 @@
 				this.Tel = '';
 				this.jl = '';
 				this.Notes = '';
-				let index = this.companyName.split('-')[1];
-				this.ghqy = this.companyName.split('-')[0];
-				this.companyId = this.company[index].id
-				let obj = {enterprise_id:this.companyId}
-				console.log(obj)
+				let obj = {enterprise_id:this.companyName}
+				// console.log(obj)
 				this.$http.post(baseUrl+'/searchProduct',obj).then((res)=>{
-					console.log(res)
+					// console.log(res)
 	              	if(res.data.retCode === 0){
 	              		this.product = res.data.data;
 	              	}else{
@@ -287,29 +331,38 @@
 		          });
 			},
 			getpname(){
-				let index = this.pname.split('-')[1];
-				this.wenhao = this.product[index].apply_sn;
-				this.cpmc = this.product[index].product_name;
-				this.pzwh = this.wenhao;
-				this.sccs = this.product[index].manufacturer;
-				this.scxkzh = this.product[index].produce_permit;
-				this.productId = this.product[index].id;
-				this.gg = this.product[index].specification;
-				this.sl = '';
-				this.yxq = '';
-				this.scrq = '';
-				this.scph = '';
-				this.radio1 = '';
-				this.radio2 = '';
-				this.radio3 = '';
-				this.radio4 = '';
-				this.radio5 = '';
-				this.radio6 = '';
-				this.file1 = '';
-				this.imageUrl = '';
-				this.Tel = '';
-				this.jl = '';
-				this.Notes = '';
+				let obj = {id:this.pname}
+				this.$http.post(baseUrl+'/findProduct',obj).then((res)=>{
+					console.log(res)
+	              	if(res.data.retCode === 0){
+			            this.wenhao = res.data.data.apply_sn;
+						this.cpmc = res.data.data.product_name;
+						this.pzwh = this.wenhao;
+						this.sccs = res.data.data.manufacturer;
+						this.scxkzh = res.data.data.produce_permit;
+						this.productId = res.data.data.id;
+						this.gg = res.data.data.specification;
+	              	}else{
+	              		this.$messagebox.alert(res.data.retMessage);
+	              		
+	              	}
+		          },(err)=>{
+		          });
+				// this.sl = '';
+				// this.yxq = '';
+				// this.scrq = '';
+				// this.scph = '';
+				// this.radio1 = '';
+				// this.radio2 = '';
+				// this.radio3 = '';
+				// this.radio4 = '';
+				// this.radio5 = '';
+				// this.radio6 = '';
+				// this.file1 = '';
+				// this.imageUrl = '';
+				// this.Tel = '';
+				// this.jl = '';
+				// this.Notes = '';
 			},
 			getpic(file) {
 		        this.imageUrl = URL.createObjectURL(file.raw);
@@ -334,13 +387,15 @@
 	            formData.append('contact', this.Tel);
 	            formData.append('results', this.jl);
 	            formData.append('notes', this.Notes);
+	            formData.append('id', this.$route.params.id);
+	            formData.append('is_check', 0);
 
 	            let config = {
 	              headers: {
 	                'Content-Type': 'multipart/form-data'
 	              }
 	            }
- 				this.$http.post(baseUrl+'/addPurchase',formData,config).then((res)=>{
+ 				this.$http.post(baseUrl+'/updatePurchase',formData,config).then((res)=>{
 	              	console.log(res)
 	              	if(res.data.retCode === 0){
 	              		this.$messagebox.alert('操作成功!').then(action => {
@@ -370,17 +425,7 @@
 	              			this.Tel = '';
 	              			this.jl = '';
 	              			this.Notes = '';
-	              			
-	              			this.$http.post(baseUrl+'/searchSupplier').then((res)=>{
-								console.log(res)
-				              	if(res.data.retCode === 0){
-				              		this.company = res.data.data;
-				              	}else{
-				              		this.$messagebox.alert(res.data.retMessage);
-				              	}
-					          },(err)=>{
-					          });
-					  this.$router.push({name:'index'})
+					  		this.$router.push({name:'workStatus'})
 
  						});
 	              	}else{

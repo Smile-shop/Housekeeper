@@ -204,3 +204,89 @@
         }
     }
 }
+.PurchaseLie_container {
+    max-width: 12.8rem;
+    height: 100%;
+    background-size: 100% 100%;
+    overflow-y: scroll;
+    text-align: center;
+    padding-bottom: .533333rem;
+    .PurchaseLie_text {
+        position: relative;
+        text-align: center;
+        height: 1rem;
+        font-size: .32rem;
+        background: #48A4F2;
+        color: #fff;
+        span {
+            line-height: 1rem;
+        }
+        .goback {
+            display: inline-block;
+            width: .2rem;
+            height: .36rem;
+            position: absolute;
+            top: .3rem;
+            left: .38rem;
+        }
+    }
+    .main{
+        .jodtable {
+            border: .017778rem solid #ccc;
+            border-top: none;border-left:none;
+            border-collapse: collapse;
+            width: 100%;
+            th {
+                background: #81bdef;
+                color: #fff;
+                padding: .142222rem .035556rem .142222rem .035556rem;
+                font-size: .195556rem;
+            }
+            tr,
+            td,
+            {
+                border: 1px solid #ccc;
+                border-collapse: collapse;
+                padding: .142222rem .035556rem .142222rem .035556rem;
+                font-size: .195556rem;
+            }
+            tr:nth-child(1) {
+                border-top: none;
+                th {
+                    border-top: none;
+                }
+                td.cao {
+                    width: 20%;
+                    .edit{
+                        font-size: .177778rem;
+                        // height: .48rem;
+                        // width: 1rem;
+                     }
+                }
+            }
+        } 
+    }
+    .main ul span{
+        width: 0.444444rem;
+        height: 0.444444rem;
+        background:rgb(250, 66, 66);
+        display: inline-block;
+        position: absolute;
+        font-size: 10px;
+        color:#fff;
+        text-align: center;
+        line-height: 0.444444rem;
+        font-weight: normal;
+        border-radius:0.355556rem;
+        left: 5.451111rem;top: 190px;
+
+    }
+    .main ul li img.PurchaseLie_navimg {
+        width: 80%;
+        height: auto;
+        margin-top: .4rem;
+    }
+    .main ul li:nth-child(1) a img.PurchaseLie_navimg {
+        margin-top: .4rem;
+    }
+}

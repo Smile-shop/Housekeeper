@@ -30,15 +30,20 @@
             th {
                 background: #81bdef;
                 color: #fff;
+                padding: .142222rem .035556rem .142222rem .035556rem;
+                border: 1px solid #81bdef;
             }
             tr,
             td,
-            th {
-                border: .017778rem solid rgba(204, 204, 204, 0.74);
+            {
+                border: 1px solid rgba(204, 204, 204, 0.74);
                 border-collapse: collapse;
                 padding: .142222rem .035556rem .142222rem .035556rem;
                 font-size: .177778rem;
                 border-left: none;
+            }
+            td:nth-child(2){
+                width: 30%;
             }
             tr:nth-child(1) {
                 border-top: none;
@@ -53,7 +58,7 @@
             border-radius: .355556rem;
             width: 2.364444rem;
             border: none;
-            border: .017778rem solid rgba(204, 204, 204, 0.74);
+            border: 1px solid rgba(204, 204, 204, 0.74);
             height: .64rem;
             margin-top: .088889rem;
             text-align: center;
@@ -62,9 +67,76 @@
         .audit,
         .look {
             font-size: .177778rem;
-            width: .853333rem;
+            width: .9rem;
             height: .48rem;
             margin: .053333rem;
+            label{
+                font-size: 10px;
+            }
+        }
+    }
+    .z{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background:rgba(0, 0, 0, 0.6);
+        z-index:1000;
+    }
+    .detail{
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 0.355556rem;
+        border:1px solid #ccc;
+        border-radius:5px;
+        background:rgba(250, 0, 0, 0.05);
+        padding:0.177778rem;
+        position: relative;
+        .cacel{
+            width: 0.444444rem;
+            height: 0.444444rem;
+            background:rgb(250, 66, 66);
+            display: inline-block;
+            position: absolute;
+            font-size: 0.231111rem;
+            color:#fff;
+            text-align: center;
+            line-height: 0.444444rem;
+            font-weight: normal;
+            border-radius:0.355556rem;
+            left: 5.351111rem;top: -0.195556rem;
+        }
+        p{
+            text-align: left;
+            margin-top: 10px;
+            font-weight: normal;position: relative;
+            img {
+                width: 50%;
+                height: auto;
+                transform: scale(1);
+                transition: all ease 0.2s;
+            }
+            img.scale {
+                transform: scale(2);
+                z-index:10000000;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                margin-left: -25%;
+                margin-top: -25%;
+            }
+            span{
+                line-height:25px;
+                font-size: 12px;
+            }
+        }
+        .audit1,.audit2{
+            width: 40%;
+            height: 35px;
+            font-size: 12px;
+            margin-top: 20px;
         }
     }
 }

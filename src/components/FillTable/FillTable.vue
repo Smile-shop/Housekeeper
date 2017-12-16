@@ -602,7 +602,7 @@
 		     		other_allergy_his_desc:this.ywqtjcwgms,
 		     		start_use_date:this.kssyrq,
 		     		acr_action_date:this.fsrq,
-		     		condition_d:this.bqms,
+		     		condition_desc:this.bqms,
 		     		skin_broken:this.checkList,
 		     		other_skin_broken:this.qt,
 		     		is_stop_use:this.radio,
