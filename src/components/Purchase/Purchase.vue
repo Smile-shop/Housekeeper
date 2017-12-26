@@ -50,7 +50,7 @@
 				  </el-form-item>
 				  <el-form-item label="生产日期:">
 				    <i class="time" @click="openPicker">
-		          		<el-input class="time" v-model="scrq"  placeholder="点击选择时间" :disabled="true"></el-input>
+		          		<el-input class="time" v-model="scrq"  placeholder="点击选择时间" ></el-input>
 		          	</i>
 				  </el-form-item>
 				  <el-form-item label="生产批号:">
@@ -58,7 +58,7 @@
 				  </el-form-item>
 				  <el-form-item label="有效期:">
 				    <i class="time" @click="openPicker1">
-		          		<el-input class="time" v-model="yxq"  placeholder="点击选择时间" :disabled="true"></el-input>
+		          		<el-input class="time" v-model="yxq"  placeholder="点击选择时间" ></el-input>
 		          	</i>
 				  </el-form-item>
 				  <el-form-item label="批次检查报告:">

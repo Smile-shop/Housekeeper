@@ -2,7 +2,7 @@
 	<div class="FileManagement_container">
 		<p class="FileManagement_text">
 			<img src="../../assets/imgs/arrow (3).png" class="goback" @click="goback">
-			<span>档案管理</span>
+			<span>{{text}}</span>
 		</p>
 		<div class="main">
 			<div class="dsearch" v-show="!b">
@@ -23,7 +23,7 @@
 			<table class="jodtable" v-show='showOrnot'>
 		      <thead>
 		        <tr>
-		          <th>表单、台账、档案名称</th>
+		          <th>档案名称</th>
 		          <th>时间</th>
 		          <th>操作</th>
 		        </tr>
@@ -357,10 +357,32 @@
 		        syqy1:{img1:'',img2:''},
 		        sycp1:{img:'',img1:'',img2:'',img3:'',img4:'',img5:'',img6:'',img7:'',},
 		        jhda1:{img:''},
+		        text:'',
 			}
 		},
 		created(){
 			this.id = this.$route.params.index;
+			if(this.id == 1){
+		     		this.text = '首营企业';
+		     	}else if(this.id == 2){
+		     		this.text = '首营产品';
+		     	}else if(this.id == 3){
+		     		this.text = '进货档案';
+		     	}else if(this.id == 4){
+		     		this.text = '销售档案';
+		     	}else if(this.id == 5){
+		     		this.text = '场所设施';
+		     	}else if(this.id == 6){
+		     		this.text = '不良反应';
+		     	}else if(this.id == 7){
+		     		this.text = '召回通知';
+		     	}else if(this.id == 8){
+		     		this.text = '召回记录';
+		     	}else if(this.id == 9){
+		     		this.text = '履约自查';
+		     	}else if(this.id == 10){
+		     		this.text = '客户意见';
+		     	}
 			if(this.id == 5){
 				let obj = {id:this.id,stime:this.stime,etime:this.etime}
 				this.$http.post(baseUrl+'/searchFile',obj).then((res)=>{

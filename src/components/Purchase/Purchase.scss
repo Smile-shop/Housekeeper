@@ -63,7 +63,7 @@
             }
             input:disabled {
                 border: .017778rem solid #bfcbd9;
-                background-color: #fff;
+                background-color: rgba(204, 204, 204, 0.12);
                 color: rgb(72, 87, 106);
                 -webkit-text-fill-color: rgb(72, 87, 106);
                 -webkit-opacity: 1;
@@ -159,7 +159,7 @@
             }
             input:disabled {
                 border: .017778rem solid #bfcbd9;
-                background-color: #fff;
+                background-color: rgba(204, 204, 204, 0.12);
                 color: rgb(72, 87, 106);
                 -webkit-text-fill-color: rgb(72, 87, 106);
                 -webkit-opacity: 1;
@@ -204,6 +204,7 @@
         }
     }
 }
+
 .PurchaseLie_container {
     max-width: 12.8rem;
     height: 100%;
@@ -230,10 +231,11 @@
             left: .38rem;
         }
     }
-    .main{
+    .main {
         .jodtable {
             border: .017778rem solid #ccc;
-            border-top: none;border-left:none;
+            border-top: none;
+            border-left: none;
             border-collapse: collapse;
             width: 100%;
             th {
@@ -245,7 +247,7 @@
             tr,
             td,
             {
-                border: 1px solid #ccc;
+                border: .017778rem solid #ccc;
                 border-collapse: collapse;
                 padding: .142222rem .035556rem .142222rem .035556rem;
                 font-size: .195556rem;
@@ -257,30 +259,33 @@
                 }
                 td.cao {
                     width: 20%;
-                    .edit{
+                    .edit {
                         font-size: .177778rem;
                         // height: .48rem;
                         // width: 1rem;
-                     }
+                    }
                 }
             }
-        } 
+        }
     }
-    .main ul span{
-        width: 0.444444rem;
-        height: 0.444444rem;
-        background:rgb(250, 66, 66);
-        display: inline-block;
-        position: absolute;
-        font-size: 10px;
-        color:#fff;
-        text-align: center;
-        line-height: 0.444444rem;
-        font-weight: normal;
-        border-radius:0.355556rem;
-        left: 5.451111rem;top: 190px;
-
-    }
+    .main ul{
+        position: relative;
+            span {
+            width: 0.444444rem;
+            height: 0.444444rem;
+            background: rgb(250, 66, 66);
+            display: inline-block;
+            position: absolute;
+            font-size: .177778rem;
+            color: #fff;
+            text-align: center;
+            line-height: 0.444444rem;
+            font-weight: normal;
+            border-radius: 0.355556rem;
+            left: 5.451111rem;
+            top: 2rem;
+        }
+    } 
     .main ul li img.PurchaseLie_navimg {
         width: 80%;
         height: auto;

@@ -31,18 +31,18 @@
                 background: #81bdef;
                 color: #fff;
                 padding: .142222rem .035556rem .142222rem .035556rem;
-                border: 1px solid #81bdef;
+                border: .017778rem solid #81bdef;
             }
             tr,
             td,
             {
-                border: 1px solid rgba(204, 204, 204, 0.74);
+                border: .017778rem solid rgba(204, 204, 204, 0.74);
                 border-collapse: collapse;
                 padding: .142222rem .035556rem .142222rem .035556rem;
                 font-size: .177778rem;
                 border-left: none;
             }
-            td:nth-child(2){
+            td:nth-child(2) {
                 width: 30%;
             }
             tr:nth-child(1) {
@@ -58,7 +58,7 @@
             border-radius: .355556rem;
             width: 2.364444rem;
             border: none;
-            border: 1px solid rgba(204, 204, 204, 0.74);
+            border: .017778rem solid rgba(204, 204, 204, 0.74);
             height: .64rem;
             margin-top: .088889rem;
             text-align: center;
@@ -70,48 +70,50 @@
             width: .9rem;
             height: .48rem;
             margin: .053333rem;
-            label{
-                font-size: 10px;
+            label {
+                font-size: .177778rem;
             }
         }
     }
-    .z{
+    .z {
         position: fixed;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background:rgba(0, 0, 0, 0.6);
-        z-index:1000;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
     }
-    .detail{
+    .detail {
         text-align: center;
-        font-size: 13px;
+        font-size: .231111rem;
         font-weight: bold;
         margin: 0.355556rem;
-        border:1px solid #ccc;
-        border-radius:5px;
-        background:rgba(250, 0, 0, 0.05);
-        padding:0.177778rem;
+        border: .017778rem solid #ccc;
+        border-radius: .088889rem;
+        background: rgba(250, 0, 0, 0.05);
+        padding: 0.177778rem;
         position: relative;
-        .cacel{
+        .cacel {
             width: 0.444444rem;
             height: 0.444444rem;
-            background:rgb(250, 66, 66);
+            background: rgb(250, 66, 66);
             display: inline-block;
             position: absolute;
             font-size: 0.231111rem;
-            color:#fff;
+            color: #fff;
             text-align: center;
             line-height: 0.444444rem;
             font-weight: normal;
-            border-radius:0.355556rem;
-            left: 5.351111rem;top: -0.195556rem;
+            border-radius: 0.355556rem;
+            left: 5.351111rem;
+            top: -0.195556rem;
         }
-        p{
+        p {
             text-align: left;
-            margin-top: 10px;
-            font-weight: normal;position: relative;
+            margin-top: .177778rem;
+            font-weight: normal;
+            position: relative;
             img {
                 width: 50%;
                 height: auto;
@@ -120,23 +122,24 @@
             }
             img.scale {
                 transform: scale(2);
-                z-index:10000000;
+                z-index: 10000000;
                 position: fixed;
                 left: 50%;
                 top: 50%;
                 margin-left: -25%;
                 margin-top: -25%;
             }
-            span{
-                line-height:25px;
-                font-size: 12px;
+            span {
+                line-height: .444444rem;
+                font-size: .213333rem;
             }
         }
-        .audit1,.audit2{
+        .audit1,
+        .audit2 {
             width: 40%;
-            height: 35px;
-            font-size: 12px;
-            margin-top: 20px;
+            height: .622222rem;
+            font-size: .213333rem;
+            margin-top: .355556rem;
         }
     }
 }

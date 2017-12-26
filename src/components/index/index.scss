@@ -13,19 +13,29 @@
         top: 0;
         z-index: 5;
     }
+    .mmm1 {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.24);
+        ;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+    }
     .person {
         width: .4rem;
         position: absolute;
         top: .34rem;
-        left: 5.6rem;
+        right: .4rem;
         z-index: 6;
     }
     .all {
         z-index: 5;
+        position: relative;
         .menu {
             ul {
                 position: absolute;
-                left: 4.06rem;
+                right: .2rem;
                 top: .88rem;
                 width: 2.2rem;
                 height: 1.4rem;
@@ -73,8 +83,68 @@
         }
         .jian {
             position: absolute;
-            left: 5.62rem;
+            right: .35rem;
             top: .8rem;
+            width: .32rem;
+            height: .32rem;
+            border: .01rem solid rgba(204, 204, 204, 0.74);
+            background: #fff;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            /* IE 9 */
+            -moz-transform: rotate(45deg);
+            /* Firefox */
+            -webkit-transform: rotate(45deg);
+            /* Safari 和 Chrome */
+            -o-transform: rotate(45deg);
+            /* Opera */
+            z-index: 5;
+        }
+    }
+.all1 {
+        z-index: 5;
+        position: relative;
+        .menu1 {
+            ul {
+                position: absolute;
+                right: 32%;
+                top: -.12rem;
+                width: 2.2rem;
+                background: #fff;
+                border: .01rem solid rgba(204, 204, 204, 0.74);
+                border-top: 0;
+                box-shadow: 0 .04rem .1rem #ccc;
+                z-index: 10;
+                list-style: none;
+                li {
+                    list-style: none;
+                    float: left;
+                    width: 100%;
+                    height: .7rem;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    /* Firefox */
+                    -webkit-box-sizing: border-box;
+                    /* Safari */
+                    text-align: center;
+                    line-height: .7rem;
+                    border-bottom: .01rem solid #ccc;
+                    &:nth-last-child(0) {
+                        border-bottom: none;
+                    }
+                    &:hover {
+                        background: #ebebeb;
+                    }
+                    color: #888;
+                    font-size: 0.195556rem;
+                }
+            }
+        }
+        .jian1 {
+            position: absolute;
+            right: 47%;
+            top: -.2rem;
             width: .32rem;
             height: .32rem;
             border: .01rem solid rgba(204, 204, 204, 0.74);
@@ -101,6 +171,7 @@
         z-index: 2;
         span {
             line-height: 1rem;
+            z-index:10;
         }
     }
     .el-icon-message {
@@ -144,7 +215,7 @@
 }
 
 .mchli li:nth-child(even) {
-    border-left: .01rem solid #E5E5E5;
+    border-right: .01rem solid #E5E5E5;
     border-bottom: .01rem solid #E5E5E5;
 }
 

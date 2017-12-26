@@ -49,7 +49,7 @@
 		              	console.log(res)
 		              	if(res.data.retCode === 0){
 		              		sessionStorage.setItem('juese',JSON.stringify(res.data.data.role_ids))
-		              		let id = 
+		              		sessionStorage.setItem('name',res.data.data.realname)
 		              		this.$router.push({name:'index'})
 		              	}else{
 		              		this.$messagebox.alert(res.data.retMessage);

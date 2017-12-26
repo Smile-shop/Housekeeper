@@ -32,28 +32,28 @@
 					    </el-select><br>
 				  </el-form-item>
 				  <el-form-item label="进货日期:">
-				    <el-input v-model="jhrq"></el-input>
+				    <el-input v-model="jhrq"  :disabled="true"></el-input>
 				  </el-form-item>
 				   <el-form-item label="销售日期:">
 				     <i class="time" @click="openPicker">
-		          		<el-input class="time" v-model="xsrq"  placeholder="点击选择时间" :disabled="true"></el-input>
+		          		<el-input class="time" v-model="xsrq"  placeholder="点击选择时间"></el-input>
 		          	</i>
 				  </el-form-item>
 				   <el-form-item label="规格:">
-				    <el-input v-model="gg"></el-input>
+				    <el-input v-model="gg"  :disabled="true"></el-input>
 				  </el-form-item>
-				  <el-form-item label="进货数量:">
-				    <el-input v-model="count"></el-input>
+				  <el-form-item label="库存数量:">
+				    <el-input v-model="count"  :disabled="true"></el-input>
 				  </el-form-item>
 				  <el-form-item label="销售数量:">
-				    <el-input type='number' v-model="sl" @change='change'></el-input>
+				    <el-input type="number" v-model="sl" @change='change'></el-input>
 				  </el-form-item>
 				   <el-form-item label="生产批号:">
-				    <el-input v-model="scph"></el-input>
+				    <el-input v-model="scph"  :disabled="true"></el-input>
 				  </el-form-item>
 				   <el-form-item label="有效期:">
 				     <i class="time">
-		          		<el-input class="time" v-model="yxq"></el-input>
+		          		<el-input class="time" v-model="yxq"  :disabled="true"></el-input>
 		          	</i>
 				  </el-form-item>
 				</el-form>
@@ -134,7 +134,7 @@
 				this.sl = Number(this.sl)
 				if(this.sl > this.count){
 					this.sl = '';
-					this.$messagebox.alert('销售数量不能大于进货数量！');
+					this.$messagebox.alert('销售数量不能大于库存数量！');
 				}
 			},
 			aa(){

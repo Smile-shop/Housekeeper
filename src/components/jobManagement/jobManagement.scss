@@ -50,7 +50,7 @@
             }
             input:focus {
                 outline: none;
-                border: 1px solid #26a2ff;
+                border: .017778rem solid #26a2ff;
             }
             .el-select {
                 input {
@@ -89,7 +89,7 @@
             font-weight: bold;
         }
         .jodtable {
-            border: 1px solid #ccc;
+            border: .017778rem solid #ccc;
             border-collapse: collapse;
             width: 100%;
             margin-top: .355556rem;
@@ -101,7 +101,7 @@
             tr,
             td,
             {
-                border: 1px solid #ccc;
+                border: .017778rem solid #ccc;
                 border-collapse: collapse;
                 padding: .142222rem .035556rem .142222rem .035556rem;
                 font-size: .213333rem;
@@ -226,7 +226,7 @@
     }
     .gwei {
         position: relative;
-        margin: .391111rem 1px .088889rem 1px;
+        margin: .391111rem .017778rem .088889rem .017778rem;
         padding: .106667rem;
         display: inline-block;
         border-radius: .106667rem;
@@ -244,7 +244,7 @@
         }
     }
     .spanActive {
-        margin: .391111rem 1px .088889rem 1px;
+        margin: .391111rem .017778rem .088889rem .017778rem;
         padding: .106667rem;
         display: inline-block;
         border-radius: .106667rem;
